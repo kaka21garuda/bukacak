@@ -32,10 +32,6 @@ class SkillsViewController: UIViewController {
         var circleView = SwiftCircle(frame: CGRect(x: 0, y: 0, width: circleWidth, height: circleHeight))
         
         view.addSubview(circleView)
-        
-        // Animate the drawing of the circle over the course of 1 second
-        circleView.animateCircle(duration: 1.0)
-        
     }
 
     

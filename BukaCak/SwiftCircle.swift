@@ -26,45 +26,38 @@ class SwiftCircle: UIView {
         circleLayer.lineWidth = 5.0
         
         // Don't draw the circle initially.
+        //circleLayer.strokeStart = 0.0
         circleLayer.strokeEnd = 0.0
         
-        layer.addSublayer(circleLayer)
-        print("StrokeEnd before animation: \(circleLayer.strokeEnd)")
-        
-        
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
-    
-    
-    
-    func animateCircle(duration: TimeInterval) {
-        print("animation is called")
-        // We want to animate the strokeEnd property of the circleLayer
         let animation = CABasicAnimation(keyPath: "strokeEnd")
         
         // Set the animation duration appropriately
-        animation.duration = duration
+        animation.duration = 1.7
         
         // Animate from 0 (no circle) to 1 (full circle)
         animation.fromValue = 0
-        animation.toValue = 1
+        animation.toValue = 1.0
         
         // Do a linear animation (i.e. the speed of the animation stays the same)
         animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
         
         // Set the circleLayer's strokeEnd property to 1.0 now so that it's the
         // right value when the animation ends.
-        circleLayer?.strokeEnd = 1.0
+        circleLayer.strokeEnd = 1.0
         
         // Do the actual animation
-        circleLayer?.add(animation, forKey: "animateCircle")
+        print("StrokeEnd before animation: \(circleLayer.strokeEnd)")
         
-        print("StrokeEnd after animation: \(circleLayer?.strokeEnd)")
+        layer.addSublayer(circleLayer)
+        circleLayer.add(animation, forKey: "animateCircle")
+        
+        print("StrokeEnd after animation: \(circleLayer.strokeEnd)")
+        print(Double(M_PI * 2.0))
+        
     }
     
-        
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
     
 }

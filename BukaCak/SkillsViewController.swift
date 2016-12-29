@@ -9,10 +9,12 @@
 import UIKit
 
 class SkillsViewController: UIViewController {
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        addCircleView()
         // Do any additional setup after loading the view.
     }
 
@@ -21,15 +23,20 @@ class SkillsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func addCircleView() {
+        var circleWidth = CGFloat(200)
+        var circleHeight = circleWidth
+        
+        // Create a new CircleView
+        //var circleView = SwiftCircle(frame: CGRect(diceRoll, 0, circleWidth, circleHeight))
+        var circleView = SwiftCircle(frame: CGRect(x: 0, y: 0, width: circleWidth, height: circleHeight))
+        
+        view.addSubview(circleView)
+        
+        // Animate the drawing of the circle over the course of 1 second
+        circleView.animateCircle(duration: 1.0)
+        
     }
-    */
 
+    
 }

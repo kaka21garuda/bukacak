@@ -143,6 +143,24 @@
             </objects>
             <point key="canvasLocation" x="32.799999999999997" y="38.23088455772114"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="KGz-f0-uKm">
+            <objects>
+                <viewController id="aBk-W3-8os" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="tAH-NY-kQC"/>
+                        <viewControllerLayoutGuide type="bottom" id="I7S-Ok-R9T"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="TJ9-5Y-w7a">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RJs-dJ-BHc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="33" y="716"/>
+        </scene>
         <!--Skills View Controller-->
         <scene sceneID="uIG-XS-ege">
             <objects>
@@ -155,25 +173,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yF8-3I-lSb" customClass="SkillsView" customModule="BukaCak" customModuleProvider="target">
-                                <rect key="frame" x="224" y="84" width="135" height="132"/>
-                                <color key="backgroundColor" red="0.026392627507448196" green="0.53314816951751709" blue="0.59677046537399292" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pj5-nx-0WP" customClass="SwiftCircle" customModule="BukaCak" customModuleProvider="target">
+                                <rect key="frame" x="147" y="293" width="80" height="80"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="135" id="Gk4-Hs-72f"/>
-                                    <constraint firstAttribute="height" constant="132" id="fly-7k-MKF"/>
+                                    <constraint firstAttribute="width" constant="80" id="U4n-Eo-xcg"/>
+                                    <constraint firstAttribute="height" constant="80" id="n0b-pU-xCY"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.026392627507448196" green="0.53314816951751709" blue="0.59677046537399292" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="yF8-3I-lSb" firstAttribute="centerY" secondItem="txV-yb-MiW" secondAttribute="centerY" constant="-183.5" id="cGF-qd-e58"/>
-                            <constraint firstItem="yF8-3I-lSb" firstAttribute="centerX" secondItem="txV-yb-MiW" secondAttribute="centerX" constant="104" id="rj2-1M-y6H"/>
+                            <constraint firstItem="pj5-nx-0WP" firstAttribute="centerX" secondItem="txV-yb-MiW" secondAttribute="centerX" id="dHo-4t-bXP"/>
+                            <constraint firstItem="pj5-nx-0WP" firstAttribute="centerY" secondItem="txV-yb-MiW" secondAttribute="centerY" id="oDW-jL-hgs"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="45K-fz-iM2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="848.79999999999995" y="40.929535232383813"/>
+            <point key="canvasLocation" x="794" y="38"/>
         </scene>
     </scenes>
 </document>

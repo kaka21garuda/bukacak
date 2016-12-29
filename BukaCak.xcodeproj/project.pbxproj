@@ -8,12 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		C6C1190D1E1449AB0041709B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C1190C1E1449AB0041709B /* AppDelegate.swift */; };
-		C6C1190F1E1449AB0041709B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C1190E1E1449AB0041709B /* ViewController.swift */; };
 		C6C119121E1449AB0041709B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6C119101E1449AB0041709B /* Main.storyboard */; };
 		C6C119141E1449AB0041709B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6C119131E1449AB0041709B /* Assets.xcassets */; };
 		C6C119171E1449AB0041709B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6C119151E1449AB0041709B /* LaunchScreen.storyboard */; };
 		C6C119221E1449AB0041709B /* BukaCakTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C119211E1449AB0041709B /* BukaCakTests.swift */; };
 		C6C1192D1E1449AB0041709B /* BukaCakUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C1192C1E1449AB0041709B /* BukaCakUITests.swift */; };
+		C6C1193B1E144C500041709B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C1193A1E144C500041709B /* HomeViewController.swift */; };
+		C6C1193D1E1468BD0041709B /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C1193C1E1468BD0041709B /* CustomButton.swift */; };
+		C6D08DAB1E1494FF0037E4A1 /* SkillsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D08DAA1E1494FF0037E4A1 /* SkillsView.swift */; };
+		C6D08DAD1E1497080037E4A1 /* SkillsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D08DAC1E1497080037E4A1 /* SkillsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +39,6 @@
 /* Begin PBXFileReference section */
 		C6C119091E1449AB0041709B /* BukaCak.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BukaCak.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6C1190C1E1449AB0041709B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C6C1190E1E1449AB0041709B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C6C119111E1449AB0041709B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C6C119131E1449AB0041709B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C6C119161E1449AB0041709B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +49,10 @@
 		C6C119281E1449AB0041709B /* BukaCakUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BukaCakUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6C1192C1E1449AB0041709B /* BukaCakUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BukaCakUITests.swift; sourceTree = "<group>"; };
 		C6C1192E1E1449AB0041709B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C6C1193A1E144C500041709B /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = ../HomeViewController.swift; sourceTree = "<group>"; };
+		C6C1193C1E1468BD0041709B /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		C6D08DAA1E1494FF0037E4A1 /* SkillsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkillsView.swift; sourceTree = "<group>"; };
+		C6D08DAC1E1497080037E4A1 /* SkillsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkillsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,11 +104,14 @@
 			isa = PBXGroup;
 			children = (
 				C6C1190C1E1449AB0041709B /* AppDelegate.swift */,
-				C6C1190E1E1449AB0041709B /* ViewController.swift */,
+				C6C1193A1E144C500041709B /* HomeViewController.swift */,
 				C6C119101E1449AB0041709B /* Main.storyboard */,
 				C6C119131E1449AB0041709B /* Assets.xcassets */,
 				C6C119151E1449AB0041709B /* LaunchScreen.storyboard */,
 				C6C119181E1449AB0041709B /* Info.plist */,
+				C6C1193C1E1468BD0041709B /* CustomButton.swift */,
+				C6D08DAA1E1494FF0037E4A1 /* SkillsView.swift */,
+				C6D08DAC1E1497080037E4A1 /* SkillsViewController.swift */,
 			);
 			path = BukaCak;
 			sourceTree = "<group>";
@@ -262,8 +271,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C6C1190F1E1449AB0041709B /* ViewController.swift in Sources */,
+				C6D08DAB1E1494FF0037E4A1 /* SkillsView.swift in Sources */,
 				C6C1190D1E1449AB0041709B /* AppDelegate.swift in Sources */,
+				C6C1193B1E144C500041709B /* HomeViewController.swift in Sources */,
+				C6D08DAD1E1497080037E4A1 /* SkillsViewController.swift in Sources */,
+				C6C1193D1E1468BD0041709B /* CustomButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -512,6 +524,7 @@
 				C6C119331E1449AB0041709B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C6C119341E1449AB0041709B /* Build configuration list for PBXNativeTarget "BukaCakTests" */ = {
 			isa = XCConfigurationList;
@@ -520,6 +533,7 @@
 				C6C119361E1449AB0041709B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C6C119371E1449AB0041709B /* Build configuration list for PBXNativeTarget "BukaCakUITests" */ = {
 			isa = XCConfigurationList;
@@ -528,6 +542,7 @@
 				C6C119391E1449AB0041709B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

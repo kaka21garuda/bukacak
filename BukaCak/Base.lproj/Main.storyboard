@@ -1,14 +1,20 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="p7h-Xc-jKW">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Home View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="BukaCak" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +22,158 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4ML-8s-aFF">
+                                <rect key="frame" x="125" y="28" width="125" height="125"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="125" id="ATY-3A-ruf"/>
+                                    <constraint firstAttribute="height" constant="125" id="Nea-fO-BlW"/>
+                                    <constraint firstAttribute="width" secondItem="4ML-8s-aFF" secondAttribute="height" multiplier="1:1" id="p8N-uv-uaV"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A Software Engineer based in San Francisco, CA." textAlignment="center" lineBreakMode="headTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ubh-ID-J5g">
+                                <rect key="frame" x="0.0" y="207" width="375" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="375" id="8SD-cY-b28"/>
+                                    <constraint firstAttribute="height" constant="35" id="So8-6W-lF0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="0.89249695009655428" green="1" blue="0.99988096952438354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Buka Cakrawala" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qZW-h5-Qy6">
+                                <rect key="frame" x="118" y="178" width="139" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="FfQ-FF-X2p"/>
+                                    <constraint firstAttribute="width" constant="139" id="fUO-ow-8ME"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <color key="textColor" red="0.89096999168395996" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lmo-yM-RwZ" customClass="CustomButton" customModule="BukaCak" customModuleProvider="target">
+                                <rect key="frame" x="16" y="293" width="80" height="80"/>
+                                <color key="backgroundColor" red="0.026392627507448196" green="0.53314816951751709" blue="0.59677046537399292" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="574-DX-Irx"/>
+                                    <constraint firstAttribute="height" constant="80" id="xil-F4-30N"/>
+                                </constraints>
+                                <state key="normal">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="38"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DU9-cy-2Da" customClass="CustomButton" customModule="BukaCak" customModuleProvider="target">
+                                <rect key="frame" x="147" y="293" width="80" height="80"/>
+                                <color key="backgroundColor" red="0.026392627509999999" green="0.53314816949999999" blue="0.59677046540000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="1hG-bN-2Vp"/>
+                                    <constraint firstAttribute="width" constant="80" id="CEi-Aa-6Xi"/>
+                                </constraints>
+                                <state key="normal">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="38"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pHk-aI-73H" customClass="CustomButton" customModule="BukaCak" customModuleProvider="target">
+                                <rect key="frame" x="279" y="293" width="80" height="80"/>
+                                <color key="backgroundColor" red="0.026392627509999999" green="0.53314816949999999" blue="0.59677046540000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="Xgj-Vm-65d"/>
+                                    <constraint firstAttribute="width" constant="80" id="nRt-bg-i1a"/>
+                                </constraints>
+                                <state key="normal">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="38"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.026392627507448196" green="0.53314816951751709" blue="0.59677046537399292" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="DU9-cy-2Da" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1aT-0d-QPv"/>
+                            <constraint firstItem="qZW-h5-Qy6" firstAttribute="top" secondItem="4ML-8s-aFF" secondAttribute="bottom" constant="25" id="6Ix-6W-kLb"/>
+                            <constraint firstItem="pHk-aI-73H" firstAttribute="firstBaseline" secondItem="lmo-yM-RwZ" secondAttribute="firstBaseline" id="6xU-Gn-Nps"/>
+                            <constraint firstItem="ubh-ID-J5g" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="8nf-ZA-Lii"/>
+                            <constraint firstItem="ubh-ID-J5g" firstAttribute="top" secondItem="qZW-h5-Qy6" secondAttribute="bottom" constant="8" id="9WI-lv-qfV"/>
+                            <constraint firstItem="pHk-aI-73H" firstAttribute="top" secondItem="DU9-cy-2Da" secondAttribute="top" id="C9v-Ar-3Hj"/>
+                            <constraint firstItem="pHk-aI-73H" firstAttribute="leading" secondItem="DU9-cy-2Da" secondAttribute="trailing" constant="52" id="IYe-y3-lqm"/>
+                            <constraint firstItem="lmo-yM-RwZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-131.5" id="JKM-sq-d9u"/>
+                            <constraint firstItem="4ML-8s-aFF" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="ORK-U7-QnQ"/>
+                            <constraint firstItem="pHk-aI-73H" firstAttribute="firstBaseline" secondItem="DU9-cy-2Da" secondAttribute="firstBaseline" id="OnS-b8-rT4"/>
+                            <constraint firstItem="DU9-cy-2Da" firstAttribute="leading" secondItem="lmo-yM-RwZ" secondAttribute="trailing" constant="51" id="QV7-eP-rId"/>
+                            <constraint firstItem="ubh-ID-J5g" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Sbb-kH-EDC"/>
+                            <constraint firstItem="pHk-aI-73H" firstAttribute="baseline" secondItem="DU9-cy-2Da" secondAttribute="baseline" id="VvS-Sr-vP5"/>
+                            <constraint firstItem="4ML-8s-aFF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="eYx-wo-bzf"/>
+                            <constraint firstItem="qZW-h5-Qy6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="krF-dv-JMA"/>
+                            <constraint firstItem="lmo-yM-RwZ" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="mEp-3G-csq"/>
+                            <constraint firstAttribute="trailing" secondItem="ubh-ID-J5g" secondAttribute="trailing" id="mUH-WY-AbS"/>
+                            <constraint firstItem="pHk-aI-73H" firstAttribute="baseline" secondItem="lmo-yM-RwZ" secondAttribute="baseline" id="n18-8M-RuD"/>
+                            <constraint firstItem="pHk-aI-73H" firstAttribute="top" secondItem="lmo-yM-RwZ" secondAttribute="top" id="sMP-sw-wTd"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailButton" destination="pHk-aI-73H" id="bhc-eQ-8of"/>
+                        <outlet property="githubButton" destination="DU9-cy-2Da" id="Fjf-6c-8bk"/>
+                        <outlet property="homeProfileImageView" destination="4ML-8s-aFF" id="BdB-jg-Qxo"/>
+                        <outlet property="linkedinButton" destination="lmo-yM-RwZ" id="yMZ-ic-5fA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="32.799999999999997" y="38.23088455772114"/>
+        </scene>
+        <!--Skills View Controller-->
+        <scene sceneID="uIG-XS-ege">
+            <objects>
+                <viewController id="p7h-Xc-jKW" customClass="SkillsViewController" customModule="BukaCak" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Vwi-Zl-Yzm"/>
+                        <viewControllerLayoutGuide type="bottom" id="85b-oX-9Ev"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="txV-yb-MiW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yF8-3I-lSb" customClass="SkillsView" customModule="BukaCak" customModuleProvider="target">
+                                <rect key="frame" x="224" y="84" width="135" height="132"/>
+                                <color key="backgroundColor" red="0.026392627507448196" green="0.53314816951751709" blue="0.59677046537399292" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="135" id="Gk4-Hs-72f"/>
+                                    <constraint firstAttribute="height" constant="132" id="fly-7k-MKF"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.026392627507448196" green="0.53314816951751709" blue="0.59677046537399292" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="yF8-3I-lSb" firstAttribute="centerY" secondItem="txV-yb-MiW" secondAttribute="centerY" constant="-183.5" id="cGF-qd-e58"/>
+                            <constraint firstItem="yF8-3I-lSb" firstAttribute="centerX" secondItem="txV-yb-MiW" secondAttribute="centerX" constant="104" id="rj2-1M-y6H"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="45K-fz-iM2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="848.79999999999995" y="40.929535232383813"/>
         </scene>
     </scenes>
 </document>

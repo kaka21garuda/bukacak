@@ -29,9 +29,11 @@ class SkillsViewController: UIViewController {
         
         // Create a new CircleView
         //var circleView = SwiftCircle(frame: CGRect(diceRoll, 0, circleWidth, circleHeight))
-        var circleView = SwiftCircle(frame: CGRect(x: 0, y: 0, width: circleWidth, height: circleHeight))
+        var objectiveCCircle = SwiftCircle(frame: CGRect(x: view.frame.width / 2, y: 0 + 20, width: circleWidth, height: circleHeight))
         
-        view.addSubview(circleView)
+        //var swiftCircleCircle = SwiftCircle(frame: )
+        
+        view.addSubview(objectiveCCircle)
     }
 
     

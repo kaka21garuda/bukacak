@@ -19,6 +19,8 @@
 		C6D08DB01E14D4370037E4A1 /* SwiftCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D08DAF1E14D4370037E4A1 /* SwiftCircle.swift */; };
 		C6D08DB31E15987D0037E4A1 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D08DB21E15987D0037E4A1 /* ProfileViewController.swift */; };
 		C6D4D4401E161D1A0061FD35 /* SocialMediaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D4D43F1E161D1A0061FD35 /* SocialMediaViewController.swift */; };
+		C6D4D4421E16E4D50061FD35 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D4D4411E16E4D50061FD35 /* AboutViewController.swift */; };
+		C6D4D4441E16E7C40061FD35 /* CircularTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D4D4431E16E7C40061FD35 /* CircularTransition.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,8 @@
 		C6D08DAF1E14D4370037E4A1 /* SwiftCircle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftCircle.swift; sourceTree = "<group>"; };
 		C6D08DB21E15987D0037E4A1 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileViewController.swift; path = ../ProfileViewController.swift; sourceTree = "<group>"; };
 		C6D4D43F1E161D1A0061FD35 /* SocialMediaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialMediaViewController.swift; sourceTree = "<group>"; };
+		C6D4D4411E16E4D50061FD35 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		C6D4D4431E16E7C40061FD35 /* CircularTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularTransition.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +111,8 @@
 		C6C1190B1E1449AB0041709B /* BukaCak */ = {
 			isa = PBXGroup;
 			children = (
+				C6C1193A1E144C500041709B /* HomeViewController.swift */,
+				C6D4D4411E16E4D50061FD35 /* AboutViewController.swift */,
 				C6D08DB11E1598310037E4A1 /* ViewControllers */,
 				C6D08DAE1E14D3FB0037E4A1 /* Skills View */,
 				C6C1190C1E1449AB0041709B /* AppDelegate.swift */,
@@ -115,6 +121,7 @@
 				C6C119151E1449AB0041709B /* LaunchScreen.storyboard */,
 				C6C119181E1449AB0041709B /* Info.plist */,
 				C6C1193C1E1468BD0041709B /* CustomButton.swift */,
+				C6D4D4431E16E7C40061FD35 /* CircularTransition.swift */,
 			);
 			path = BukaCak;
 			sourceTree = "<group>";
@@ -149,7 +156,6 @@
 			isa = PBXGroup;
 			children = (
 				C6D08DAC1E1497080037E4A1 /* SkillsViewController.swift */,
-				C6C1193A1E144C500041709B /* HomeViewController.swift */,
 				C6D08DB21E15987D0037E4A1 /* ProfileViewController.swift */,
 				C6D4D43F1E161D1A0061FD35 /* SocialMediaViewController.swift */,
 			);
@@ -297,8 +303,10 @@
 				C6D4D4401E161D1A0061FD35 /* SocialMediaViewController.swift in Sources */,
 				C6C1190D1E1449AB0041709B /* AppDelegate.swift in Sources */,
 				C6C1193B1E144C500041709B /* HomeViewController.swift in Sources */,
+				C6D4D4441E16E7C40061FD35 /* CircularTransition.swift in Sources */,
 				C6D08DAD1E1497080037E4A1 /* SkillsViewController.swift in Sources */,
 				C6D08DB01E14D4370037E4A1 /* SwiftCircle.swift in Sources */,
+				C6D4D4421E16E4D50061FD35 /* AboutViewController.swift in Sources */,
 				C6C1193D1E1468BD0041709B /* CustomButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

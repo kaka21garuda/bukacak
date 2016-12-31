@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C62A4E901E1750E700FC81A9 /* EducationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62A4E8F1E1750E700FC81A9 /* EducationViewController.swift */; };
+		C62A4E921E1758CE00FC81A9 /* SkillViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62A4E911E1758CE00FC81A9 /* SkillViewController.swift */; };
 		C6C1190D1E1449AB0041709B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C1190C1E1449AB0041709B /* AppDelegate.swift */; };
 		C6C119121E1449AB0041709B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6C119101E1449AB0041709B /* Main.storyboard */; };
 		C6C119141E1449AB0041709B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6C119131E1449AB0041709B /* Assets.xcassets */; };
@@ -41,6 +43,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C62A4E8F1E1750E700FC81A9 /* EducationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EducationViewController.swift; sourceTree = "<group>"; };
+		C62A4E911E1758CE00FC81A9 /* SkillViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkillViewController.swift; sourceTree = "<group>"; };
 		C6C119091E1449AB0041709B /* BukaCak.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BukaCak.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6C1190C1E1449AB0041709B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C6C119111E1449AB0041709B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -113,6 +117,8 @@
 			children = (
 				C6C1193A1E144C500041709B /* HomeViewController.swift */,
 				C6D4D4411E16E4D50061FD35 /* AboutViewController.swift */,
+				C62A4E8F1E1750E700FC81A9 /* EducationViewController.swift */,
+				C62A4E911E1758CE00FC81A9 /* SkillViewController.swift */,
 				C6D08DB11E1598310037E4A1 /* ViewControllers */,
 				C6D08DAE1E14D3FB0037E4A1 /* Skills View */,
 				C6C1190C1E1449AB0041709B /* AppDelegate.swift */,
@@ -300,8 +306,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				C6D08DB31E15987D0037E4A1 /* ProfileViewController.swift in Sources */,
+				C62A4E921E1758CE00FC81A9 /* SkillViewController.swift in Sources */,
 				C6D4D4401E161D1A0061FD35 /* SocialMediaViewController.swift in Sources */,
 				C6C1190D1E1449AB0041709B /* AppDelegate.swift in Sources */,
+				C62A4E901E1750E700FC81A9 /* EducationViewController.swift in Sources */,
 				C6C1193B1E144C500041709B /* HomeViewController.swift in Sources */,
 				C6D4D4441E16E7C40061FD35 /* CircularTransition.swift in Sources */,
 				C6D08DAD1E1497080037E4A1 /* SkillsViewController.swift in Sources */,

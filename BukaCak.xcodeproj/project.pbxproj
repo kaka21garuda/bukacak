@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C61BD8FC1E185133005DFA97 /* AboutCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61BD8FB1E185133005DFA97 /* AboutCollectionViewCell.swift */; };
 		C62A4E901E1750E700FC81A9 /* EducationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62A4E8F1E1750E700FC81A9 /* EducationViewController.swift */; };
 		C62A4E921E1758CE00FC81A9 /* SkillViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62A4E911E1758CE00FC81A9 /* SkillViewController.swift */; };
 		C6C1190D1E1449AB0041709B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C1190C1E1449AB0041709B /* AppDelegate.swift */; };
@@ -43,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C61BD8FB1E185133005DFA97 /* AboutCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutCollectionViewCell.swift; sourceTree = "<group>"; };
 		C62A4E8F1E1750E700FC81A9 /* EducationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EducationViewController.swift; sourceTree = "<group>"; };
 		C62A4E911E1758CE00FC81A9 /* SkillViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkillViewController.swift; sourceTree = "<group>"; };
 		C6C119091E1449AB0041709B /* BukaCak.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BukaCak.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -117,6 +119,7 @@
 			children = (
 				C6C1193A1E144C500041709B /* HomeViewController.swift */,
 				C6D4D4411E16E4D50061FD35 /* AboutViewController.swift */,
+				C61BD8FB1E185133005DFA97 /* AboutCollectionViewCell.swift */,
 				C62A4E8F1E1750E700FC81A9 /* EducationViewController.swift */,
 				C62A4E911E1758CE00FC81A9 /* SkillViewController.swift */,
 				C6D08DB11E1598310037E4A1 /* ViewControllers */,
@@ -315,6 +318,7 @@
 				C6D08DAD1E1497080037E4A1 /* SkillsViewController.swift in Sources */,
 				C6D08DB01E14D4370037E4A1 /* SwiftCircle.swift in Sources */,
 				C6D4D4421E16E4D50061FD35 /* AboutViewController.swift in Sources */,
+				C61BD8FC1E185133005DFA97 /* AboutCollectionViewCell.swift in Sources */,
 				C6C1193D1E1468BD0041709B /* CustomButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

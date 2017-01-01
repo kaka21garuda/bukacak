@@ -15,6 +15,7 @@ class AboutCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var titleLabel: UILabel!
     
-    @IBOutlet weak var contentLabel: UILabel!
+    
+    @IBOutlet weak var contentTextView: UITextView!
     
 }

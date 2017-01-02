@@ -175,6 +175,13 @@ class HomeViewController: UIViewController, UIViewControllerTransitioningDelegat
             let skillViewController: SkillViewController = segue.destination as! SkillViewController
             skillViewController.transitioningDelegate = self
             skillViewController.modalPresentationStyle = .custom
+        
+        } else if segue.identifier == "projectSegue" {
+            
+            let projectViewController: ProjectsViewController = segue.destination as! ProjectsViewController
+            projectViewController.transitioningDelegate = self
+            projectViewController.modalPresentationStyle = .custom
+            
         }
     }
     

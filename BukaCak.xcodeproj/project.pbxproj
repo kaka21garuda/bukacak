@@ -20,6 +20,8 @@
 		C6D4D4421E16E4D50061FD35 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D4D4411E16E4D50061FD35 /* AboutViewController.swift */; };
 		C6D4D4441E16E7C40061FD35 /* CircularTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D4D4431E16E7C40061FD35 /* CircularTransition.swift */; };
 		C6DA1D821E19C75200E91556 /* SchoolView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DA1D811E19C75200E91556 /* SchoolView.swift */; };
+		C6DA1D841E1B128200E91556 /* ProjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DA1D831E1B128200E91556 /* ProjectsViewController.swift */; };
+		C6DA1D861E1B174800E91556 /* ProjectsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DA1D851E1B174800E91556 /* ProjectsCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +61,8 @@
 		C6D4D4411E16E4D50061FD35 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		C6D4D4431E16E7C40061FD35 /* CircularTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularTransition.swift; sourceTree = "<group>"; };
 		C6DA1D811E19C75200E91556 /* SchoolView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SchoolView.swift; sourceTree = "<group>"; };
+		C6DA1D831E1B128200E91556 /* ProjectsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectsViewController.swift; sourceTree = "<group>"; };
+		C6DA1D851E1B174800E91556 /* ProjectsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectsCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,10 +114,10 @@
 			isa = PBXGroup;
 			children = (
 				C6C1193A1E144C500041709B /* HomeViewController.swift */,
-				C6D4D4411E16E4D50061FD35 /* AboutViewController.swift */,
 				C61BD8FB1E185133005DFA97 /* AboutCollectionViewCell.swift */,
-				C62A4E8F1E1750E700FC81A9 /* EducationViewController.swift */,
-				C62A4E911E1758CE00FC81A9 /* SkillViewController.swift */,
+				C6D4D4411E16E4D50061FD35 /* AboutViewController.swift */,
+				C6DA1D831E1B128200E91556 /* ProjectsViewController.swift */,
+				C6DA1D851E1B174800E91556 /* ProjectsCollectionViewCell.swift */,
 				C6C1190C1E1449AB0041709B /* AppDelegate.swift */,
 				C6C119101E1449AB0041709B /* Main.storyboard */,
 				C6C119131E1449AB0041709B /* Assets.xcassets */,
@@ -121,6 +125,8 @@
 				C6C119181E1449AB0041709B /* Info.plist */,
 				C6D4D4431E16E7C40061FD35 /* CircularTransition.swift */,
 				C6DA1D811E19C75200E91556 /* SchoolView.swift */,
+				C62A4E911E1758CE00FC81A9 /* SkillViewController.swift */,
+				C62A4E8F1E1750E700FC81A9 /* EducationViewController.swift */,
 			);
 			path = BukaCak;
 			sourceTree = "<group>";
@@ -283,10 +289,12 @@
 				C62A4E921E1758CE00FC81A9 /* SkillViewController.swift in Sources */,
 				C6C1190D1E1449AB0041709B /* AppDelegate.swift in Sources */,
 				C62A4E901E1750E700FC81A9 /* EducationViewController.swift in Sources */,
+				C6DA1D841E1B128200E91556 /* ProjectsViewController.swift in Sources */,
 				C6C1193B1E144C500041709B /* HomeViewController.swift in Sources */,
 				C6D4D4441E16E7C40061FD35 /* CircularTransition.swift in Sources */,
 				C6DA1D821E19C75200E91556 /* SchoolView.swift in Sources */,
 				C6D4D4421E16E4D50061FD35 /* AboutViewController.swift in Sources */,
+				C6DA1D861E1B174800E91556 /* ProjectsCollectionViewCell.swift in Sources */,
 				C61BD8FC1E185133005DFA97 /* AboutCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

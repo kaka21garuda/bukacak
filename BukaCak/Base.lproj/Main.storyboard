@@ -260,26 +260,15 @@
                                     <action selector="dismissButtonAsAction:" destination="hs6-pl-oqJ" eventType="touchUpInside" id="kO0-Ne-9pU"/>
                                 </connections>
                             </button>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RtA-7I-Ksz">
-                                <rect key="frame" x="0.0" y="430" width="375" height="237"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="RtA-7I-Ksz" secondAttribute="height" multiplier="125:79" id="xNp-o7-pq9"/>
-                                </constraints>
-                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="n5j-dX-Hha" firstAttribute="top" secondItem="RtA-7I-Ksz" secondAttribute="bottom" id="19Q-5l-MH4"/>
-                            <constraint firstItem="RtA-7I-Ksz" firstAttribute="centerX" secondItem="8dI-eW-zxb" secondAttribute="centerX" id="Lw9-Bf-SvN"/>
                             <constraint firstItem="OIK-hU-n36" firstAttribute="top" secondItem="b4r-4f-4qt" secondAttribute="bottom" id="egH-7Y-rND"/>
                             <constraint firstAttribute="leadingMargin" secondItem="OIK-hU-n36" secondAttribute="leading" id="hJH-Pb-jkr"/>
-                            <constraint firstAttribute="trailing" secondItem="RtA-7I-Ksz" secondAttribute="trailing" id="iXm-E9-PD8"/>
-                            <constraint firstItem="RtA-7I-Ksz" firstAttribute="leading" secondItem="8dI-eW-zxb" secondAttribute="leading" id="lbb-xv-pbi"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="dismissButton" destination="OIK-hU-n36" id="mob-IQ-f4R"/>
-                        <outlet property="educationScrollView" destination="RtA-7I-Ksz" id="Aeg-a7-fQF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pSz-CZ-In3" userLabel="First Responder" sceneMemberID="firstResponder"/>

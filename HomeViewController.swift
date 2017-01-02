@@ -14,6 +14,7 @@ class HomeViewController: UIViewController, UIViewControllerTransitioningDelegat
     var buttonSender: UIButton?
     //var buttonLocation: CGPoint?
     
+    
     @IBOutlet weak var homeProfileImageView: UIImageView!
     
     @IBOutlet weak var aboutButton: UIButton!
@@ -30,7 +31,6 @@ class HomeViewController: UIViewController, UIViewControllerTransitioningDelegat
     @IBAction func aboutAction(_ sender: UIButton) {
         self.buttonSender = sender
         //self.buttonLocation = sender.frame.origin
-
         print(buttonSender!)
     }
     
@@ -91,6 +91,8 @@ class HomeViewController: UIViewController, UIViewControllerTransitioningDelegat
         }
     }
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -132,6 +134,28 @@ class HomeViewController: UIViewController, UIViewControllerTransitioningDelegat
         educationButton.layer.borderColor = UIColor.white.cgColor
         
     }
+    
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+//       
+//        aboutButton.frame.origin.y += (self.view.bounds.height - aboutButton.frame.origin.y)
+//        educationButton.frame.origin.y += (self.view.bounds.height - educationButton.frame.origin.y)
+//        skillsButton.frame.origin.y += (self.view.bounds.height - educationButton.frame.origin.y)
+//        workButton.frame.origin.y += (self.view.bounds.height - educationButton.frame.origin.y)
+//        
+//    }
+//    
+//    override func viewDidAppear(_ animated: Bool) {
+//        super.viewDidAppear(animated)
+//        
+//        UIView.animate(withDuration: 5.0, delay: 0.0, options: UIViewAnimationOptions.curveEaseOut, animations: {
+//            self.aboutButton.frame.origin.y -= self.aboutButton.frame.origin.y
+//            self.educationButton.frame.origin.y -= self.educationButton.frame.origin.y
+//            self.skillsButton.frame.origin.y -= self.skillsButton.frame.origin.y
+//            self.workButton.frame.origin.y -= self.workButton.frame.origin.y
+//            self.view.layoutIfNeeded()
+//        }, completion: nil)
+//    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "aboutSegue" {

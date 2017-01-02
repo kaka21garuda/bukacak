@@ -17,14 +17,8 @@
 		C6C119221E1449AB0041709B /* BukaCakTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C119211E1449AB0041709B /* BukaCakTests.swift */; };
 		C6C1192D1E1449AB0041709B /* BukaCakUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C1192C1E1449AB0041709B /* BukaCakUITests.swift */; };
 		C6C1193B1E144C500041709B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C1193A1E144C500041709B /* HomeViewController.swift */; };
-		C6C1193D1E1468BD0041709B /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C1193C1E1468BD0041709B /* CustomButton.swift */; };
-		C6D08DAD1E1497080037E4A1 /* SkillsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D08DAC1E1497080037E4A1 /* SkillsViewController.swift */; };
-		C6D08DB01E14D4370037E4A1 /* SwiftCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D08DAF1E14D4370037E4A1 /* SwiftCircle.swift */; };
-		C6D08DB31E15987D0037E4A1 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D08DB21E15987D0037E4A1 /* ProfileViewController.swift */; };
-		C6D4D4401E161D1A0061FD35 /* SocialMediaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D4D43F1E161D1A0061FD35 /* SocialMediaViewController.swift */; };
 		C6D4D4421E16E4D50061FD35 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D4D4411E16E4D50061FD35 /* AboutViewController.swift */; };
 		C6D4D4441E16E7C40061FD35 /* CircularTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D4D4431E16E7C40061FD35 /* CircularTransition.swift */; };
-		C6DA1D801E19BEC000E91556 /* Feature.xib in Resources */ = {isa = PBXBuildFile; fileRef = C6DA1D7F1E19BEC000E91556 /* Feature.xib */; };
 		C6DA1D821E19C75200E91556 /* SchoolView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DA1D811E19C75200E91556 /* SchoolView.swift */; };
 /* End PBXBuildFile section */
 
@@ -62,14 +56,8 @@
 		C6C1192C1E1449AB0041709B /* BukaCakUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BukaCakUITests.swift; sourceTree = "<group>"; };
 		C6C1192E1E1449AB0041709B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C6C1193A1E144C500041709B /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = ../HomeViewController.swift; sourceTree = "<group>"; };
-		C6C1193C1E1468BD0041709B /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
-		C6D08DAC1E1497080037E4A1 /* SkillsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkillsViewController.swift; sourceTree = "<group>"; };
-		C6D08DAF1E14D4370037E4A1 /* SwiftCircle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftCircle.swift; sourceTree = "<group>"; };
-		C6D08DB21E15987D0037E4A1 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileViewController.swift; path = ../ProfileViewController.swift; sourceTree = "<group>"; };
-		C6D4D43F1E161D1A0061FD35 /* SocialMediaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialMediaViewController.swift; sourceTree = "<group>"; };
 		C6D4D4411E16E4D50061FD35 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		C6D4D4431E16E7C40061FD35 /* CircularTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularTransition.swift; sourceTree = "<group>"; };
-		C6DA1D7F1E19BEC000E91556 /* Feature.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Feature.xib; sourceTree = "<group>"; };
 		C6DA1D811E19C75200E91556 /* SchoolView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SchoolView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -126,15 +114,11 @@
 				C61BD8FB1E185133005DFA97 /* AboutCollectionViewCell.swift */,
 				C62A4E8F1E1750E700FC81A9 /* EducationViewController.swift */,
 				C62A4E911E1758CE00FC81A9 /* SkillViewController.swift */,
-				C6D08DB11E1598310037E4A1 /* ViewControllers */,
-				C6D08DAE1E14D3FB0037E4A1 /* Skills View */,
 				C6C1190C1E1449AB0041709B /* AppDelegate.swift */,
-				C6DA1D7F1E19BEC000E91556 /* Feature.xib */,
 				C6C119101E1449AB0041709B /* Main.storyboard */,
 				C6C119131E1449AB0041709B /* Assets.xcassets */,
 				C6C119151E1449AB0041709B /* LaunchScreen.storyboard */,
 				C6C119181E1449AB0041709B /* Info.plist */,
-				C6C1193C1E1468BD0041709B /* CustomButton.swift */,
 				C6D4D4431E16E7C40061FD35 /* CircularTransition.swift */,
 				C6DA1D811E19C75200E91556 /* SchoolView.swift */,
 			);
@@ -157,24 +141,6 @@
 				C6C1192E1E1449AB0041709B /* Info.plist */,
 			);
 			path = BukaCakUITests;
-			sourceTree = "<group>";
-		};
-		C6D08DAE1E14D3FB0037E4A1 /* Skills View */ = {
-			isa = PBXGroup;
-			children = (
-				C6D08DAF1E14D4370037E4A1 /* SwiftCircle.swift */,
-			);
-			name = "Skills View";
-			sourceTree = "<group>";
-		};
-		C6D08DB11E1598310037E4A1 /* ViewControllers */ = {
-			isa = PBXGroup;
-			children = (
-				C6D08DAC1E1497080037E4A1 /* SkillsViewController.swift */,
-				C6D08DB21E15987D0037E4A1 /* ProfileViewController.swift */,
-				C6D4D43F1E161D1A0061FD35 /* SocialMediaViewController.swift */,
-			);
-			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -288,7 +254,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C6C119171E1449AB0041709B /* LaunchScreen.storyboard in Resources */,
-				C6DA1D801E19BEC000E91556 /* Feature.xib in Resources */,
 				C6C119141E1449AB0041709B /* Assets.xcassets in Resources */,
 				C6C119121E1449AB0041709B /* Main.storyboard in Resources */,
 			);
@@ -315,19 +280,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C6D08DB31E15987D0037E4A1 /* ProfileViewController.swift in Sources */,
 				C62A4E921E1758CE00FC81A9 /* SkillViewController.swift in Sources */,
-				C6D4D4401E161D1A0061FD35 /* SocialMediaViewController.swift in Sources */,
 				C6C1190D1E1449AB0041709B /* AppDelegate.swift in Sources */,
 				C62A4E901E1750E700FC81A9 /* EducationViewController.swift in Sources */,
 				C6C1193B1E144C500041709B /* HomeViewController.swift in Sources */,
 				C6D4D4441E16E7C40061FD35 /* CircularTransition.swift in Sources */,
-				C6D08DAD1E1497080037E4A1 /* SkillsViewController.swift in Sources */,
-				C6D08DB01E14D4370037E4A1 /* SwiftCircle.swift in Sources */,
 				C6DA1D821E19C75200E91556 /* SchoolView.swift in Sources */,
 				C6D4D4421E16E4D50061FD35 /* AboutViewController.swift in Sources */,
 				C61BD8FC1E185133005DFA97 /* AboutCollectionViewCell.swift in Sources */,
-				C6C1193D1E1468BD0041709B /* CustomButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

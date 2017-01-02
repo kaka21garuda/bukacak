@@ -16,11 +16,11 @@ struct About {
 
 }
 
-let aboutMe: About = About(image: #imageLiteral(resourceName: "profile"), title: "My name is Buka Cakrawala 😉", text: "Hi, I'm a 17 year old sofware developer based in San Francisco, CA. I was born in Indonesia🇮🇩 and currently studying at a Programming School called Make School in downtown San Francisco.\n\nMy passions lie in programming especially iOS, backend, and UI/UX design. I relish working in collaborative environments with other creative minds. Additionally I'm a huge fan of Sherlock Holmes🕵🏻.")
+let aboutMe: About = About(image: #imageLiteral(resourceName: "profile"), title: "My name is Buka Cakrawala 😉", text: "Hi, I'm a 17 year old sofware developer based in San Francisco, CA. I was born in Indonesia🇮🇩 and currently studying at a Programming School called Make School in downtown San Francisco.\nMy passions lie in programming especially iOS, backend, and UI/UX design. I relish working in collaborative environments with other creative minds. Additionally I'm a huge fan of Sherlock Holmes🕵🏻.")
 
 let inspiration: About = About(image: #imageLiteral(resourceName: "bulb"), title: "👨🏼‍💻Inspiration", text: "My biggest inspiration person is Thomas Alva Edison. The person who taught me that everything in life is possible as long as you believe what you're doing is right and you put a 100% effort into it. He makes me think to try at least one more time wherever I failed or did something wrong.")
 
-let futurePlan: About = About(image: #imageLiteral(resourceName: "building"), title: "Future Plan", text: "My future plan is to become a good iOS developer as I really enjoy doing mobile apps development. I will never stop creating cool apps and ship it in the App Store, code in Swift everyday, learn by making!.\nLearn by doing in my opinion is the best practice for anyone to always get better in programming.I am indeed looking for internship opportunity in 2017's upcoming summer in order for me to increase my engineering skills into a higher level.")
+let futurePlan: About = About(image: #imageLiteral(resourceName: "building"), title: "Future Plan", text: "My future plan is to become a good iOS developer as I really enjoy doing mobile apps development. I will never stop creating cool apps and ship it in the App Store, code in Swift everyday, learn by making!.\n\nLearn by doing in my opinion is the best practice for anyone to always get better in programming.I am indeed looking for internship opportunity in 2017's upcoming summer in order for me to increase my engineering skills into a higher level.\nAt the moment, I am studying Data Structure and Probability in Python, further iOS, and IoT devices.")
 
 class AboutViewController: UIViewController {
     

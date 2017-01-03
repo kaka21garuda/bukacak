@@ -21,10 +21,11 @@ class SkillViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        addCircle()
 
         // Do any additional setup after loading the view.
         dismissButton.layer.cornerRadius = dismissButton.frame.height / 2
-        
         colorGradientBackground()
     }
 
@@ -50,5 +51,26 @@ class SkillViewController: UIViewController {
         
     }
 
+    func addCircle() {
+        let circleWidth = CGFloat(self.view.frame.height / 4)
+        let circleHeight = circleWidth
+        
+        let oneCircle = SkillLoaderView(frame: CGRect(x: 0 + 10, y: (self.view.bounds.height / 2) + (circleHeight / 2), width: circleWidth, height: circleHeight))
+        let twoCircle = SkillLoaderView(frame: CGRect(x: (self.view.bounds.width / 2) + 10, y: (self.view.bounds.height / 2) + (circleHeight / 2), width: circleWidth, height: circleHeight))
+        let threeCircle = SkillLoaderView(frame: CGRect(x: 0 + 10, y: ((self.view.bounds.height / 2) - (circleHeight / 2)) - 50, width: circleWidth, height: circleHeight))
+        let fourCircle = SkillLoaderView(frame: CGRect(x: (self.view.bounds.width / 2) + 10, y: ((self.view.bounds.height / 2) - (circleHeight / 2)) - 50, width: circleWidth, height: circleHeight))
+        
+        
+        view.addSubview(oneCircle)
+        view.addSubview(twoCircle)
+        view.addSubview(threeCircle)
+        view.addSubview(fourCircle)
+        
+        oneCircle.animate(duration: 2.0, completion: 1.0, color: UIColor.white.cgColor)
+        twoCircle.animate(duration: 2.0, completion: 0.55, color: UIColor.green.cgColor)
+        threeCircle.animate(duration: 2.0, completion: 1.0, color: UIColor.blue.cgColor)
+        fourCircle.animate(duration: 2.0, completion: 1.0, color: UIColor.orange.cgColor)
+    }
+    
     
 }

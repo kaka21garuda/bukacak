@@ -22,6 +22,7 @@
 		C6DA1D821E19C75200E91556 /* SchoolView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DA1D811E19C75200E91556 /* SchoolView.swift */; };
 		C6DA1D841E1B128200E91556 /* ProjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DA1D831E1B128200E91556 /* ProjectsViewController.swift */; };
 		C6DA1D861E1B174800E91556 /* ProjectsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DA1D851E1B174800E91556 /* ProjectsCollectionViewCell.swift */; };
+		C6DA1D881E1B228400E91556 /* SkillLoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DA1D871E1B228400E91556 /* SkillLoaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		C6DA1D811E19C75200E91556 /* SchoolView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SchoolView.swift; sourceTree = "<group>"; };
 		C6DA1D831E1B128200E91556 /* ProjectsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectsViewController.swift; sourceTree = "<group>"; };
 		C6DA1D851E1B174800E91556 /* ProjectsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectsCollectionViewCell.swift; sourceTree = "<group>"; };
+		C6DA1D871E1B228400E91556 /* SkillLoaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkillLoaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +128,7 @@
 				C6D4D4431E16E7C40061FD35 /* CircularTransition.swift */,
 				C6DA1D811E19C75200E91556 /* SchoolView.swift */,
 				C62A4E911E1758CE00FC81A9 /* SkillViewController.swift */,
+				C6DA1D871E1B228400E91556 /* SkillLoaderView.swift */,
 				C62A4E8F1E1750E700FC81A9 /* EducationViewController.swift */,
 			);
 			path = BukaCak;
@@ -286,6 +289,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6DA1D881E1B228400E91556 /* SkillLoaderView.swift in Sources */,
 				C62A4E921E1758CE00FC81A9 /* SkillViewController.swift in Sources */,
 				C6C1190D1E1449AB0041709B /* AppDelegate.swift in Sources */,
 				C62A4E901E1750E700FC81A9 /* EducationViewController.swift in Sources */,

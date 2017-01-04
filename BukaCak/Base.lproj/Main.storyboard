@@ -195,7 +195,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="OSn-hz-wfu">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OSn-hz-wfu">
                                 <rect key="frame" x="16" y="106" width="343" height="316"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
@@ -493,7 +493,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="455"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Education" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="npj-oi-TuZ">
-                                <rect key="frame" x="16" y="390" width="188" height="48"/>
+                                <rect key="frame" x="16" y="203" width="188" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="188" id="Jvu-dQ-DRw"/>
                                     <constraint firstAttribute="height" constant="48" id="gna-4M-qQg"/>
@@ -508,7 +508,7 @@
                             <constraint firstItem="jqZ-a0-D03" firstAttribute="top" secondItem="8dI-eW-zxb" secondAttribute="top" id="0Tc-kB-Svi"/>
                             <constraint firstItem="n5j-dX-Hha" firstAttribute="top" secondItem="jqZ-a0-D03" secondAttribute="bottom" constant="212" id="0hP-Bj-Lun"/>
                             <constraint firstItem="jqZ-a0-D03" firstAttribute="leading" secondItem="8dI-eW-zxb" secondAttribute="leading" id="2go-x7-HJ7"/>
-                            <constraint firstItem="npj-oi-TuZ" firstAttribute="top" secondItem="jqZ-a0-D03" secondAttribute="bottom" constant="-65" id="Qen-OH-gJ7"/>
+                            <constraint firstItem="npj-oi-TuZ" firstAttribute="top" secondItem="jqZ-a0-D03" secondAttribute="bottom" constant="-252" id="Qen-OH-gJ7"/>
                             <constraint firstItem="jqZ-a0-D03" firstAttribute="centerX" secondItem="8dI-eW-zxb" secondAttribute="centerX" id="lRR-9Q-kVj"/>
                             <constraint firstAttribute="trailing" secondItem="jqZ-a0-D03" secondAttribute="trailing" id="nT3-TN-Ucj"/>
                             <constraint firstItem="jqZ-a0-D03" firstAttribute="leading" secondItem="npj-oi-TuZ" secondAttribute="trailing" constant="-204" id="sDd-WS-Kd1"/>

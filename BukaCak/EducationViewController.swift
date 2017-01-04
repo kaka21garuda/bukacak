@@ -19,9 +19,13 @@ let product = School(schoolName: "Make School", schoolStory: "The Product Colleg
 
 let summer = School(schoolName: "Summer Academy", schoolStory: "The Make School Summer Academy is designed to teach product development to high school and college students passionate about technology.")
 
+let inti = School(schoolName: "Inti University", schoolStory: "Enter some Inti Description here!")
+
+let schoolsList = [product, summer, inti]
+
 class EducationViewController: UIViewController, UICollisionBehaviorDelegate {
     
-    let schoolsList = [product, summer]
+    
        
 //    @IBOutlet weak var dismissButton: UIButton!
 //    
@@ -50,8 +54,15 @@ class EducationViewController: UIViewController, UICollisionBehaviorDelegate {
         animator.addBehavior(gravity)
         gravity.magnitude = 4
         
+        var offset: CGFloat = 250
         
+        for i in 0 ... schoolsList.count - 1 {
         
+            if let view = addViewController(atOffset: offset, dataForViewController: schoolsList[i] as AnyObject?) {
+                views.append(view)
+                offset -= 50
+            }
+        }
     }
     
     func addViewController(atOffset offset: CGFloat, dataForViewController data: AnyObject?) -> UIView? {
@@ -105,16 +116,115 @@ class EducationViewController: UIViewController, UICollisionBehaviorDelegate {
             collision.addBoundary(withIdentifier: 2 as NSCopying, from: boundaryStart, to: boundaryEnd)
             
             gravity.addItem(view)
+            
+            let itemBehaviour = UIDynamicItemBehavior(items: [view])
+            animator.addBehavior(itemBehaviour)
+            
+            return view
+            
+            
         }
         return nil
     }
     
     func handlePan(gestureRecognizer: UIPanGestureRecognizer) {
     
+        let touchPoint = gestureRecognizer.location(in: self.view)
+        let draggedView = gestureRecognizer.view!
         
+        if gestureRecognizer.state == .began {
         
+            let dragStartPoint = gestureRecognizer.location(in: draggedView)
+            
+            if dragStartPoint.y < 200 {
+            
+                viewDragging = true
+                previousTouchPoint = touchPoint
+            
+            }
+        
+        } else if gestureRecognizer.state == .changed && viewDragging {
+            let yOffset = previousTouchPoint.y - touchPoint.y
+            
+            draggedView.center = CGPoint(x: draggedView.center.x, y: draggedView.center.y - yOffset)
+            previousTouchPoint = touchPoint
+        } else if gestureRecognizer.state == .ended && viewDragging {
+            
+            pin(view: draggedView)
+            addVelocity(toView: draggedView, fromGestureRecognizer: gestureRecognizer)
+        
+            animator.updateItem(usingCurrentState: draggedView)
+            viewDragging = false
+            
+        }
     }
+    
+    
+    func pin(view: UIView) {
+    
+        let viewHasReachedPinLocation = view.frame.origin.y < 100
+        
+        if viewHasReachedPinLocation {
+            if !viewPinned {
+                var snapPosition = self.view.center
+                snapPosition.y += 30
+                
+                snap = UISnapBehavior(item: view, snapTo: snapPosition)
+                animator.addBehavior(snap)
+                
+                setVisibility(view: view, alpha: 0)
+                viewPinned = true
+            }
+        } else {
+            if viewPinned {
+                animator.removeBehavior(snap)
+                setVisibility(view: view, alpha: 1)
+                viewPinned = false
+            }
+        }
+    }
+    
+    
+    func setVisibility(view: UIView, alpha: CGFloat) {
+        for aView in views {
+            if aView != view {
+                aView.alpha = alpha
+            }
+        }
+    }
+    
+    
+    func addVelocity(toView view: UIView, fromGestureRecognizer panGestureRecognizer: UIPanGestureRecognizer) {
+        var velocity = panGestureRecognizer.velocity(in: self.view)
+        velocity.x = 0
+        
+        if let behaviour = itemBehaviour(forView: view) {
+            behaviour.addLinearVelocity(velocity, for: view)
+        }
+    }
+    
 
+    func itemBehaviour(forView view: UIView) ->UIDynamicItemBehavior? {
+    
+        for behaviour in animator.behaviors {
+        
+            if let itemBehaviour = behaviour as? UIDynamicItemBehavior {
+            
+                if let possibleView = itemBehaviour.items.first as? UIView, possibleView == view {
+                    return itemBehaviour
+                }
+            }
+        }
+        return nil
+    }
+    
+    func collisionBehavior(_ behavior: UICollisionBehavior, beganContactFor item: UIDynamicItem, withBoundaryIdentifier identifier: NSCopying?, at p: CGPoint) {
+        if NSNumber(integerLiteral: 2).isEqual(identifier) {
+            let view = item as! UIView
+            pin(view: view)
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

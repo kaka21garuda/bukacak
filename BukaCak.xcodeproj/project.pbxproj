@@ -23,6 +23,8 @@
 		C6DA1D841E1B128200E91556 /* ProjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DA1D831E1B128200E91556 /* ProjectsViewController.swift */; };
 		C6DA1D861E1B174800E91556 /* ProjectsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DA1D851E1B174800E91556 /* ProjectsCollectionViewCell.swift */; };
 		C6DA1D881E1B228400E91556 /* SkillLoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DA1D871E1B228400E91556 /* SkillLoaderView.swift */; };
+		C6E9A6D01E1C9BA4009FE5B0 /* ContentProjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E9A6CF1E1C9BA4009FE5B0 /* ContentProjectsViewController.swift */; };
+		C6E9A6D61E1C9CC6009FE5B0 /* MainProjectShowCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E9A6D51E1C9CC6009FE5B0 /* MainProjectShowCase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +67,8 @@
 		C6DA1D831E1B128200E91556 /* ProjectsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectsViewController.swift; sourceTree = "<group>"; };
 		C6DA1D851E1B174800E91556 /* ProjectsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectsCollectionViewCell.swift; sourceTree = "<group>"; };
 		C6DA1D871E1B228400E91556 /* SkillLoaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkillLoaderView.swift; sourceTree = "<group>"; };
+		C6E9A6CF1E1C9BA4009FE5B0 /* ContentProjectsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentProjectsViewController.swift; sourceTree = "<group>"; };
+		C6E9A6D51E1C9CC6009FE5B0 /* MainProjectShowCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainProjectShowCase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,21 +119,15 @@
 		C6C1190B1E1449AB0041709B /* BukaCak */ = {
 			isa = PBXGroup;
 			children = (
-				C6C1193A1E144C500041709B /* HomeViewController.swift */,
-				C61BD8FB1E185133005DFA97 /* AboutCollectionViewCell.swift */,
-				C6D4D4411E16E4D50061FD35 /* AboutViewController.swift */,
-				C6DA1D831E1B128200E91556 /* ProjectsViewController.swift */,
-				C6DA1D851E1B174800E91556 /* ProjectsCollectionViewCell.swift */,
+				C6E9A6D41E1C9C8E009FE5B0 /* AnimationAndTransition */,
+				C6E9A6D31E1C9C69009FE5B0 /* ProjectShowCase */,
+				C6E9A6D21E1C9C30009FE5B0 /* MainMenuViewController */,
+				C6E9A6D11E1C9C11009FE5B0 /* Views */,
 				C6C1190C1E1449AB0041709B /* AppDelegate.swift */,
 				C6C119101E1449AB0041709B /* Main.storyboard */,
 				C6C119131E1449AB0041709B /* Assets.xcassets */,
 				C6C119151E1449AB0041709B /* LaunchScreen.storyboard */,
 				C6C119181E1449AB0041709B /* Info.plist */,
-				C6D4D4431E16E7C40061FD35 /* CircularTransition.swift */,
-				C6DA1D811E19C75200E91556 /* SchoolView.swift */,
-				C62A4E911E1758CE00FC81A9 /* SkillViewController.swift */,
-				C6DA1D871E1B228400E91556 /* SkillLoaderView.swift */,
-				C62A4E8F1E1750E700FC81A9 /* EducationViewController.swift */,
 			);
 			path = BukaCak;
 			sourceTree = "<group>";
@@ -150,6 +148,46 @@
 				C6C1192E1E1449AB0041709B /* Info.plist */,
 			);
 			path = BukaCakUITests;
+			sourceTree = "<group>";
+		};
+		C6E9A6D11E1C9C11009FE5B0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C6DA1D811E19C75200E91556 /* SchoolView.swift */,
+				C61BD8FB1E185133005DFA97 /* AboutCollectionViewCell.swift */,
+				C6DA1D851E1B174800E91556 /* ProjectsCollectionViewCell.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		C6E9A6D21E1C9C30009FE5B0 /* MainMenuViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C6C1193A1E144C500041709B /* HomeViewController.swift */,
+				C6D4D4411E16E4D50061FD35 /* AboutViewController.swift */,
+				C62A4E8F1E1750E700FC81A9 /* EducationViewController.swift */,
+				C6DA1D831E1B128200E91556 /* ProjectsViewController.swift */,
+				C62A4E911E1758CE00FC81A9 /* SkillViewController.swift */,
+			);
+			name = MainMenuViewController;
+			sourceTree = "<group>";
+		};
+		C6E9A6D31E1C9C69009FE5B0 /* ProjectShowCase */ = {
+			isa = PBXGroup;
+			children = (
+				C6E9A6CF1E1C9BA4009FE5B0 /* ContentProjectsViewController.swift */,
+				C6E9A6D51E1C9CC6009FE5B0 /* MainProjectShowCase.swift */,
+			);
+			name = ProjectShowCase;
+			sourceTree = "<group>";
+		};
+		C6E9A6D41E1C9C8E009FE5B0 /* AnimationAndTransition */ = {
+			isa = PBXGroup;
+			children = (
+				C6DA1D871E1B228400E91556 /* SkillLoaderView.swift */,
+				C6D4D4431E16E7C40061FD35 /* CircularTransition.swift */,
+			);
+			name = AnimationAndTransition;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -296,9 +334,11 @@
 				C6DA1D841E1B128200E91556 /* ProjectsViewController.swift in Sources */,
 				C6C1193B1E144C500041709B /* HomeViewController.swift in Sources */,
 				C6D4D4441E16E7C40061FD35 /* CircularTransition.swift in Sources */,
+				C6E9A6D61E1C9CC6009FE5B0 /* MainProjectShowCase.swift in Sources */,
 				C6DA1D821E19C75200E91556 /* SchoolView.swift in Sources */,
 				C6D4D4421E16E4D50061FD35 /* AboutViewController.swift in Sources */,
 				C6DA1D861E1B174800E91556 /* ProjectsCollectionViewCell.swift in Sources */,
+				C6E9A6D01E1C9BA4009FE5B0 /* ContentProjectsViewController.swift in Sources */,
 				C61BD8FC1E185133005DFA97 /* AboutCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

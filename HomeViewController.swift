@@ -135,20 +135,21 @@ class HomeViewController: UIViewController, UIViewControllerTransitioningDelegat
         
     }
     
+    
 //    override func viewWillAppear(_ animated: Bool) {
 //        super.viewWillAppear(animated)
 //       
-//        aboutButton.frame.origin.y += (self.view.bounds.height - aboutButton.frame.origin.y)
-//        educationButton.frame.origin.y += (self.view.bounds.height - educationButton.frame.origin.y)
-//        skillsButton.frame.origin.y += (self.view.bounds.height - educationButton.frame.origin.y)
-//        workButton.frame.origin.y += (self.view.bounds.height - educationButton.frame.origin.y)
+//        aboutButton.frame.origin.y = self.view.bounds.height + aboutButton.frame.origin.y
+//        educationButton.frame.origin.y = self.view.bounds.height + educationButton.frame.origin.y
+//        skillsButton.frame.origin.y = self.view.bounds.height + skillsButton.frame.origin.y
+//        workButton.frame.origin.y = self.view.bounds.height + workButton.frame.origin.y
 //        
 //    }
 //    
 //    override func viewDidAppear(_ animated: Bool) {
 //        super.viewDidAppear(animated)
 //        
-//        UIView.animate(withDuration: 5.0, delay: 0.0, options: UIViewAnimationOptions.curveEaseOut, animations: {
+//        UIView.animate(withDuration: 15.0, delay: 0.0, options: UIViewAnimationOptions.curveEaseOut, animations: {
 //            self.aboutButton.frame.origin.y -= self.aboutButton.frame.origin.y
 //            self.educationButton.frame.origin.y -= self.educationButton.frame.origin.y
 //            self.skillsButton.frame.origin.y -= self.skillsButton.frame.origin.y

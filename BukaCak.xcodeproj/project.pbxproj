@@ -10,6 +10,7 @@
 		C61BD8FC1E185133005DFA97 /* AboutCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61BD8FB1E185133005DFA97 /* AboutCollectionViewCell.swift */; };
 		C62A4E901E1750E700FC81A9 /* EducationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62A4E8F1E1750E700FC81A9 /* EducationViewController.swift */; };
 		C62A4E921E1758CE00FC81A9 /* SkillViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62A4E911E1758CE00FC81A9 /* SkillViewController.swift */; };
+		C62E1EB51E1D78FF00CDB41D /* EducationElementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62E1EB41E1D78FF00CDB41D /* EducationElementViewController.swift */; };
 		C6C1190D1E1449AB0041709B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C1190C1E1449AB0041709B /* AppDelegate.swift */; };
 		C6C119121E1449AB0041709B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6C119101E1449AB0041709B /* Main.storyboard */; };
 		C6C119141E1449AB0041709B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6C119131E1449AB0041709B /* Assets.xcassets */; };
@@ -48,6 +49,7 @@
 		C61BD8FB1E185133005DFA97 /* AboutCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutCollectionViewCell.swift; sourceTree = "<group>"; };
 		C62A4E8F1E1750E700FC81A9 /* EducationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EducationViewController.swift; sourceTree = "<group>"; };
 		C62A4E911E1758CE00FC81A9 /* SkillViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkillViewController.swift; sourceTree = "<group>"; };
+		C62E1EB41E1D78FF00CDB41D /* EducationElementViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EducationElementViewController.swift; sourceTree = "<group>"; };
 		C6C119091E1449AB0041709B /* BukaCak.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BukaCak.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6C1190C1E1449AB0041709B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C6C119111E1449AB0041709B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 				C6C119131E1449AB0041709B /* Assets.xcassets */,
 				C6C119151E1449AB0041709B /* LaunchScreen.storyboard */,
 				C6C119181E1449AB0041709B /* Info.plist */,
+				C62E1EB41E1D78FF00CDB41D /* EducationElementViewController.swift */,
 			);
 			path = BukaCak;
 			sourceTree = "<group>";
@@ -339,6 +342,7 @@
 				C6D4D4421E16E4D50061FD35 /* AboutViewController.swift in Sources */,
 				C6DA1D861E1B174800E91556 /* ProjectsCollectionViewCell.swift in Sources */,
 				C6E9A6D01E1C9BA4009FE5B0 /* ContentProjectsViewController.swift in Sources */,
+				C62E1EB51E1D78FF00CDB41D /* EducationElementViewController.swift in Sources */,
 				C61BD8FC1E185133005DFA97 /* AboutCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

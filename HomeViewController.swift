@@ -91,7 +91,12 @@ class HomeViewController: UIViewController, UIViewControllerTransitioningDelegat
         }
     }
     
-    
+    func animateImage(view: UIView, duration: TimeInterval, velocity: CGFloat) {
+        UIView.animate(withDuration: duration, delay: 0, usingSpringWithDamping: 0.2, initialSpringVelocity: velocity, options: .allowUserInteraction, animations: { 
+            [ weak self ] in
+                self?.homeProfileImageView.transform = .identity
+        }, completion: nil)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -107,14 +112,16 @@ class HomeViewController: UIViewController, UIViewControllerTransitioningDelegat
         self.skillsButton.setBackgroundImage(#imageLiteral(resourceName: "app-store"), for: .normal)
         self.educationButton.setBackgroundImage(#imageLiteral(resourceName: "attachment"), for: .normal)
         
+        // profile image view
         self.homeProfileImageView.contentMode = .scaleAspectFill
         self.homeProfileImageView.clipsToBounds = true
         self.homeProfileImageView.image = #imageLiteral(resourceName: "profile")
-        
         self.homeProfileImageView.layer.borderWidth = 1.6
         self.homeProfileImageView.layer.borderColor = UIColor.white.cgColor
-        
         self.homeProfileImageView.layer.cornerRadius = homeProfileImageView.frame.size.height / 2
+        
+        self.homeProfileImageView.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
+        animateImage(view: self.homeProfileImageView, duration: 2.6, velocity: 6.0)
         
         // UIButton layout
         aboutButton.layer.cornerRadius = aboutButton.frame.size.width / 2
@@ -134,7 +141,6 @@ class HomeViewController: UIViewController, UIViewControllerTransitioningDelegat
         educationButton.layer.borderColor = UIColor.white.cgColor
         
     }
-    
     
 //    override func viewWillAppear(_ animated: Bool) {
 //        super.viewWillAppear(animated)
@@ -182,8 +188,6 @@ class HomeViewController: UIViewController, UIViewControllerTransitioningDelegat
             let projectViewController: ProjectsViewController = segue.destination as! ProjectsViewController
             projectViewController.transitioningDelegate = self
             projectViewController.modalPresentationStyle = .custom
-            
         }
     }
-    
 }

@@ -58,14 +58,14 @@ class EducationViewController: UIViewController, UICollisionBehaviorDelegate {
         
         for i in 0 ... schoolsList.count - 1 {
         
-            if let view = addViewController(atOffset: offset, dataForViewController: schoolsList[i] as AnyObject?) {
+            if let view = addViewController(atOffset: offset, dataForViewController: schoolsList[i].schoolName as AnyObject?, story: schoolsList[i].schoolStory as AnyObject?) {
                 views.append(view)
                 offset -= 50
             }
         }
     }
     
-    func addViewController(atOffset offset: CGFloat, dataForViewController data: AnyObject?) -> UIView? {
+    func addViewController(atOffset offset: CGFloat, dataForViewController data: AnyObject?, story: AnyObject?) -> UIView? {
     
         let frame = self.view.bounds.offsetBy(dx: 0, dy: self.view.bounds.size.height - offset)
         
@@ -83,8 +83,12 @@ class EducationViewController: UIViewController, UICollisionBehaviorDelegate {
             
             
             
-            if let headingStr = data as? String {
-                stack.header = headingStr
+            if (data as? String) != nil {
+                stack.schoolTitle.text = data as! String?
+            }
+            
+            if (story as? String) != nil {
+                stack.descriptionTextView.text = story as! String
             }
             
             self.addChildViewController(stack)

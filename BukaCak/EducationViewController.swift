@@ -7,21 +7,25 @@
 //
 
 import UIKit
+import MapKit
 
 struct School {
     
     let schoolName: String!
     let schoolStory: String!
-    
+    let latitude: CLLocationDegrees!
+    let longtitude: CLLocationDegrees!
 }
 
-let product = School(schoolName: "Make School", schoolStory: "The Product College is a two year program, each year is broken up into two semesters, and each semester into two quarters. Students focus the majority of their time on one of two technical concentrations: Mobile Development and Full Stack Web Development.")
+let product = School(schoolName: "Make School", schoolStory: "The Product College is a two year program, each year is broken up into two semesters, and each semester into two quarters. Students focus the majority of their time on one of two technical concentrations: Mobile Development and Full Stack Web Development.", latitude: 37.7735142, longtitude: -122.4178074)
 
-let summer = School(schoolName: "Summer Academy", schoolStory: "The Make School Summer Academy is designed to teach product development to high school and college students passionate about technology.")
 
-let inti = School(schoolName: "Inti University", schoolStory: "Enter some Inti Description here!")
 
-let schoolsList = [product, summer, inti]
+let summer = School(schoolName: "Summer Academy", schoolStory: "The Make School Summer Academy is designed to teach product development to high school and college students passionate about technology.", latitude: 37.7735142, longtitude: -122.4178074)
+
+let inti = School(schoolName: "Inti University", schoolStory: "Enter some Inti Description here!", latitude: 3.0741922, longtitude: 101.5909564)
+
+let schoolsList = [inti, summer, product]
 
 class EducationViewController: UIViewController, UICollisionBehaviorDelegate {
     
@@ -58,14 +62,19 @@ class EducationViewController: UIViewController, UICollisionBehaviorDelegate {
         
         for i in 0 ... schoolsList.count - 1 {
         
-            if let view = addViewController(atOffset: offset, dataForViewController: schoolsList[i].schoolName as AnyObject?, story: schoolsList[i].schoolStory as AnyObject?) {
+            if let view = addViewController(atOffset: offset, dataForViewController: schoolsList[i].schoolName as AnyObject?, story: schoolsList[i].schoolStory as AnyObject?, lat: schoolsList[i].latitude as AnyObject?, long: schoolsList[i].longtitude as AnyObject?) {
                 views.append(view)
                 offset -= 50
             }
         }
     }
     
-    func addViewController(atOffset offset: CGFloat, dataForViewController data: AnyObject?, story: AnyObject?) -> UIView? {
+    func addViewController(atOffset offset: CGFloat, dataForViewController data: AnyObject?, story: AnyObject?, lat: AnyObject?, long: AnyObject?) -> UIView? {
+        
+        var point = MKPointAnnotation()
+        
+        let span = MKCoordinateSpanMake(0.008, 0.008)
+        
     
         let frame = self.view.bounds.offsetBy(dx: 0, dy: self.view.bounds.size.height - offset)
         
@@ -90,6 +99,17 @@ class EducationViewController: UIViewController, UICollisionBehaviorDelegate {
             if (story as? String) != nil {
                 stack.descriptionTextView.text = story as! String
             }
+            
+            if (lat as? CLLocationDegrees) != nil {
+                if (long as? CLLocationDegrees) != nil {
+                    point.coordinate = CLLocationCoordinate2D(latitude: lat as! CLLocationDegrees, longitude: long as! CLLocationDegrees)
+                    point.title = data as? String
+                    let region = MKCoordinateRegion(center: point.coordinate, span: span)
+                    stack.mapView.addAnnotation(point)
+                    stack.mapView.setRegion(region, animated: true)
+                }
+            }
+            
             
             self.addChildViewController(stack)
             self.view.addSubview(view)

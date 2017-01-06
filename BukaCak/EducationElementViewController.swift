@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MapKit
 
 class EducationElementViewController: UIViewController {
     
@@ -14,12 +15,15 @@ class EducationElementViewController: UIViewController {
     @IBOutlet weak var schoolTitle: UILabel!
     @IBOutlet weak var descriptionTextView: UITextView!
     
+    @IBOutlet weak var mapView: MKMapView!
+    
+    
         
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        mapView.layer.cornerRadius = 5.0
         
         // Do any additional setup after loading the view.
     }

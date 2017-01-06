@@ -10,57 +10,43 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    @IBOutlet weak var textView: UITextView!
     
     
-    //let myText = Array("Hello my name is Buka Cakrawala, Software Engineer based in San Francisco".characters)
-    let importUIkit = "import UIKit"
-    let importAwesome = "import Awesomeness"
+    let myText = "import UIKit\nimport Awesomeness\n\nclass Viewcontroller: UIViewController {\n\n    let messsage = AwesomeText(message: 'hello,')\n\n    override func viewDidLoad() {\n       super.viewDidLoad()\n\n       message.sayHello()\n    }\n}\n\nextension ViewController: UIAwesomeDelegate {\n\n    func world() -> String {\n       return 'world'\n    }\n}"
+    var myCounter = 0
+    var timer:Timer?
+    func fireTimer(){
+        timer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: "typeLetter", userInfo: nil, repeats: true)
+    }
     
-    let classIntro = "class ViewController: UIViewController {"
-    let object = "let message = AwesomeText(message: 'hello', NSTimer: 2.0)"
-    let viewdidload = "override func viewDidLoad() {"
-    let superviewdidload = "super.viewDidLoad()"
-    let activateObject = "message.sayHello()"
-    let end = "}"
+    func typeLetter(){
+        if myCounter < (Array(myText.characters)).count {
+            textView.text = textView.text! + String(Array(myText.characters)[myCounter])
+            let randomInterval = 0.014
+            timer?.invalidate()
+            timer = Timer.scheduledTimer(timeInterval: randomInterval, target: self, selector: "typeLetter", userInfo: nil, repeats: false)
+        } else {
+            timer?.invalidate()
+        }
+        myCounter += 1
+    }
     
-    let extensionText = "extension ViewController: UIAwesomeDelegate {"
-    let delegateFunction = "func hello() -> String {"
-    let delegateMessage = "return ', world!'"
-    let endFunction = "}"
+    func changeColor() {
+        
+    }
     
-     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        fireTimer()
+    }
     
-    
-    
-    
-    
-    var counter = 0
-    var timer: Timer?
-    
-//    func fireTimer() {
-//        timer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(typeLetter), userInfo: nil, repeats: true)
-//    }
-//    
-//    func typeLetter() {
-//        if counter < myText.count {
-//            textField.text = textField.text! + String(myText[counter])
-//            let randomInterval = Double((arc4random_uniform(8)+1))/20
-//            timer?.invalidate()
-//            timer = Timer.scheduledTimer(timeInterval: randomInterval, target: self, selector: #selector(typeLetter), userInfo: nil, repeats: true)
-//        } else {
-//            timer?.invalidate()
-//        }
-//        counter += 1
-//    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        //fireTimer()
-        // Do any additional setup after loading the view.
-        let array = (importUIkit.components(separatedBy: " "), importAwesome.components(separatedBy: " "))
-        print(array)
+        fireTimer()
+        
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

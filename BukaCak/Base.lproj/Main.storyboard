@@ -380,33 +380,46 @@
                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="12"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sfK-Yd-pyb">
-                                <rect key="frame" x="16" y="152" width="343" height="15"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="12"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vkr-yA-Qgc">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vkr-yA-Qgc">
                                 <rect key="frame" x="16" y="129" width="343" height="15"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="15" id="WD0-pw-gfS"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="12"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g3U-sZ-gia">
+                                <rect key="frame" x="0.0" y="129" width="375" height="457"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="12"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" red="0.16038811206817627" green="0.16775605082511902" blue="0.21337759494781494" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="g3U-sZ-gia" firstAttribute="leading" secondItem="Vkr-yA-Qgc" secondAttribute="leading" constant="-16" id="5wP-xF-U87"/>
                             <constraint firstItem="Z22-Ge-8s0" firstAttribute="leading" secondItem="ER5-gR-SFb" secondAttribute="leading" id="98q-yt-6Ge"/>
+                            <constraint firstItem="g3U-sZ-gia" firstAttribute="top" secondItem="Z22-Ge-8s0" secondAttribute="bottom" constant="8" id="GaX-j9-8tK"/>
+                            <constraint firstItem="Vkr-yA-Qgc" firstAttribute="centerX" secondItem="ER5-gR-SFb" secondAttribute="centerX" id="IMz-Kg-x9A"/>
+                            <constraint firstItem="g3U-sZ-gia" firstAttribute="trailing" secondItem="Vkr-yA-Qgc" secondAttribute="trailing" constant="16" id="IWu-xJ-qKa"/>
                             <constraint firstItem="Z22-Ge-8s0" firstAttribute="top" secondItem="ER5-gR-SFb" secondAttribute="top" id="Mv4-2Y-y1J"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="Vkr-yA-Qgc" secondAttribute="leading" id="Pfp-uF-WE3"/>
                             <constraint firstAttribute="trailing" secondItem="Z22-Ge-8s0" secondAttribute="trailing" id="QVp-wd-ZZd"/>
+                            <constraint firstItem="hzk-dc-lgQ" firstAttribute="top" secondItem="g3U-sZ-gia" secondAttribute="bottom" constant="81" id="SdA-Ge-EAn"/>
                             <constraint firstItem="Z22-Ge-8s0" firstAttribute="centerX" secondItem="ER5-gR-SFb" secondAttribute="centerX" id="s97-fN-A59"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Vkr-yA-Qgc" secondAttribute="trailing" id="sLr-3z-3bW"/>
+                            <constraint firstItem="Vkr-yA-Qgc" firstAttribute="top" secondItem="Z22-Ge-8s0" secondAttribute="bottom" constant="8" id="wjD-8S-xS8"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="textView" destination="g3U-sZ-gia" id="KBw-4d-VA1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Txl-of-hqA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1002.4" y="1468.5157421289357"/>
+            <point key="canvasLocation" x="-1004" y="1467.616191904048"/>
         </scene>
         <!--Skill View Controller-->
         <scene sceneID="hWM-9g-Tjn">

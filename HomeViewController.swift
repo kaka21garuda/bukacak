@@ -9,12 +9,16 @@
 import UIKit
 import AVFoundation
 
-class HomeViewController: UIViewController, UIViewControllerTransitioningDelegate, UIViewControllerPreviewingDelegate {
+class HomeViewController: UIViewController, UIViewControllerTransitioningDelegate {
     
     var buttonSender: UIButton?
-    //var buttonLocation: CGPoint?
     
+    @IBOutlet weak var aboutContraint: NSLayoutConstraint!
     
+    @IBOutlet weak var workContraint: NSLayoutConstraint!
+    
+
+      
     @IBOutlet weak var homeProfileImageView: UIImageView!
     
     @IBOutlet weak var aboutButton: UIButton!
@@ -30,34 +34,52 @@ class HomeViewController: UIViewController, UIViewControllerTransitioningDelegat
     
     @IBAction func aboutAction(_ sender: UIButton) {
         self.buttonSender = sender
-        //self.buttonLocation = sender.frame.origin
-        print(buttonSender!)
+        performSegue(withIdentifier: "aboutSegue", sender: sender)
     }
     
     @IBAction func skillAction(_ sender: UIButton) {
         self.buttonSender = sender
-        print(buttonSender!)
+        performSegue(withIdentifier: "skillSegue", sender: sender)
+        
     }
-    
     
     @IBAction func projectAction(_ sender: UIButton) {
         self.buttonSender = sender
-        print(buttonSender!)
+        performSegue(withIdentifier: "projectSegue", sender: sender)
     }
     
     @IBAction func educationAction(_ sender: UIButton) {
         self.buttonSender = sender
-        print(buttonSender!)
+        performSegue(withIdentifier: "educationSegue", sender: sender)
     }
     
+    func colorGradientBackground() {
+        
+        let topColor = UIColor(red: 233/255.0, green: 100/255.0, blue: 67/255.0, alpha: 1)
+        let bottomColor = UIColor(red: 144/255.0, green: 78/255.0, blue: 149/255.0, alpha: 1)
+        
+        let gradientColor: [CGColor] = [topColor.cgColor, bottomColor.cgColor]
+        let gradientLocations: [Float] = [0.0, 1.0]
+        
+        let gradientLayer: CAGradientLayer = CAGradientLayer()
+        gradientLayer.colors = gradientColor
+        gradientLayer.locations = gradientLocations as [NSNumber]?
+        
+        gradientLayer.frame = self.view.bounds
+        self.view.layer.insertSublayer(gradientLayer, at: 0)
+        
+    }
+
+    
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        
+        print("transition: \(transition)")
+        print("button sender \(buttonSender)")
         
         transition.transitionMode = .present
         transition.startingPoint = (buttonSender?.center)!
         transition.cirleColor = (buttonSender?.backgroundColor!)!
-        
         return transition
-        
     }
     
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
@@ -69,27 +91,27 @@ class HomeViewController: UIViewController, UIViewControllerTransitioningDelegat
         return transition
     }
     
-    // peek
-    func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
-        show(viewControllerToCommit, sender: self)
-    }
-    
-    // pop
-    func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
-        
-        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-        
-        guard let aboutVC = storyBoard.instantiateViewController(withIdentifier: whichLocation(location: location)) as? AboutViewController else { return nil }
-        return aboutVC
-    }
-    
-    func whichLocation(location: CGPoint) -> String {
-        if location == aboutButton.frame.origin {
-            return "AboutViewController"
-        } else {
-            return "EducationViewController"
-        }
-    }
+//    // peek
+//    func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
+//        show(viewControllerToCommit, sender: self)
+//    }
+//    
+//    // pop
+//    func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
+//        
+//        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+//        
+//        guard let aboutVC = storyBoard.instantiateViewController(withIdentifier: whichLocation(location: location)) as? AboutViewController else { return nil }
+//        return aboutVC
+//    }
+//    
+//    func whichLocation(location: CGPoint) -> String {
+//        if location == aboutButton.frame.origin {
+//            return "AboutViewController"
+//        } else {
+//            return "EducationViewController"
+//        }
+//    }
     
     func animateImage(view: UIView, duration: TimeInterval, velocity: CGFloat) {
         UIView.animate(withDuration: duration, delay: 0, usingSpringWithDamping: 0.2, initialSpringVelocity: velocity, options: .allowUserInteraction, animations: { 
@@ -98,19 +120,42 @@ class HomeViewController: UIViewController, UIViewControllerTransitioningDelegat
         }, completion: nil)
     }
     
+    func applyMotionEffect(toView view: UIView, magnitude: Float) {
+        let xmotion = UIInterpolatingMotionEffect(keyPath: "center.x", type: .tiltAlongHorizontalAxis)
+        xmotion.minimumRelativeValue = -magnitude
+        xmotion.maximumRelativeValue = magnitude
+        
+        let ymotion = UIInterpolatingMotionEffect(keyPath: "center.y", type: .tiltAlongVerticalAxis)
+        ymotion.minimumRelativeValue = -magnitude
+        ymotion.maximumRelativeValue = magnitude
+        
+        let group = UIMotionEffectGroup()
+        group.motionEffects = [xmotion, ymotion]
+        
+        view.addMotionEffect(group)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Registering 3d touch
-        if traitCollection.forceTouchCapability == .available {
-            registerForPreviewing(with: self, sourceView: view)
-        }
+        //colorGradientBackground()
+        
+        applyMotionEffect(toView: self.view, magnitude: 10)
+        applyMotionEffect(toView: aboutButton, magnitude: -20)
+        applyMotionEffect(toView: educationButton, magnitude: -20)
+        applyMotionEffect(toView: skillsButton, magnitude: -20)
+        applyMotionEffect(toView: workButton, magnitude: -20)
+        
+//        // Registering 3d touch
+//        if traitCollection.forceTouchCapability == .available {
+//            registerForPreviewing(with: self, sourceView: view)
+//        }
         
         // Buttons
-        self.aboutButton.setBackgroundImage(#imageLiteral(resourceName: "man-thinking-about-love"), for: .normal)
-        self.workButton.setBackgroundImage(#imageLiteral(resourceName: "layers"), for: .normal)
-        self.skillsButton.setBackgroundImage(#imageLiteral(resourceName: "app-store"), for: .normal)
-        self.educationButton.setBackgroundImage(#imageLiteral(resourceName: "attachment"), for: .normal)
+        self.aboutButton.setBackgroundImage(#imageLiteral(resourceName: "man"), for: .normal)
+        self.workButton.setBackgroundImage(#imageLiteral(resourceName: "settings"), for: .normal)
+        self.skillsButton.setBackgroundImage(#imageLiteral(resourceName: "coding"), for: .normal)
+        self.educationButton.setBackgroundImage(#imageLiteral(resourceName: "library"), for: .normal)
         
         // profile image view
         self.homeProfileImageView.contentMode = .scaleAspectFill
@@ -145,23 +190,18 @@ class HomeViewController: UIViewController, UIViewControllerTransitioningDelegat
 //    override func viewWillAppear(_ animated: Bool) {
 //        super.viewWillAppear(animated)
 //       
-//        aboutButton.frame.origin.y = self.view.bounds.height + aboutButton.frame.origin.y
-//        educationButton.frame.origin.y = self.view.bounds.height + educationButton.frame.origin.y
-//        skillsButton.frame.origin.y = self.view.bounds.height + skillsButton.frame.origin.y
-//        workButton.frame.origin.y = self.view.bounds.height + workButton.frame.origin.y
-//        
+//        aboutContraint.constant -= view.bounds.width
+//        workContraint.constant += view.bounds.width
 //    }
 //    
 //    override func viewDidAppear(_ animated: Bool) {
 //        super.viewDidAppear(animated)
 //        
-//        UIView.animate(withDuration: 15.0, delay: 0.0, options: UIViewAnimationOptions.curveEaseOut, animations: {
-//            self.aboutButton.frame.origin.y -= self.aboutButton.frame.origin.y
-//            self.educationButton.frame.origin.y -= self.educationButton.frame.origin.y
-//            self.skillsButton.frame.origin.y -= self.skillsButton.frame.origin.y
-//            self.workButton.frame.origin.y -= self.workButton.frame.origin.y
-//            self.view.layoutIfNeeded()
-//        }, completion: nil)
+//       UIView.animate(withDuration: 2.0, delay: 0.0, options: .curveEaseOut, animations: {
+//        self.aboutContraint.constant += self.view.bounds.width
+//        self.workContraint.constant -= self.view.bounds.width
+//        self.view.layoutIfNeeded()
+//       }, completion: nil)
 //    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

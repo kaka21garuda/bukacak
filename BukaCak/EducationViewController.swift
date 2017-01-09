@@ -12,18 +12,21 @@ import MapKit
 struct School {
     
     let schoolName: String!
+    let schoolPlace: String!
+    let schoolYear: String!
     let schoolStory: String!
     let latitude: CLLocationDegrees!
     let longtitude: CLLocationDegrees!
+    
 }
 
-let product = School(schoolName: "Make School", schoolStory: "The Product College is a two year program, each year is broken up into two semesters, and each semester into two quarters. Students focus the majority of their time on one of two technical concentrations: Mobile Development and Full Stack Web Development.", latitude: 37.7735142, longtitude: -122.4178074)
+let product = School(schoolName: "Product Academy",schoolPlace: "San Francisco, CA",schoolYear: "2016 - present",schoolStory: "The Product College is a two year program taken place in Make School, each year is broken up into two semesters, and each semester into two quarters. Students focus the majority of their time on one of two technical concentrations: Mobile Development and Full Stack Web Development.", latitude: 37.7735142, longtitude: -122.4178074)
 
 
 
-let summer = School(schoolName: "Summer Academy", schoolStory: "The Make School Summer Academy is designed to teach product development to high school and college students passionate about technology.", latitude: 37.7735142, longtitude: -122.4178074)
+let summer = School(schoolName: "Summer Academy",schoolPlace: "San Francisco, CA",schoolYear: "2016(2 months)", schoolStory: "The Make School Summer Academy is designed to teach product development to high school and college students passionate about technology.", latitude: 37.7735142, longtitude: -122.4178074)
 
-let inti = School(schoolName: "Inti University", schoolStory: "Enter some Inti Description here!", latitude: 3.0741922, longtitude: 101.5909564)
+let inti = School(schoolName: "Inti University", schoolPlace: "KL, Malaysia",schoolYear: "2015 -2016",schoolStory: "Enter some description here!", latitude: 3.0741922, longtitude: 101.5909564)
 
 let schoolsList = [inti, summer, product]
 
@@ -31,11 +34,11 @@ class EducationViewController: UIViewController, UICollisionBehaviorDelegate {
     
     
        
-//    @IBOutlet weak var dismissButton: UIButton!
-//    
-//    @IBAction func dismissButtonAsAction(_ sender: Any) {
-//        self.dismiss(animated: true, completion: nil)
-//    }
+    @IBOutlet weak var dismissButton: UIButton!
+   
+    @IBAction func dismissAction(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
     
     
     var views = [UIView]()
@@ -50,7 +53,10 @@ class EducationViewController: UIViewController, UICollisionBehaviorDelegate {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        //dismissButton.layer.cornerRadius = dismissButton.frame.size.height / 2
+        self.dismissButton.layer.cornerRadius = dismissButton.frame.size.height / 2
+        self.dismissButton.setBackgroundImage(#imageLiteral(resourceName: "error-4"), for: .normal)
+        self.dismissButton.layer.borderColor = UIColor.white.cgColor
+        self.dismissButton.layer.borderWidth = 1.2
         
         animator = UIDynamicAnimator(referenceView: self.view)
         gravity = UIGravityBehavior()
@@ -62,16 +68,16 @@ class EducationViewController: UIViewController, UICollisionBehaviorDelegate {
         
         for i in 0 ... schoolsList.count - 1 {
         
-            if let view = addViewController(atOffset: offset, dataForViewController: schoolsList[i].schoolName as AnyObject?, story: schoolsList[i].schoolStory as AnyObject?, lat: schoolsList[i].latitude as AnyObject?, long: schoolsList[i].longtitude as AnyObject?) {
+            if let view = addViewController(atOffset: offset, dataForViewController: schoolsList[i].schoolName as AnyObject?, story: schoolsList[i].schoolStory as AnyObject?, lat: schoolsList[i].latitude as AnyObject?, long: schoolsList[i].longtitude as AnyObject?, place: schoolsList[i].schoolPlace as AnyObject?, year: schoolsList[i].schoolYear as AnyObject?) {
                 views.append(view)
                 offset -= 50
             }
         }
     }
     
-    func addViewController(atOffset offset: CGFloat, dataForViewController data: AnyObject?, story: AnyObject?, lat: AnyObject?, long: AnyObject?) -> UIView? {
+    func addViewController(atOffset offset: CGFloat, dataForViewController data: AnyObject?, story: AnyObject?, lat: AnyObject?, long: AnyObject?, place: AnyObject?, year: AnyObject?) -> UIView? {
         
-        var point = MKPointAnnotation()
+        let point = MKPointAnnotation()
         
         let span = MKCoordinateSpanMake(0.008, 0.008)
         
@@ -90,8 +96,6 @@ class EducationViewController: UIViewController, UICollisionBehaviorDelegate {
             view.layer.shadowRadius = 3
             view.layer.shadowOpacity = 0.5
             
-            
-            
             if (data as? String) != nil {
                 stack.schoolTitle.text = data as! String?
             }
@@ -100,10 +104,15 @@ class EducationViewController: UIViewController, UICollisionBehaviorDelegate {
                 stack.descriptionTextView.text = story as! String
             }
             
+            if (year as? String) != nil {
+                stack.schoolYearLabel.text = year as? String
+            }
+            
             if (lat as? CLLocationDegrees) != nil {
                 if (long as? CLLocationDegrees) != nil {
                     point.coordinate = CLLocationCoordinate2D(latitude: lat as! CLLocationDegrees, longitude: long as! CLLocationDegrees)
                     point.title = data as? String
+                    point.subtitle = place as? String
                     let region = MKCoordinateRegion(center: point.coordinate, span: span)
                     stack.mapView.addAnnotation(point)
                     stack.mapView.setRegion(region, animated: true)
@@ -145,9 +154,7 @@ class EducationViewController: UIViewController, UICollisionBehaviorDelegate {
             animator.addBehavior(itemBehaviour)
             
             return view
-            
-            
-        }
+            }
         return nil
     }
     

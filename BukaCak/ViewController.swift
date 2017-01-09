@@ -8,48 +8,77 @@
 
 import UIKit
 
+enum NewLine {
+    case old
+    case new
+}
+
+
 class ViewController: UIViewController {
     
     @IBOutlet weak var textView: UITextView!
+    @IBOutlet weak var welcomeTextView: UITextView!
+    @IBOutlet weak var codingTextView: UITextView!
     
+    let myText = " swift"
+    let codingText = "    1> let me = Awesomeness()\n    2> me.deliver(message: 'Hello, ', to: 'world!')"
     
-    let myText = "import UIKit\nimport Awesomeness\n\nclass Viewcontroller: UIViewController {\n\n    let messsage = AwesomeText(message: 'hello,')\n\n    override func viewDidLoad() {\n       super.viewDidLoad()\n\n       message.sayHello()\n    }\n}\n\nextension ViewController: UIAwesomeDelegate {\n\n    func world() -> String {\n       return 'world'\n    }\n}"
     var myCounter = 0
     var timer:Timer?
+    
+    var anotherCounter = 0
+    var anotherTimer: Timer?
+    
     func fireTimer(){
         timer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(ViewController.typeLetter), userInfo: nil, repeats: true)
+    }
+    
+    func fireCoding() {
+        anotherTimer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(ViewController.codeLetter), userInfo: nil, repeats: true)
     }
     
     func typeLetter(){
         if myCounter < (Array(myText.characters)).count {
             textView.text = textView.text! + String(Array(myText.characters)[myCounter])
-            let randomInterval = 0.014
+            let randomInterval = 0.07
             timer?.invalidate()
             timer = Timer.scheduledTimer(timeInterval: randomInterval, target: self, selector: #selector(ViewController.typeLetter), userInfo: nil, repeats: false)
         } else {
             timer?.invalidate()
+            print("\n\n\n")
+            print("timer validate in typeLetter()")
+            print("\n\n\n")
+            alpha(line: .new)
+            //fireCoding()
         }
         myCounter += 1
-        //changeColor()
     }
     
-    func changeColor() {
-        let string: NSMutableAttributedString = NSMutableAttributedString(string: self.textView.text!)
-        let words = textView.text!.components(separatedBy: " ")
-        for word in words {
-            if word.hasPrefix("import") {
-                print("found one")
-                let range = (self.textView.text! as NSString).range(of: word)
-                string.addAttribute(NSForegroundColorAttributeName, value: UIColor.red, range: range)
-            } else {
-                print("no word match")
-            }
+    func codeLetter() {
+        if anotherCounter < (Array(codingText.characters)).count {
+            codingTextView.text = codingTextView.text! + String(Array(codingText.characters)[anotherCounter])
+            let interval = 0.07
+            anotherTimer?.invalidate()
+            anotherTimer = Timer.scheduledTimer(timeInterval: interval, target: self, selector: #selector(ViewController.codeLetter), userInfo: nil, repeats: false)
+        } else {
+            anotherTimer?.invalidate()
         }
-        self.textView.attributedText = string
+        anotherCounter += 1
     }
+    
+    func alpha(line: NewLine) {
+        if line == .old {
+            welcomeTextView.alpha = 0.0
+        } else {
+            welcomeTextView.alpha = 1.0
+            fireCoding()
+        }
+    }
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        alpha(line: .old)
         fireTimer()
     }
     
@@ -61,7 +90,6 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //fireTimer()
         
         
     }

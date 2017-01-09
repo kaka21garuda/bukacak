@@ -28,36 +28,22 @@ class ProjectsViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
     
-//    @IBOutlet weak var dismissButton: UIButton!
-//    
-//    @IBAction func dismissButtonAsAction(_ sender: Any) {
-//        self.dismiss(animated: true, completion: nil)
-//    }
+   
+    @IBOutlet weak var dismissButton: UIButton!
+    
+   
+    @IBAction func dismissAction(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        colorGradientBackground()
-        
-        
-        
-    }
-    
-    func colorGradientBackground() {
-        
-        let topColor = UIColor(red: 233/255.0, green: 100/255.0, blue: 67/255.0, alpha: 1)
-        let bottomColor = UIColor(red: 144/255.0, green: 78/255.0, blue: 149/255.0, alpha: 1)
-        
-        let gradientColor: [CGColor] = [topColor.cgColor, bottomColor.cgColor]
-        let gradientLocations: [Float] = [0.0, 1.0]
-        
-        let gradientLayer: CAGradientLayer = CAGradientLayer()
-        gradientLayer.colors = gradientColor
-        gradientLayer.locations = gradientLocations as [NSNumber]?
-        
-        gradientLayer.frame = self.view.bounds
-        self.view.layer.insertSublayer(gradientLayer, at: 0)
-        
+        self.dismissButton.setBackgroundImage(#imageLiteral(resourceName: "error-3"), for: .normal)
+        self.dismissButton.layer.cornerRadius = self.dismissButton.bounds.size.height / 2
+        self.dismissButton.layer.borderColor = UIColor.white.cgColor
+        self.dismissButton.layer.borderWidth = 1.2
     }
 }
 

@@ -13,7 +13,6 @@ struct About {
     let image: UIImage
     let title: String
     let text: String
-
 }
 
 let aboutMe: About = About(image: #imageLiteral(resourceName: "profile"), title: "My name is Buka Cakrawala 😉", text: "Hi, I'm a 17 year old sofware developer based in San Francisco, CA. I was born in Indonesia🇮🇩 and currently studying at a Programming School called Make School in downtown San Francisco.\nMy passions lie in programming especially iOS, backend, and UI/UX design. I relish working in collaborative environments with other creative minds. Additionally I'm a huge fan of Sherlock Holmes🕵🏻.")
@@ -37,7 +36,12 @@ class AboutViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        colorGradientBackground()
+        self.dismissButton.setBackgroundImage(#imageLiteral(resourceName: "error"), for: .normal)
+        self.dismissButton.layer.borderColor = UIColor.white.cgColor
+        self.dismissButton.layer.borderWidth = 1.2
+        
+        let shadowPath = UIBezierPath(rect: self.dismissButton.bounds)
+        
         dismissButton.layer.cornerRadius = dismissButton.frame.size.width / 2
     }
 
@@ -46,22 +50,6 @@ class AboutViewController: UIViewController {
         
     }
     
-    func colorGradientBackground() {
-    
-        let topColor = UIColor(red: 233/255.0, green: 100/255.0, blue: 67/255.0, alpha: 1)
-        let bottomColor = UIColor(red: 144/255.0, green: 78/255.0, blue: 149/255.0, alpha: 1)
-        
-        let gradientColor: [CGColor] = [topColor.cgColor, bottomColor.cgColor]
-        let gradientLocations: [Float] = [0.0, 1.0]
-        
-        let gradientLayer: CAGradientLayer = CAGradientLayer()
-        gradientLayer.colors = gradientColor
-        gradientLayer.locations = gradientLocations as [NSNumber]?
-        
-        gradientLayer.frame = self.view.bounds
-        self.view.layer.insertSublayer(gradientLayer, at: 0)
-        
-    }
 }
 
 extension AboutViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
@@ -81,6 +69,9 @@ extension AboutViewController: UICollectionViewDataSource, UICollectionViewDeleg
         cell.imageView.image = aboutLists[indexPath.item].image
         cell.titleLabel.text = aboutLists[indexPath.item].title
         cell.contentTextView.text = aboutLists[indexPath.item].text
+        
+        cell.contentTextView.setContentOffset(CGPoint.zero, animated: false)
+        cell.contentTextView.scrollRangeToVisible(NSMakeRange(0, 0))
         
         cell.layer.borderWidth = 1.0
         cell.layer.borderColor = UIColor.white.cgColor

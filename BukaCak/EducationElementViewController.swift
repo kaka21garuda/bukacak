@@ -14,6 +14,7 @@ class EducationElementViewController: UIViewController {
     
     @IBOutlet weak var schoolTitle: UILabel!
     @IBOutlet weak var descriptionTextView: UITextView!
+    @IBOutlet weak var schoolYearLabel: UILabel!
     
     @IBOutlet weak var mapView: MKMapView!
     

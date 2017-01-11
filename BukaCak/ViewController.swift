@@ -14,7 +14,10 @@ enum NewLine {
 }
 
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UIViewControllerTransitioningDelegate {
+    
+    let transition = CircularTransition()
+    var buttonSender: UIButton!
     
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var welcomeTextView: UITextView!
@@ -26,8 +29,11 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var nextButton: UIButton!
     
-    @IBAction func nextAction(_ sender: Any) {
+    @IBAction func nextAction(_ sender: UIButton) {
+        self.buttonSender = sender
+        self.performSegue(withIdentifier: "homeSegue", sender: sender)
     }
+    
     
     
     var effect: UIVisualEffect!
@@ -106,6 +112,26 @@ class ViewController: UIViewController {
         
     }
     
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        
+        print("transition: \(transition)")
+        print("button sender \(buttonSender)")
+        
+        transition.transitionMode = .present
+        transition.startingPoint = (buttonSender?.center)!
+        transition.cirleColor = (buttonSender?.backgroundColor!)!
+        return transition
+    }
+    
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        
+        transition.transitionMode = .dismiss
+        transition.startingPoint = (buttonSender?.center)!
+        transition.cirleColor = (buttonSender?.backgroundColor!)!
+        
+        return transition
+    }
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -125,13 +151,24 @@ class ViewController: UIViewController {
         effect = visualBlur.effect
         visualBlur.effect = nil
         
-        alertView.layer.cornerRadius = 5
+        alertView.layer.cornerRadius = 12
+        nextButton.layer.cornerRadius = 12
+        nextButton.layer.borderWidth = 1.2
+        nextButton.layer.borderColor = UIColor.black.cgColor
         
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "homeSegue" {
+            let home: HomeViewController = segue.destination as! HomeViewController
+            home.transitioningDelegate = self
+            home.modalPresentationStyle = .custom
+        }
     }
     
 

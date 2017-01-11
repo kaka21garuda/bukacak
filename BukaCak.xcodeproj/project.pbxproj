@@ -125,6 +125,7 @@
 		C6C1190B1E1449AB0041709B /* BukaCak */ = {
 			isa = PBXGroup;
 			children = (
+				C660B4E51E1EE1B00064BEEA /* ViewController.swift */,
 				C6E9A6D41E1C9C8E009FE5B0 /* AnimationAndTransition */,
 				C6E9A6D31E1C9C69009FE5B0 /* ProjectShowCase */,
 				C6E9A6D21E1C9C30009FE5B0 /* MainMenuViewController */,
@@ -170,9 +171,9 @@
 		C6E9A6D21E1C9C30009FE5B0 /* MainMenuViewController */ = {
 			isa = PBXGroup;
 			children = (
-				C61B424B1E26107C007D36E3 /* EducationViewController.swift */,
 				C6C1193A1E144C500041709B /* HomeViewController.swift */,
 				C6D4D4411E16E4D50061FD35 /* AboutViewController.swift */,
+				C61B424B1E26107C007D36E3 /* EducationViewController.swift */,
 				C6DA1D831E1B128200E91556 /* ProjectsViewController.swift */,
 				C62A4E911E1758CE00FC81A9 /* SkillViewController.swift */,
 				C62E1EB41E1D78FF00CDB41D /* EducationElementViewController.swift */,
@@ -193,7 +194,6 @@
 			isa = PBXGroup;
 			children = (
 				C61B424F1E2615B6007D36E3 /* SkillLoaderView.swift */,
-				C660B4E51E1EE1B00064BEEA /* ViewController.swift */,
 				C6D4D4431E16E7C40061FD35 /* CircularTransition.swift */,
 			);
 			name = AnimationAndTransition;

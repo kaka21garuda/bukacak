@@ -92,16 +92,13 @@ extension MainProjectShowCase: UIPageViewControllerDataSource {
         var index = vc.pageIndex as Int
         
         if index == NSNotFound {
-            
             return nil
-            
         }
         
         index += 1
         if index == self.pageTitle.count {
             return nil
         }
-        
         return self.viewControllerAtIndex(index: index)
         
     }

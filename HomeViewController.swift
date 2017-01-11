@@ -53,23 +53,6 @@ class HomeViewController: UIViewController, UIViewControllerTransitioningDelegat
         performSegue(withIdentifier: "educationSegue", sender: sender)
     }
     
-    func colorGradientBackground() {
-        
-        let topColor = UIColor(red: 233/255.0, green: 100/255.0, blue: 67/255.0, alpha: 1)
-        let bottomColor = UIColor(red: 144/255.0, green: 78/255.0, blue: 149/255.0, alpha: 1)
-        
-        let gradientColor: [CGColor] = [topColor.cgColor, bottomColor.cgColor]
-        let gradientLocations: [Float] = [0.0, 1.0]
-        
-        let gradientLayer: CAGradientLayer = CAGradientLayer()
-        gradientLayer.colors = gradientColor
-        gradientLayer.locations = gradientLocations as [NSNumber]?
-        
-        gradientLayer.frame = self.view.bounds
-        self.view.layer.insertSublayer(gradientLayer, at: 0)
-        
-    }
-
     
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         
@@ -135,6 +118,14 @@ class HomeViewController: UIViewController, UIViewControllerTransitioningDelegat
         view.addMotionEffect(group)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.homeProfileImageView.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
+        animateImage(view: self.homeProfileImageView, duration: 2.6, velocity: 6.0)
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -165,8 +156,7 @@ class HomeViewController: UIViewController, UIViewControllerTransitioningDelegat
         self.homeProfileImageView.layer.borderColor = UIColor.white.cgColor
         self.homeProfileImageView.layer.cornerRadius = homeProfileImageView.frame.size.height / 2
         
-        self.homeProfileImageView.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
-        animateImage(view: self.homeProfileImageView, duration: 2.6, velocity: 6.0)
+       
         
         // UIButton layout
         aboutButton.layer.cornerRadius = aboutButton.frame.size.width / 2

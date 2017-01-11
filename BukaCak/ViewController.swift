@@ -20,6 +20,18 @@ class ViewController: UIViewController {
     @IBOutlet weak var welcomeTextView: UITextView!
     @IBOutlet weak var codingTextView: UITextView!
     
+    @IBOutlet var alertView: UIView!
+    
+    @IBOutlet weak var visualBlur: UIVisualEffectView!
+    
+    @IBOutlet weak var nextButton: UIButton!
+    
+    @IBAction func nextAction(_ sender: Any) {
+    }
+    
+    
+    var effect: UIVisualEffect!
+    
     let myText = " swift"
     let codingText = "    1> let me = Awesomeness()\n\n    2> me.deliver(message: \"Hello, \", to: \"world!\")\n\n    3> let welcome = UIAlertController(title: \"Welcome\", message: helloLanguage(), preferredStyle: .alert)\n\n    4> func helloLanguage() -> String {\n         if me.language == .english {\n            return \"Hello\"\n         } else if me.language == .spanish {\n            return \"Hola\"\n         } else {\n            return \"Welcome\"\n         }\n       }\n\n    ^D"
 
@@ -60,11 +72,12 @@ class ViewController: UIViewController {
     func codeLetter() {
         if anotherCounter < (Array(codingText.characters)).count {
             codingTextView.text = codingTextView.text! + String(Array(codingText.characters)[anotherCounter])
-            let interval = 0.07
+            let interval = 0.01
             anotherTimer?.invalidate()
             anotherTimer = Timer.scheduledTimer(timeInterval: interval, target: self, selector: #selector(ViewController.codeLetter), userInfo: nil, repeats: false)
         } else {
             anotherTimer?.invalidate()
+            animateIn()
         }
         anotherCounter += 1
     }
@@ -76,6 +89,21 @@ class ViewController: UIViewController {
             welcomeTextView.alpha = 1.0
             fireCoding()
         }
+    }
+    
+    func animateIn() {
+        self.view.addSubview(alertView)
+        alertView.center = self.view.center
+        
+        alertView.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
+        alertView.alpha = 0
+        
+        UIView.animate(withDuration: 0.4) { 
+            self.visualBlur.effect = self.effect
+            self.alertView.alpha = 1.0
+            self.alertView.transform = CGAffineTransform.identity
+        }
+        
     }
     
     
@@ -94,6 +122,10 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        effect = visualBlur.effect
+        visualBlur.effect = nil
+        
+        alertView.layer.cornerRadius = 5
         
     }
     

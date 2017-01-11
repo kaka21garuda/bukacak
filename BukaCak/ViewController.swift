@@ -21,7 +21,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var codingTextView: UITextView!
     
     let myText = " swift"
-    let codingText = "    1> let me = Awesomeness()\n    2> me.deliver(message: 'Hello, ', to: 'world!')"
+    let codingText = "    1> let me = Awesomeness()\n\n    2> me.deliver(message: \"Hello, \", to: \"world!\")\n\n    3> let welcome = UIAlertController(title: \"Welcome\", message: helloLanguage(), preferredStyle: .alert)\n\n    4> func helloLanguage() -> String {\n         if me.language == .english {\n            return \"Hello\"\n         } else if me.language == .spanish {\n            return \"Hola\"\n         } else {\n            return \"Welcome\"\n         }\n       }\n\n    ^D"
+
+    
     
     var myCounter = 0
     var timer:Timer?
@@ -31,6 +33,7 @@ class ViewController: UIViewController {
     
     func fireTimer(){
         timer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(ViewController.typeLetter), userInfo: nil, repeats: true)
+
     }
     
     func fireCoding() {

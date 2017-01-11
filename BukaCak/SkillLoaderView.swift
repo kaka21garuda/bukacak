@@ -10,11 +10,30 @@ import UIKit
 
 class SkillLoaderView: UIView {
     
+    let label = UILabel()
+    var labelText = "Hello"
+    
     var circleLayer: CAShapeLayer!
+    
+    
+    
+    init(frame: CGRect, text: String) {
+        
+        labelText = text
+        
+        super.init(frame:frame)
+        
+        setup()
+    }
+    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
+        setup()
+    }
+    
+    func setup() {
+    
         // UIBezierPath to create the GCPath Layer
         // The path should be the entire circle
         let circlepath = UIBezierPath(arcCenter: CGPoint(x: frame.size.width / 2.0, y: frame.size.height / 2), radius: (frame.size.width - 10) / 2, startAngle: 0.0, endAngle: CGFloat(M_PI * 2.0), clockwise: true)
@@ -28,6 +47,22 @@ class SkillLoaderView: UIView {
         circleLayer.strokeEnd = 0.0
         
         layer.addSublayer(circleLayer)
+        
+        setupLabel()
+        
+    }
+    
+    
+    func setupLabel() {
+        self.addSubview(label)
+        label.text = labelText
+        label.font = UIFont.boldSystemFont(ofSize: 18)
+        label.textColor = UIColor.white
+        label.sizeToFit()
+        print(self.bounds)
+        label.center.x = self.bounds.midX
+        label.center.y = self.bounds.midY
+        
     }
 
     

@@ -48,7 +48,9 @@ class SkillViewController: UIViewController {
         let circleWidth = CGFloat(self.view.frame.height / 4)
         let circleHeight = circleWidth
         
-        let oneCircle = SkillLoaderView(frame: CGRect(x: 0 + 10, y: ((self.view.bounds.height / 2) - (circleHeight / 2)) - 50, width: circleWidth, height: circleHeight))
+        // let c = SkillLoaderView(frame: <#T##CGRect#>, text: "OMG!")
+        
+        let oneCircle = SkillLoaderView(frame: CGRect(x: 0 + 10, y: ((self.view.bounds.height / 2) - (circleHeight / 2)) - 50, width: circleWidth, height: circleHeight), text: "OMG!")
         
         let twoCircle = SkillLoaderView(frame: CGRect(x: (self.view.bounds.width / 2) + 10, y: ((self.view.bounds.height / 2) - (circleHeight / 2)) - 50, width: circleWidth, height: circleHeight))
         let threeCircle = SkillLoaderView(frame: CGRect(x: 0 + 10, y: (self.view.bounds.height / 2) + (circleHeight / 2), width: circleWidth, height: circleHeight))

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="hC8-BU-YHq">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -383,6 +383,24 @@
             </objects>
             <point key="canvasLocation" x="-74.400000000000006" y="748.87556221889065"/>
         </scene>
+        <!--Dragable View Controller-->
+        <scene sceneID="b2g-ys-asR">
+            <objects>
+                <viewController id="hC8-BU-YHq" customClass="DragableViewController" customModule="BukaCak" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xKd-c4-F5C"/>
+                        <viewControllerLayoutGuide type="bottom" id="ar0-1I-KzQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9Ic-Hw-ZVJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.2990451388888889" green="0.080023871527777776" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vjC-uN-cuf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-169" y="1944"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="XJX-CJ-E5M">
             <objects>
@@ -418,11 +436,11 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c4Y-fW-Ccv">
-                                <rect key="frame" x="0.0" y="133" width="375" height="422"/>
+                                <rect key="frame" x="0.0" y="133" width="375" height="344"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="375" id="eiX-60-ftY"/>
-                                    <constraint firstAttribute="height" constant="422" id="jrV-EK-iag"/>
+                                    <constraint firstAttribute="height" constant="344" id="jrV-EK-iag"/>
                                 </constraints>
                                 <color key="textColor" red="0.16083657741546631" green="0.77155399322509766" blue="0.25967806577682495" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="12"/>

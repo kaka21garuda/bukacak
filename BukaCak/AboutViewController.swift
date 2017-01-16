@@ -21,7 +21,7 @@ let aboutMe: About = About(image: #imageLiteral(resourceName: "profile"), title:
 let hackathons: About = About(image: #imageLiteral(resourceName: "calhacks"), title: "Hackathons 🎧🤖", text: "Although I'm in such a young age, going to hackathons is one of my favorite hobby. Visiting university campus, meet with incredible and talented people, and having the chance of working with them for a project is extremely fun for me. Hackathon is also the opportunity for me to learn technologies, and through hackathon I discovered Arduino for the first time.\n\nI won my first hackathon at CalHacks hosted by UC Berkeley for the best technology using finger print sensor. Our idea was originally replaced the use of credit cards with finger print. My team and I believed that with finger print is a safer way to do money transaction.")
 
 
-//let hobby: About = About(image: <#T##UIImage#>, title: <#T##String#>, text: <#T##String#>)
+let hobby: About = About(image: #imageLiteral(resourceName: "yellowPencil"), title: "Hobby⚽️", text: "Besides of doing programming, I always have a couple of hobbies that I like to do usually during the weekend. I love to play soccer. One of the reason why I love soccer is because I grew up in Indonesia, where soccer is the most popular sport in my country. I also enjoy doing graphic design. Making things look beautiful is really satisfying for me.🌞")
 
 let inspiration: About = About(image: #imageLiteral(resourceName: "bulb"), title: "👨🏼‍💻Inspiration", text: "My biggest inspiration person is Thomas Alva Edison. The person who taught me that everything in life is possible as long as you believe what you're doing is right and you put a 100% effort into it. He makes me think to try at least one more time wherever I failed or did something wrong.")
 
@@ -31,7 +31,7 @@ let futurePlan: About = About(image: #imageLiteral(resourceName: "building"), ti
 
 class AboutViewController: UIViewController {
     
-    let aboutLists:[About] = [aboutMe, hackathons, inspiration, futurePlan]
+    let aboutLists:[About] = [aboutMe, hackathons, hobby, inspiration, futurePlan]
     
     @IBOutlet weak var dismissButton: UIButton!
     
@@ -67,7 +67,7 @@ extension AboutViewController: UICollectionViewDataSource, UICollectionViewDeleg
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return 5
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

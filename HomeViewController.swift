@@ -96,9 +96,6 @@ class HomeViewController: UIViewController, UIViewControllerTransitioningDelegat
         let dismissAction = UIAlertAction(title: "Close", style: .cancel) { (closeAction) in
             //
         }
-        
-        
-        
         actionSheet.addAction(tweetAction)
         actionSheet.addAction(facebookAction)
         actionSheet.addAction(dismissAction)
@@ -127,27 +124,6 @@ class HomeViewController: UIViewController, UIViewControllerTransitioningDelegat
         return transition
     }
     
-//    // peek
-//    func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
-//        show(viewControllerToCommit, sender: self)
-//    }
-//    
-//    // pop
-//    func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
-//        
-//        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-//        
-//        guard let aboutVC = storyBoard.instantiateViewController(withIdentifier: whichLocation(location: location)) as? AboutViewController else { return nil }
-//        return aboutVC
-//    }
-//    
-//    func whichLocation(location: CGPoint) -> String {
-//        if location == aboutButton.frame.origin {
-//            return "AboutViewController"
-//        } else {
-//            return "EducationViewController"
-//        }
-//    }
     
     func animateImage(view: UIView, duration: TimeInterval, velocity: CGFloat) {
         UIView.animate(withDuration: duration, delay: 0, usingSpringWithDamping: 0.2, initialSpringVelocity: velocity, options: .allowUserInteraction, animations: { 
@@ -181,12 +157,9 @@ class HomeViewController: UIViewController, UIViewControllerTransitioningDelegat
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //contactButton.layer.borderColor = contactButton.titleLabel?.textColor as! CGColor?
+    
         contactButton.layer.borderWidth = 1.0
         contactButton.layer.cornerRadius = contactButton.bounds.size.height / 2
-        
-        //colorGradientBackground()
         
         applyMotionEffect(toView: self.view, magnitude: 10)
         applyMotionEffect(toView: aboutButton, magnitude: -20)
@@ -233,24 +206,7 @@ class HomeViewController: UIViewController, UIViewControllerTransitioningDelegat
         educationButton.layer.borderColor = UIColor.white.cgColor
         
     }
-    
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(animated)
-//       
-//        aboutContraint.constant -= view.bounds.width
-//        workContraint.constant += view.bounds.width
-//    }
-//    
-//    override func viewDidAppear(_ animated: Bool) {
-//        super.viewDidAppear(animated)
-//        
-//       UIView.animate(withDuration: 2.0, delay: 0.0, options: .curveEaseOut, animations: {
-//        self.aboutContraint.constant += self.view.bounds.width
-//        self.workContraint.constant -= self.view.bounds.width
-//        self.view.layoutIfNeeded()
-//       }, completion: nil)
-//    }
-    
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "aboutSegue" {
             

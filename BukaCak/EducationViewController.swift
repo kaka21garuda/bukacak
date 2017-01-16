@@ -26,7 +26,7 @@ let product = School(schoolName: "Product Academy",schoolPlace: "San Francisco, 
 
 let summer = School(schoolName: "Summer Academy",schoolPlace: "San Francisco, CA",schoolYear: "2016(2 months)", schoolStory: "The Make School Summer Academy is designed to teach product development to high school and college students passionate about technology.", latitude: 37.7735142, longtitude: -122.4178074)
 
-let inti = School(schoolName: "Inti University", schoolPlace: "KL, Malaysia",schoolYear: "2015 -2016",schoolStory: "Enter some description here!", latitude: 3.0741922, longtitude: 101.5909564)
+let inti = School(schoolName: "Inti University", schoolPlace: "KL, Malaysia",schoolYear: "2015 -2016",schoolStory: "INTI International University & Colleges in Malaysia offers tertiary and pre- university courses with campuses in Malaysia. I attended INTI in 2015 - 2016 for foundational degree in Computer Science. \n\nCourses that I take\n∙Pre-Calculus\n∙Chemistry\n∙AP Computer Science\n∙General Studies.", latitude: 3.0741922, longtitude: 101.5909564)
 
 let schoolsList = [inti, summer, product]
 

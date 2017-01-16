@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 struct About {
     
     let image: UIImage
@@ -15,15 +16,22 @@ struct About {
     let text: String
 }
 
-let aboutMe: About = About(image: #imageLiteral(resourceName: "profile"), title: "My name is Buka Cakrawala 😉", text: "Hi, I'm a 17 year old sofware developer based in San Francisco, CA. I was born in Indonesia🇮🇩 and currently studying at a Programming School called Make School in downtown San Francisco.\nMy passions lie in programming especially iOS, backend, and UI/UX design. I relish working in collaborative environments with other creative minds. Additionally I'm a huge fan of Sherlock Holmes🕵🏻.")
+let aboutMe: About = About(image: #imageLiteral(resourceName: "profile"), title: "My name is Buka Cakrawala 😉", text: "Hi, I'm a 17 year old sofware developer based in San Francisco, CA. I was born in Indonesia🇮🇩 and currently studying at a Programming School called Make School in downtown San Francisco.\n\nMy passions lie in programming especially iOS, backend, and UI/UX design. I relish working in collaborative environments with other creative minds. Additionally I'm a huge fan of Sherlock Holmes🕵🏻.")
+
+let hackathons: About = About(image: #imageLiteral(resourceName: "calhacks"), title: "Hackathons 🎧🤖", text: "Although I'm in such a young age, going to hackathons is one of my favorite hobby. Visiting university campus, meet with incredible and talented people, and having the chance of working with them for a project is extremely fun for me. Hackathon is also the opportunity for me to learn technologies, and through hackathon I discovered Arduino for the first time.\n\nI won my first hackathon at CalHacks hosted by UC Berkeley for the best technology using finger print sensor. Our idea was originally replaced the use of credit cards with finger print. My team and I believed that with finger print is a safer way to do money transaction.")
+
+
+//let hobby: About = About(image: <#T##UIImage#>, title: <#T##String#>, text: <#T##String#>)
 
 let inspiration: About = About(image: #imageLiteral(resourceName: "bulb"), title: "👨🏼‍💻Inspiration", text: "My biggest inspiration person is Thomas Alva Edison. The person who taught me that everything in life is possible as long as you believe what you're doing is right and you put a 100% effort into it. He makes me think to try at least one more time wherever I failed or did something wrong.")
 
-let futurePlan: About = About(image: #imageLiteral(resourceName: "building"), title: "Future Plan", text: "My future plan is to become a good iOS developer as I really enjoy doing mobile apps development. I will never stop creating cool apps and ship it in the App Store, code in Swift everyday, learn by making!.\n\nLearn by doing in my opinion is the best practice for anyone to always get better in programming.I am indeed looking for internship opportunity in 2017's upcoming summer in order for me to increase my engineering skills into a higher level.\nAt the moment, I am studying Data Structure and Probability in Python, further iOS, and IoT devices.")
+let futurePlan: About = About(image: #imageLiteral(resourceName: "building"), title: "Future Plan", text: "My future plan is to become a good iOS developer as I really enjoy doing mobile apps development. I will never stop creating cool apps and ship it in the App Store, code in Swift everyday, learn by making!.\n\nLearn by doing in my opinion is the best practice for anyone to always get better in programming.I am indeed looking for internship opportunity in 2017's upcoming summer in order for me to increase my engineering skills into a higher level.\n\nAt the moment, I am studying Data Structure and Probability in Python, further iOS, and IoT devices.")
+
+
 
 class AboutViewController: UIViewController {
     
-    let aboutLists:[About] = [aboutMe, inspiration, futurePlan]
+    let aboutLists:[About] = [aboutMe, hackathons, inspiration, futurePlan]
     
     @IBOutlet weak var dismissButton: UIButton!
     
@@ -59,7 +67,7 @@ extension AboutViewController: UICollectionViewDataSource, UICollectionViewDeleg
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return 4
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

@@ -126,11 +126,16 @@ class EducationViewController: UIViewController, UICollisionBehaviorDelegate {
             
             stack.didMove(toParentViewController: self)
             
+            self.view.isUserInteractionEnabled = true
             
             let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(EducationViewController.handlePan(gestureRecognizer:)))
             
+            let swipeGesture = UISwipeGestureRecognizer(target: self, action: #selector(EducationViewController.handleSwipe(recognizer:)))
+            swipeGesture.direction = UISwipeGestureRecognizerDirection.down
+            
             
             view.addGestureRecognizer(panGestureRecognizer)
+            view.addGestureRecognizer(swipeGesture)
             
             
             let collision = UICollisionBehavior(items: [view])
@@ -159,35 +164,56 @@ class EducationViewController: UIViewController, UICollisionBehaviorDelegate {
         return nil
     }
     
+    func handleSwipe(recognizer: UISwipeGestureRecognizer) {
+        
+        let touchPoint = recognizer.location(in: self.view)
+        let swipedView = recognizer.view!
+        
+        if recognizer.direction == .down {
+            print("swiped down is detected!")
+            previousTouchPoint = touchPoint
+            
+            let yOffset = previousTouchPoint.y - touchPoint.y
+            swipedView.center = CGPoint(x: swipedView.center.x, y: swipedView.center.y - yOffset)
+            
+            pin(view: swipedView)
+            animator.updateItem(usingCurrentState: swipedView)
+            
+        } else {
+            print("it is not swiping down!")
+        }
+    }
+    
     func handlePan(gestureRecognizer: UIPanGestureRecognizer) {
     
         let touchPoint = gestureRecognizer.location(in: self.view)
         let draggedView = gestureRecognizer.view!
         
         if gestureRecognizer.state == .began {
-        
             let dragStartPoint = gestureRecognizer.location(in: draggedView)
+            print("TOUCHPOINT: \(touchPoint)")
+            print("DRAG: \(dragStartPoint)")
             
-            if dragStartPoint.y < 200 {
+            if dragStartPoint.y > 0 {
             
                 viewDragging = true
                 previousTouchPoint = touchPoint
             
             }
         
-        } else if gestureRecognizer.state == .changed && viewDragging {
+        } else if gestureRecognizer.state == .changed  {
+            
             let yOffset = previousTouchPoint.y - touchPoint.y
             
             draggedView.center = CGPoint(x: draggedView.center.x, y: draggedView.center.y - yOffset)
             previousTouchPoint = touchPoint
-        } else if gestureRecognizer.state == .ended && viewDragging {
+        } else if gestureRecognizer.state == .ended  {
             
             pin(view: draggedView)
             addVelocity(toView: draggedView, fromGestureRecognizer: gestureRecognizer)
         
             animator.updateItem(usingCurrentState: draggedView)
             viewDragging = false
-        
         }
     }
     
@@ -225,16 +251,14 @@ class EducationViewController: UIViewController, UICollisionBehaviorDelegate {
         }
     }
     
-    
     func addVelocity(toView view: UIView, fromGestureRecognizer panGestureRecognizer: UIPanGestureRecognizer) {
         var velocity = panGestureRecognizer.velocity(in: self.view)
         velocity.x = 0
         
         if let behaviour = itemBehaviour(forView: view) {
-            behaviour.addLinearVelocity(velocity, for: view)
+             behaviour.addLinearVelocity(velocity, for: view)
         }
     }
-    
 
     func itemBehaviour(forView view: UIView) ->UIDynamicItemBehavior? {
     

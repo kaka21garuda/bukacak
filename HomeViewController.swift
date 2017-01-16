@@ -7,9 +7,14 @@
 //
 
 import UIKit
-import AVFoundation
+import Social
+
+//import AVFoundation
 
 class HomeViewController: UIViewController, UIViewControllerTransitioningDelegate {
+    
+    @IBOutlet weak var contactButton: UIButton!
+    
     
     var buttonSender: UIButton?
     
@@ -53,6 +58,54 @@ class HomeViewController: UIViewController, UIViewControllerTransitioningDelegat
         performSegue(withIdentifier: "educationSegue", sender: sender)
     }
     
+    @IBAction func contactAction(_ sender: UIButton) {
+        let actionSheet = UIAlertController(title: "", message: "Contact on social", preferredStyle: .actionSheet)
+        
+        let tweetAction = UIAlertAction(title: "Contact on Twitter", style: .default) { (twitterAction) in
+            
+            if SLComposeViewController.isAvailable(forServiceType: SLServiceTypeTwitter) {
+                // initialize the default view controller for sharing the post.
+                let twitterComposeVC = SLComposeViewController(forServiceType: SLServiceTypeTwitter)
+                twitterComposeVC?.setInitialText("@bukacak ")
+                self.present(twitterComposeVC!, animated: true, completion: nil)
+                
+            } else {
+                let notwitter = UIAlertController(title: "You're not logged in", message: "Please go to settings and log in with your twitter account.", preferredStyle: .alert)
+                let okAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                notwitter.addAction(okAction)
+                self.present(notwitter, animated: true, completion: nil)
+            }
+        }
+        
+        let facebookAction = UIAlertAction(title: "Contact on Facebook", style: .default) { (facebookAction) in
+            if SLComposeViewController.isAvailable(forServiceType: SLServiceTypeFacebook) {
+                
+                let facebookComposeVC = SLComposeViewController(forServiceType: SLServiceTypeFacebook)
+                facebookComposeVC?.setInitialText("@Buka Cakrawala ")
+                self.present(facebookComposeVC!, animated: true, completion: nil)
+                
+            } else {
+                
+                let notfacebook = UIAlertController(title: "You're not logged in", message: "Please go to settings and log in with your facebook account.", preferredStyle: .alert)
+                let okAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                notfacebook.addAction(okAction)
+                self.present(notfacebook, animated: true, completion: nil)
+            }
+        }
+        
+        let dismissAction = UIAlertAction(title: "Close", style: .cancel) { (closeAction) in
+            //
+        }
+        
+        
+        
+        actionSheet.addAction(tweetAction)
+        actionSheet.addAction(facebookAction)
+        actionSheet.addAction(dismissAction)
+        
+        present(actionSheet, animated: true, completion: nil)
+        
+    }
     
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         
@@ -128,6 +181,10 @@ class HomeViewController: UIViewController, UIViewControllerTransitioningDelegat
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //contactButton.layer.borderColor = contactButton.titleLabel?.textColor as! CGColor?
+        contactButton.layer.borderWidth = 1.0
+        contactButton.layer.cornerRadius = contactButton.bounds.size.height / 2
         
         //colorGradientBackground()
         

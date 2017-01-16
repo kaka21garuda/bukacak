@@ -33,14 +33,12 @@ class ViewController: UIViewController, UIViewControllerTransitioningDelegate {
         self.buttonSender = sender
         self.performSegue(withIdentifier: "homeSegue", sender: sender)
     }
-    
-    
-    
+
     var effect: UIVisualEffect!
     
     let myText = " swift"
     let codingText = "    1> let me = Awesomeness()\n\n    2> me.deliver(message: \"Hello, \", to: \"world!\")\n\n    3> let welcome = UIAlertController(title: \"Welcome\", message: helloLanguage(), preferredStyle: .alert)\n\n    4> func helloLanguage() -> String {\n         if me.language == .english {\n            return \"Hello\"\n         } else if me.language == .spanish {\n            return \"Hola\"\n         } else {\n            return \"Welcome\"\n         }\n       }\n\n    ^D"
-
+    
     
     
     var myCounter = 0
@@ -51,7 +49,7 @@ class ViewController: UIViewController, UIViewControllerTransitioningDelegate {
     
     func fireTimer(){
         timer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(ViewController.typeLetter), userInfo: nil, repeats: true)
-
+        
     }
     
     func fireCoding() {
@@ -61,7 +59,7 @@ class ViewController: UIViewController, UIViewControllerTransitioningDelegate {
     func typeLetter(){
         if myCounter < (Array(myText.characters)).count {
             textView.text = textView.text! + String(Array(myText.characters)[myCounter])
-            let randomInterval = 0.07
+            let randomInterval = 0.9
             timer?.invalidate()
             timer = Timer.scheduledTimer(timeInterval: randomInterval, target: self, selector: #selector(ViewController.typeLetter), userInfo: nil, repeats: false)
         } else {
@@ -78,7 +76,7 @@ class ViewController: UIViewController, UIViewControllerTransitioningDelegate {
     func codeLetter() {
         if anotherCounter < (Array(codingText.characters)).count {
             codingTextView.text = codingTextView.text! + String(Array(codingText.characters)[anotherCounter])
-            let interval = 0.01
+            let interval = 0.07
             anotherTimer?.invalidate()
             anotherTimer = Timer.scheduledTimer(timeInterval: interval, target: self, selector: #selector(ViewController.codeLetter), userInfo: nil, repeats: false)
         } else {
@@ -104,11 +102,17 @@ class ViewController: UIViewController, UIViewControllerTransitioningDelegate {
         alertView.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
         alertView.alpha = 0
         
-        UIView.animate(withDuration: 0.4) { 
+        UIView.animate(withDuration: 0.4, delay: 2.0, options: .curveEaseInOut, animations: {
             self.visualBlur.effect = self.effect
             self.alertView.alpha = 1.0
             self.alertView.transform = CGAffineTransform.identity
-        }
+        }, completion: nil)
+        
+        //        UIView.animate(withDuration: 0.4) {
+        //            self.visualBlur.effect = self.effect
+        //            self.alertView.alpha = 1.0
+        //            self.alertView.transform = CGAffineTransform.identity
+        //        }
         
     }
     
@@ -171,5 +175,5 @@ class ViewController: UIViewController, UIViewControllerTransitioningDelegate {
         }
     }
     
-
+    
 }

@@ -48,20 +48,28 @@ class SkillViewController: UIViewController {
         let circleWidth = CGFloat(self.view.frame.height / 4)
         let circleHeight = circleWidth
         
-        // let c = SkillLoaderView(frame: <#T##CGRect#>, text: "OMG!")
+       
         
-        let oneCircle = SkillLoaderView(frame: CGRect(x: 0 + 10, y: ((self.view.bounds.height / 2) - (circleHeight / 2)) - 50, width: circleWidth, height: circleHeight), text: "OMG!")
+        let oneCircle = SkillLoaderView(frame: CGRect(x: 0 + 10, y: ((self.view.bounds.height / 2) - (circleHeight / 2)) - 50, width: circleWidth, height: circleHeight), text: "1", endText: "55")
         
-        let twoCircle = SkillLoaderView(frame: CGRect(x: (self.view.bounds.width / 2) + 10, y: ((self.view.bounds.height / 2) - (circleHeight / 2)) - 50, width: circleWidth, height: circleHeight))
-        let threeCircle = SkillLoaderView(frame: CGRect(x: 0 + 10, y: (self.view.bounds.height / 2) + (circleHeight / 2), width: circleWidth, height: circleHeight))
+        let twoCircle = SkillLoaderView(frame: CGRect(x: (self.view.bounds.width / 2) + 10, y: ((self.view.bounds.height / 2) - (circleHeight / 2)) - 50, width: circleWidth, height: circleHeight), text: "2", endText: "100")
+        
+        let threeCircle = SkillLoaderView(frame: CGRect(x: 0 + 10, y: (self.view.bounds.height / 2) + (circleHeight / 2), width: circleWidth, height: circleHeight), text: "3", endText: "65")
 
-        let fourCircle = SkillLoaderView(frame: CGRect(x: (self.view.bounds.width / 2) + 10, y: (self.view.bounds.height / 2) + (circleHeight / 2), width: circleWidth, height: circleHeight))
+        let fourCircle = SkillLoaderView(frame: CGRect(x: (self.view.bounds.width / 2) + 10, y: (self.view.bounds.height / 2) + (circleHeight / 2), width: circleWidth, height: circleHeight), text: "4", endText: "80")
         
         view.addSubview(oneCircle)
         view.addSubview(twoCircle)
         view.addSubview(threeCircle)
         view.addSubview(fourCircle)
         
+        oneCircle.count(fromValue: 0, toValue: 55, withDuration: 5, animationType: .easeOut)
+        
+        twoCircle.count(fromValue: 0, toValue: 100, withDuration: 5, animationType: .easeOut)
+        
+        threeCircle.count(fromValue: 0, toValue: 65, withDuration: 5, animationType: .easeOut)
+        
+        fourCircle.count(fromValue: 0, toValue: 80, withDuration: 5, animationType: .easeOut)
         
         // animate the circle here
         oneCircle.animate(duration: 5.0, completion: 0.55, color: UIColor(red: 23 / 255.0, green: 168 / 255.0, blue: (248 / 255.0), alpha: 1.0).cgColor)

@@ -40,6 +40,7 @@ class ProjectsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         self.dismissButton.setBackgroundImage(#imageLiteral(resourceName: "error-3"), for: .normal)
         self.dismissButton.layer.cornerRadius = self.dismissButton.bounds.size.height / 2
         self.dismissButton.layer.borderColor = UIColor.white.cgColor

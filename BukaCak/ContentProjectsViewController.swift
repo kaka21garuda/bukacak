@@ -20,6 +20,7 @@ class ContentProjectsViewController: UIViewController {
     var titleText: String!
     var descriptionProject: String!
     var imagefile: String!
+
     
 
     override func viewDidLoad() {

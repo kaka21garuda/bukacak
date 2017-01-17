@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C61642FC1E2DFA9A00AC96C6 /* DynamicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61642FB1E2DFA9A00AC96C6 /* DynamicViewController.swift */; };
 		C61B424C1E26107C007D36E3 /* EducationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61B424B1E26107C007D36E3 /* EducationViewController.swift */; };
 		C61B42501E2615B6007D36E3 /* SkillLoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61B424F1E2615B6007D36E3 /* SkillLoaderView.swift */; };
 		C61BD8FC1E185133005DFA97 /* AboutCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61BD8FB1E185133005DFA97 /* AboutCollectionViewCell.swift */; };
@@ -47,6 +48,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C61642FB1E2DFA9A00AC96C6 /* DynamicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicViewController.swift; sourceTree = "<group>"; };
 		C61B424B1E26107C007D36E3 /* EducationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EducationViewController.swift; sourceTree = "<group>"; };
 		C61B424F1E2615B6007D36E3 /* SkillLoaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkillLoaderView.swift; sourceTree = "<group>"; };
 		C61BD8FB1E185133005DFA97 /* AboutCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 		C6C1190B1E1449AB0041709B /* BukaCak */ = {
 			isa = PBXGroup;
 			children = (
+				C61642FB1E2DFA9A00AC96C6 /* DynamicViewController.swift */,
 				C660B4E51E1EE1B00064BEEA /* ViewController.swift */,
 				C6E9A6D41E1C9C8E009FE5B0 /* AnimationAndTransition */,
 				C6E9A6D31E1C9C69009FE5B0 /* ProjectShowCase */,
@@ -343,6 +346,7 @@
 				C6D4D4441E16E7C40061FD35 /* CircularTransition.swift in Sources */,
 				C6E9A6D61E1C9CC6009FE5B0 /* MainProjectShowCase.swift in Sources */,
 				C6DA1D821E19C75200E91556 /* SchoolView.swift in Sources */,
+				C61642FC1E2DFA9A00AC96C6 /* DynamicViewController.swift in Sources */,
 				C6D4D4421E16E4D50061FD35 /* AboutViewController.swift in Sources */,
 				C6DA1D861E1B174800E91556 /* ProjectsCollectionViewCell.swift in Sources */,
 				C6E9A6D01E1C9BA4009FE5B0 /* ContentProjectsViewController.swift in Sources */,

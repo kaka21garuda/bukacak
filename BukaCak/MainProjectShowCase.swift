@@ -32,7 +32,7 @@ class MainProjectShowCase: UIViewController {
         
         self.pageTitle = NSArray(objects: "Alfa News", "Ipsma", "Whamp!", "PARKR")
         self.pageDescription = NSArray(objects: "Enable the user to read news with different categories from the most reliable sources, give them a better experience of reading news with the user friendly UI in Alfa News.", "Ipsma is an mobile iOS app that allows user to create an event and invite people within the user's contact list. User can pick location where they want to create the event, set the event detail and pass their invitation via SMS text / email.", "Whamp: an extraordinary 2d iPhone game which will bring you into another level of complexity, wrapped in a simplicity well minded design.", "Driver assisted mobile UI for determining on-street parking rules in San Francisco.")
-        self.pageImage = NSArray(objects: "AlphaIcon1024", "Group@80", "Group@80 (1)", "parkr")
+        self.pageImage = NSArray(objects: "AlphaIcon1024", "Group@180", "Group@180 (1)", "parkr")
         
         
         self.pageViewController = self.storyboard?.instantiateViewController(withIdentifier: "PageViewController") as! UIPageViewController

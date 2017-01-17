@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="nAz-d1-lTg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="1Z0-xY-Lj6">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -400,6 +400,24 @@
             </objects>
             <point key="canvasLocation" x="-74.400000000000006" y="748.87556221889065"/>
         </scene>
+        <!--Dynamic View Controller-->
+        <scene sceneID="ZuR-zs-pDq">
+            <objects>
+                <viewController id="1Z0-xY-Lj6" customClass="DynamicViewController" customModule="BukaCak" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bBS-uu-NSk"/>
+                        <viewControllerLayoutGuide type="bottom" id="G8E-wc-Sr3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="R6U-wS-UMe">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rX7-Ua-1fF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="662" y="1518"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="XJX-CJ-E5M">
             <objects>
@@ -662,10 +680,10 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QMs-Tt-5UH">
                                             <rect key="frame" x="43" y="47" width="288" height="532"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3x5-F0-yFk">
-                                                    <rect key="frame" x="24" y="8" width="243" height="222"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3x5-F0-yFk">
+                                                    <rect key="frame" x="8" y="8" width="272" height="222"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="243" id="7L6-ht-QTH"/>
+                                                        <constraint firstAttribute="width" constant="272" id="7L6-ht-QTH"/>
                                                         <constraint firstAttribute="height" constant="222" id="h81-GV-vpU"/>
                                                     </constraints>
                                                 </imageView>
@@ -680,7 +698,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p5E-vT-tcT">
-                                                    <rect key="frame" x="8" y="267" width="272" height="257"/>
+                                                    <rect key="frame" x="8" y="267" width="272" height="198"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
@@ -692,11 +710,11 @@
                                                 <constraint firstItem="p5E-vT-tcT" firstAttribute="leading" secondItem="QMs-Tt-5UH" secondAttribute="leading" constant="8" id="35z-ed-wVP"/>
                                                 <constraint firstItem="p5E-vT-tcT" firstAttribute="centerX" secondItem="QMs-Tt-5UH" secondAttribute="centerX" id="870-qH-FgG"/>
                                                 <constraint firstItem="hgg-hC-PwK" firstAttribute="centerX" secondItem="QMs-Tt-5UH" secondAttribute="centerX" constant="1.5" id="A6P-Fs-uCx"/>
-                                                <constraint firstItem="3x5-F0-yFk" firstAttribute="leading" secondItem="QMs-Tt-5UH" secondAttribute="leading" constant="24" id="Bb8-rt-S0v"/>
-                                                <constraint firstAttribute="bottom" secondItem="p5E-vT-tcT" secondAttribute="bottom" constant="8" id="JNn-Yw-P8s"/>
+                                                <constraint firstItem="3x5-F0-yFk" firstAttribute="leading" secondItem="QMs-Tt-5UH" secondAttribute="leading" constant="8" id="Bb8-rt-S0v"/>
+                                                <constraint firstAttribute="bottom" secondItem="p5E-vT-tcT" secondAttribute="bottom" constant="67" id="JNn-Yw-P8s"/>
                                                 <constraint firstItem="3x5-F0-yFk" firstAttribute="top" secondItem="QMs-Tt-5UH" secondAttribute="top" constant="8" id="OhN-WD-vkH"/>
                                                 <constraint firstItem="p5E-vT-tcT" firstAttribute="top" secondItem="hgg-hC-PwK" secondAttribute="bottom" constant="8" id="Yop-Te-blz"/>
-                                                <constraint firstAttribute="trailing" secondItem="3x5-F0-yFk" secondAttribute="trailing" constant="21" id="j1R-F0-AzE"/>
+                                                <constraint firstAttribute="trailing" secondItem="3x5-F0-yFk" secondAttribute="trailing" constant="8" id="j1R-F0-AzE"/>
                                                 <constraint firstItem="hgg-hC-PwK" firstAttribute="top" secondItem="3x5-F0-yFk" secondAttribute="bottom" constant="8" id="m6k-40-C3a"/>
                                                 <constraint firstAttribute="trailing" secondItem="p5E-vT-tcT" secondAttribute="trailing" constant="8" id="wXR-gM-owG"/>
                                             </constraints>
@@ -911,7 +929,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="McZ-mL-CXT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-74" y="-1027"/>
+            <point key="canvasLocation" x="-74" y="-633"/>
         </scene>
     </scenes>
 </document>

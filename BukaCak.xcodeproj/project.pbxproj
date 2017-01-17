@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C610FD6E1E207D3500DFFEA0 /* CountingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C610FD6D1E207D3500DFFEA0 /* CountingLabel.swift */; };
 		C61B424C1E26107C007D36E3 /* EducationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61B424B1E26107C007D36E3 /* EducationViewController.swift */; };
 		C61B42501E2615B6007D36E3 /* SkillLoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61B424F1E2615B6007D36E3 /* SkillLoaderView.swift */; };
 		C61BD8FC1E185133005DFA97 /* AboutCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61BD8FB1E185133005DFA97 /* AboutCollectionViewCell.swift */; };
@@ -48,7 +47,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		C610FD6D1E207D3500DFFEA0 /* CountingLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountingLabel.swift; sourceTree = "<group>"; };
 		C61B424B1E26107C007D36E3 /* EducationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EducationViewController.swift; sourceTree = "<group>"; };
 		C61B424F1E2615B6007D36E3 /* SkillLoaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkillLoaderView.swift; sourceTree = "<group>"; };
 		C61BD8FB1E185133005DFA97 /* AboutCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -134,7 +132,6 @@
 				C6C119101E1449AB0041709B /* Main.storyboard */,
 				C6C119131E1449AB0041709B /* Assets.xcassets */,
 				C6C119151E1449AB0041709B /* LaunchScreen.storyboard */,
-				C610FD6D1E207D3500DFFEA0 /* CountingLabel.swift */,
 				C6C119181E1449AB0041709B /* Info.plist */,
 			);
 			path = BukaCak;
@@ -341,7 +338,6 @@
 				C61B424C1E26107C007D36E3 /* EducationViewController.swift in Sources */,
 				C62A4E921E1758CE00FC81A9 /* SkillViewController.swift in Sources */,
 				C6C1190D1E1449AB0041709B /* AppDelegate.swift in Sources */,
-				C610FD6E1E207D3500DFFEA0 /* CountingLabel.swift in Sources */,
 				C6DA1D841E1B128200E91556 /* ProjectsViewController.swift in Sources */,
 				C6C1193B1E144C500041709B /* HomeViewController.swift in Sources */,
 				C6D4D4441E16E7C40061FD35 /* CircularTransition.swift in Sources */,

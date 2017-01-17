@@ -22,17 +22,17 @@ struct School {
 
 let product = School(schoolName: "Product Academy",schoolPlace: "San Francisco, CA",schoolYear: "2016 - present",schoolStory: "The Product College is a two year program taken place in Make School, each year is broken up into two semesters, and each semester into two quarters. Students focus the majority of their time on one of two technical concentrations: Mobile Development and Full Stack Web Development.", latitude: 37.7735142, longtitude: -122.4178074)
 
-
-
 let summer = School(schoolName: "Summer Academy",schoolPlace: "San Francisco, CA",schoolYear: "2016(2 months)", schoolStory: "The Make School Summer Academy is designed to teach product development to high school and college students passionate about technology.", latitude: 37.7735142, longtitude: -122.4178074)
 
-let inti = School(schoolName: "Inti University", schoolPlace: "KL, Malaysia",schoolYear: "2015 -2016",schoolStory: "INTI International University & Colleges in Malaysia offers tertiary and pre- university courses with campuses in Malaysia. I attended INTI in 2015 - 2016 for foundational degree in Computer Science. \n\nCourses that I take\n∙Pre-Calculus\n∙Chemistry\n∙AP Computer Science\n∙General Studies.", latitude: 3.0741922, longtitude: 101.5909564)
+let inti = School(schoolName: "Inti University", schoolPlace: "KL, Malaysia",schoolYear: "2015 -2016",schoolStory: "INTI International University & Colleges in Malaysia offers tertiary and pre- university courses with campuses in Malaysia. I attended INTI in 2015 - 2016 for foundational degree in Computer Science. \n\nCourses that I took:\n∙Pre-Calculus\n∙Chemistry\n∙AP Computer Science\n∙General Studies.", latitude: 3.0741922, longtitude: 101.5909564)
 
 let schoolsList = [inti, summer, product]
 
 class EducationViewController: UIViewController, UICollisionBehaviorDelegate {
     
+    var timer: Timer!
     
+    @IBOutlet weak var blinkingLabel: UILabel!
        
     @IBOutlet weak var dismissButton: UIButton!
    
@@ -49,8 +49,17 @@ class EducationViewController: UIViewController, UICollisionBehaviorDelegate {
     var viewDragging = false
     var viewPinned = false
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        labelFadeOut(view: blinkingLabel)
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
 
         // Do any additional setup after loading the view.
         self.dismissButton.layer.cornerRadius = dismissButton.frame.size.height / 2
@@ -72,6 +81,22 @@ class EducationViewController: UIViewController, UICollisionBehaviorDelegate {
                 views.append(view)
                 offset -= 50
             }
+        }
+    }
+    
+    func labelFadeOut(view: UIView) {
+        let animationDuration = 0.2
+        
+        for i in 0..<1000 {
+            // Fade in the view
+            UIView.animate(withDuration: animationDuration, animations: {
+                view.alpha = 1.0
+            }, completion: { (success) in
+                // if success, fade out the view.
+                UIView.animate(withDuration: animationDuration, delay: 0.3, options: .curveEaseOut, animations: {
+                    view.alpha = 0
+                }, completion: nil)
+            })
         }
     }
     

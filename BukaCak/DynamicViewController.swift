@@ -10,10 +10,12 @@ import UIKit
 
 class DynamicViewController: UIViewController {
     
-    var pakrButton: UIButton!
-    var ipsmaButton: UIButton!
-    var whampButton: UIButton!
-    var alfaButton: UIButton!
+    
+    
+    var pakrButton  = BallButton()
+    var ipsmaButton = BallButton()
+    var whampButton = BallButton()
+    var alfaButton  = BallButton()
     
     lazy var animator: UIDynamicAnimator = {
         return UIDynamicAnimator(referenceView: self.view)
@@ -29,17 +31,6 @@ class DynamicViewController: UIViewController {
         lazycollider.translatesReferenceBoundsIntoBoundary = true
         return lazycollider
     }()
-    
-//    lazy var dynamicItemBehavior: UIDynamicItemBehavior {
-//        let lazybehavior = UIDynamicItemBehavior()
-//        
-//        // 0 = no , 1.0 = max
-//        lazybehavior.elasticity = 0.8
-//        
-//        
-//        return lazybehavior
-//        
-//    }()
     
     lazy var dynamicItemBehavior:UIDynamicItemBehavior = {
         let lazyBehavior = UIDynamicItemBehavior()
@@ -69,62 +60,57 @@ class DynamicViewController: UIViewController {
     }
     
     func drawButton() {
-        let buttonSize = CGSize(width: 60, height: 60)
-        let centerPoint = CGPoint(x: self.view.bounds.midX - (buttonSize.width / 2), y: self.view.bounds.midY - (buttonSize.height / 2))
-        let frame = CGRect(origin: centerPoint, size: buttonSize)
+        let buttons = [pakrButton, ipsmaButton, whampButton, alfaButton]
+        let colors = [UIColor.blue, UIColor.orange, UIColor.red, UIColor.green]
         
-        pakrButton = UIButton(frame: frame)
-        pakrButton.backgroundColor = UIColor.orange
-        pakrButton.layer.cornerRadius = pakrButton.bounds.size.height / 2
+        var count = 0
         
-        ipsmaButton = UIButton(frame: frame)
-        ipsmaButton.backgroundColor = UIColor.blue
-        ipsmaButton.layer.cornerRadius = ipsmaButton.bounds.size.height / 2
+        for button in buttons {
+            let buttonSize = CGSize(width: 120, height: 120)
+            
+            let x = CGFloat(arc4random() % 120) - 60
+            let y = CGFloat(arc4random() % 120) - 60
+            
+            print(x, y)
+            
+            let centerPoint = CGPoint(x: self.view.bounds.midX - (buttonSize.width / 2) + x,
+                                      y: self.view.bounds.midY - (buttonSize.height / 2) + y)
+            let frame = CGRect(origin: centerPoint, size: buttonSize)
+            
+            button.frame = frame
+            button.backgroundColor = colors[count]
+            count += 1
+            button.layer.cornerRadius = pakrButton.bounds.size.height / 2
+            
+            self.view.addSubview(button)
+        }
         
-        whampButton = UIButton(frame: frame)
-        whampButton.backgroundColor = UIColor.red
-        whampButton.layer.cornerRadius = whampButton.bounds.size.height / 2
-        
-        alfaButton = UIButton(frame: frame)
-        alfaButton.backgroundColor = UIColor.green
-        alfaButton.layer.cornerRadius = alfaButton.bounds.size.height / 2
-        
-        self.view.addSubview(pakrButton)
-        self.view.addSubview(ipsmaButton)
-        self.view.addSubview(whampButton)
-        self.view.addSubview(alfaButton)
-        
-        
+       
     }
     
     func animateButton() {
-        // adding animation behaviour
-        animator.addBehavior(gravity)
-        animator.addBehavior(collider)
-        animator.addBehavior(dynamicItemBehavior)
-        // adding item into the behaviour
-        gravity.addItem(pakrButton)
-        collider.addItem(pakrButton)
-        dynamicItemBehavior.addItem(pakrButton)
+        let behaviors = [gravity, collider, dynamicItemBehavior] as [Any]
         
-        gravity.addItem(ipsmaButton)
-        collider.addItem(ipsmaButton)
-        dynamicItemBehavior.addItem(ipsmaButton)
-        
-        gravity.addItem(whampButton)
-        collider.addItem(whampButton)
-        dynamicItemBehavior.addItem(whampButton)
-        
-        gravity.addItem(alfaButton)
-        collider.addItem(alfaButton)
-        dynamicItemBehavior.addItem(alfaButton)
-        
-        
-        
+        for behavior in behaviors {
+            animator.addBehavior(behavior as! UIDynamicBehavior)
+            (behavior as AnyObject).addItem(pakrButton)
+            (behavior as AnyObject).addItem(ipsmaButton)
+            (behavior as AnyObject).addItem(whampButton)
+            (behavior as AnyObject).addItem(alfaButton)
+        }
         
     }
-    
-    
-    
-
 }
+
+class BallButton: UIButton {
+    override var collisionBoundsType: UIDynamicItemCollisionBoundsType {
+        return .ellipse
+    }
+}
+
+
+
+
+
+
+

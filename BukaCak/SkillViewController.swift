@@ -31,6 +31,8 @@ class SkillViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         print("This is Skill View")
+        
+        print(UIFont.familyNames)
 
         // Do any additional setup after loading the view.
         dismissButton.layer.cornerRadius = dismissButton.frame.height / 2
@@ -48,35 +50,19 @@ class SkillViewController: UIViewController {
         let circleWidth = CGFloat(self.view.frame.height / 4)
         let circleHeight = circleWidth
         
-       
+        let oneCircle = SkillLoaderView(frame: CGRect(x: 0 + 10, y: ((self.view.bounds.height / 2) - (circleHeight / 2)) - 50, width: circleWidth, height: circleHeight), start: 0, end: 55, interval: 0.09, completion: 0.55, color: UIColor(red: 23 / 255.0, green: 168 / 255.0, blue: (248 / 255.0), alpha: 1.0))
         
-        let oneCircle = SkillLoaderView(frame: CGRect(x: 0 + 10, y: ((self.view.bounds.height / 2) - (circleHeight / 2)) - 50, width: circleWidth, height: circleHeight), text: "1", endText: "55")
+        let twoCircle = SkillLoaderView(frame: CGRect(x: (self.view.bounds.width / 2) + 10, y: ((self.view.bounds.height / 2) - (circleHeight / 2)) - 50, width: circleWidth, height: circleHeight), start: 0, end: 100, interval: 0.05, completion: 1.0, color: UIColor.green)
         
-        let twoCircle = SkillLoaderView(frame: CGRect(x: (self.view.bounds.width / 2) + 10, y: ((self.view.bounds.height / 2) - (circleHeight / 2)) - 50, width: circleWidth, height: circleHeight), text: "2", endText: "100")
-        
-        let threeCircle = SkillLoaderView(frame: CGRect(x: 0 + 10, y: (self.view.bounds.height / 2) + (circleHeight / 2), width: circleWidth, height: circleHeight), text: "3", endText: "65")
+        let threeCircle = SkillLoaderView(frame: CGRect(x: 0 + 10, y: (self.view.bounds.height / 2) + (circleHeight / 2), width: circleWidth, height: circleHeight), start: 0, end: 70, interval: 0.0714, completion: 0.7, color: UIColor.yellow)
 
-        let fourCircle = SkillLoaderView(frame: CGRect(x: (self.view.bounds.width / 2) + 10, y: (self.view.bounds.height / 2) + (circleHeight / 2), width: circleWidth, height: circleHeight), text: "4", endText: "80")
+        let fourCircle = SkillLoaderView(frame: CGRect(x: (self.view.bounds.width / 2) + 10, y: (self.view.bounds.height / 2) + (circleHeight / 2), width: circleWidth, height: circleHeight), start: 0, end: 80, interval: 0.0625, completion: 0.8, color: UIColor.cyan)
         
         view.addSubview(oneCircle)
         view.addSubview(twoCircle)
         view.addSubview(threeCircle)
         view.addSubview(fourCircle)
         
-        oneCircle.count(fromValue: 0, toValue: 55, withDuration: 5, animationType: .easeOut)
-        
-        twoCircle.count(fromValue: 0, toValue: 100, withDuration: 5, animationType: .easeOut)
-        
-        threeCircle.count(fromValue: 0, toValue: 65, withDuration: 5, animationType: .easeOut)
-        
-        fourCircle.count(fromValue: 0, toValue: 80, withDuration: 5, animationType: .easeOut)
-        
-        // animate the circle here
-        oneCircle.animate(duration: 5.0, completion: 0.55, color: UIColor(red: 23 / 255.0, green: 168 / 255.0, blue: (248 / 255.0), alpha: 1.0).cgColor)
-        twoCircle.animate(duration: 5.0, completion: 1.0, color: UIColor(red: 254 / 255.0, green: 139 / 255.0, blue: 58 / 255.0, alpha: 1.0).cgColor)
-        threeCircle.animate(duration: 5.0, completion: 0.65, color: UIColor(red: 51 / 255.0, green: 51 / 255.0, blue: 51 / 255.0, alpha: 1.0).cgColor)
-        fourCircle.animate(duration: 5.0, completion: 0.80, color: UIColor(red: 79 / 255.0, green: 221 / 255.0, blue: 121 / 255.0, alpha: 1.0).cgColor)
-
     }
     
     

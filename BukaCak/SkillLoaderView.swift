@@ -8,64 +8,111 @@
 
 import UIKit
 
-enum CounterAnimationType {
-    case linear
-    case easeIn
-    case easeOut
-}
-
 class SkillLoaderView: UIView {
     
-    let counterVelocity: Float = 3.0
+    var counterVelocity: TimeInterval = 0.03
     
-    var timer: Timer?
+    var timer: Timer!
     
     let label = UILabel()
     
-    var labelText = "0"
-    var endingLabelText = "100"
-    
-    var countStart = 0
-    var countEnd = 100
-    
-    var progress: TimeInterval!
-    var duration: TimeInterval!
-    var lastUpdate: TimeInterval!
-    
-    var counterAnimationType: CounterAnimationType!
-    
-    var currentCounterValue: Int {
-        if progress >= duration {
-            return countEnd
-        }
-        
-        let percentage = Int(progress / duration)
-        let update = updateCounter(counterValue: percentage)
-        
-        return countStart + (update * (countEnd - countStart))
-        
-    }
-    
-    
+    var countStart  = 0
+    var countEnd    = 100
+    var count       = 0
+
     var circleLayer: CAShapeLayer!
     
-    init(frame: CGRect, text: String, endText: String) {
+    var startTime = NSDate.timeIntervalSinceReferenceDate
+    
+    // MARK: - Init
+    
+    // Initialize with frame, start, end, interval, completion, and color
+    init(frame: CGRect, start: Int, end: Int, interval: TimeInterval, completion: CGFloat, color: UIColor) {
         
-        labelText = text
-        endingLabelText = endText
+        countStart = start
+        countEnd = end
+        count = start
+        //counterVelocity = interval
         
         super.init(frame:frame)
         
-        setup()
+        setupCircle()
+        setupLabel()
+        startTimer()
+        
+        let duration = TimeInterval(countEnd - countStart) * counterVelocity
+        animate(duration: duration, completion: completion, color: color.cgColor)
+        
+        print(duration)
+        print("--------------")
+        
+        // counterVelocity = interval
+    }
+    
+    // Initialize with frame, start, end, interval, completion
+    init(frame: CGRect, start: Int, end: Int, interval: TimeInterval) {
+        
+        countStart = start
+        countEnd = end
+        count = start
+        counterVelocity = interval
+        
+        super.init(frame:frame)
+        
+        setupCircle()
+        setupLabel()
+        startTimer()
+        
+        let duration = TimeInterval(countEnd - countStart) * counterVelocity
+        animate(duration: duration, completion: 1, color: UIColor.black.cgColor)
+    }
+    
+    
+    init(frame: CGRect, start: Int, end: Int) {
+        
+        countStart = start
+        countEnd = end
+        count = start
+        
+        super.init(frame:frame)
+        
+        setupCircle()
+        setupLabel()
+        startTimer()
+        
+        let duration = TimeInterval(countEnd - countStart) * counterVelocity
+        animate(duration: duration, completion: 1, color: UIColor.red.cgColor)
     }
     
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setup()
+        
+        setupCircle()
+        setupLabel()
+        startTimer()
+        
+        let duration = TimeInterval(countEnd - countStart) * counterVelocity
+        animate(duration: duration, completion: 1, color: UIColor.red.cgColor)
     }
     
-    func setup() {
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        
+        print("Initialize skill loader from ocder????")
+        
+        setupCircle()
+        setupLabel()
+        startTimer()
+        
+        let duration = TimeInterval(countEnd - countStart) * counterVelocity
+        print(duration)
+        animate(duration: duration, completion: 1, color: UIColor.red.cgColor)
+    }
+    
+    // MARK: - Methods
+    
+    func setupCircle() {
     
         // UIBezierPath to create the GCPath Layer
         // The path should be the entire circle
@@ -81,90 +128,52 @@ class SkillLoaderView: UIView {
         
         layer.addSublayer(circleLayer)
         
-        setupLabel()
-        
+    }
+    
+    
+    func startTimer() {
+        startTime = NSDate.timeIntervalSinceReferenceDate
+        timer = Timer.scheduledTimer(timeInterval: 0.014, target: self, selector: #selector(countUp), userInfo: nil, repeats: true)
     }
     
     
     func setupLabel() {
-        self.addSubview(label)
-        label.text = "\(labelText)"
-        label.font = UIFont.boldSystemFont(ofSize: 18)
+        label.text = "\(count) %"
+        label.frame = bounds
+        
+        label.font = UIFont(name: "Avenir Next", size: 18)
+        
+        label.textAlignment = .center
         label.textColor = UIColor.white
-        label.sizeToFit()
+        // label.sizeToFit()
         print(self.bounds)
         //label.layer.bounds.width = 20
         label.center.x = self.bounds.midX
         label.center.y = self.bounds.midY
+        self.addSubview(label)
         
-//        count(fromValue: Int(labelText)!, toValue: Int(endingLabelText)!, withDuration: 5, animationType: .easeOut)
     }
     
-    func count(fromValue: Int, toValue: Int, withDuration duration: TimeInterval, animationType: CounterAnimationType) {
-        
-        self.countStart = fromValue
-        self.countEnd = toValue
-        self.duration = duration
-        self.counterAnimationType = animationType
-        self.progress = 0
-        self.lastUpdate = Date.timeIntervalSinceReferenceDate
-        
-        invalidateTimer()
-        
-        if duration == 0 {
-            updateText(value: toValue)
-            return
+    func countUp() {
+        if count < countEnd {
+            count += 1
+            label.text = "\(count) %"
+        } else {
+            timer.invalidate()
         }
         
-        timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(updateValue), userInfo: nil, repeats: true)
+        var t = NSDate.timeIntervalSinceReferenceDate - startTime
+        print(t, Double(count) * counterVelocity, count)
     }
     
-    func updateValue() {
-        let now = Date.timeIntervalSinceReferenceDate
-        progress = progress + (now - lastUpdate)
-        lastUpdate = now
-        
-        if progress >= duration {
-            invalidateTimer()
-            progress = duration
-        }
-        
-        // update Text Label
-        updateText(value: currentCounterValue)
-        
-    }
-    
-    func updateText(value: Int) {
-        self.label.text = "\(value)"
-        //self.addSubview(label)
-    }
-    
-    func updateCounter(counterValue: Int) -> Int {
-        switch counterAnimationType! {
-        case .linear:
-            return counterValue
-        case .easeIn:
-            return Int(powf(Float(counterValue), counterVelocity))
-        case .easeOut:
-            return Int(1.0 - powf(1.0 - Float(counterValue), counterVelocity))
-        }
-    }
-    
-    func invalidateTimer() {
-        timer?.invalidate()
-        timer = nil
-    }
-
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
     
     func animate(duration: TimeInterval, completion: CGFloat, color: CGColor) {
+        
         // We want to animate the stroke end property of the circle layer.
         let animation = CABasicAnimation(keyPath: "strokeEnd")
         
         // Set the animation duration appropriately
-        animation.duration = duration
+        animation.duration = duration //
         
         //Animate from 0 to 1
         animation.fromValue = 0

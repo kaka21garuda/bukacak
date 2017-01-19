@@ -38,7 +38,7 @@ class DynamicViewController: UIViewController {
         let lazyBehavior = UIDynamicItemBehavior()
         
         // 0 = no elacticity, 1.0 = max elacticity
-        lazyBehavior.elasticity = 0.8
+        lazyBehavior.elasticity = 1.0
         lazyBehavior.allowsRotation = true
         lazyBehavior.friction = 0.4
         //lazyBehavior.density = 0.4
@@ -101,9 +101,26 @@ class DynamicViewController: UIViewController {
             (behavior as AnyObject).addItem(ipsmaButton)
             (behavior as AnyObject).addItem(whampButton)
             (behavior as AnyObject).addItem(alfaButton)
+            updateMotion()
         }
         
     }
+    
+    func updateMotion() {
+        if coreMotionManager.isAccelerometerAvailable && !coreMotionManager.isAccelerometerActive {
+            coreMotionManager.accelerometerUpdateInterval = 0.25
+            coreMotionManager.startAccelerometerUpdates(to: OperationQueue.main, withHandler: { (data, error) in
+                if self.gravity.dynamicAnimator != nil {
+                    if let dx = data?.acceleration.x, let dy = data?.acceleration.y {
+                        self.gravity.gravityDirection = CGVector(dx: dx, dy: dy)
+                    }
+                } else {
+                    self.coreMotionManager.stopAccelerometerUpdates()
+                }
+            })
+        }
+    }
+    
 }
 
 class BallButton: UIButton {

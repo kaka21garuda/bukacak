@@ -15,6 +15,9 @@ class SkillLoaderView: UIView {
     var timer: Timer!
     
     let label = UILabel()
+    let titleLabel = UILabel()
+    
+    var titleText = ""
     
     var countStart  = 0
     var countEnd    = 100
@@ -27,17 +30,20 @@ class SkillLoaderView: UIView {
     // MARK: - Init
     
     // Initialize with frame, start, end, interval, completion, and color
-    init(frame: CGRect, start: Int, end: Int, interval: TimeInterval, completion: CGFloat, color: UIColor) {
+    init(frame: CGRect, start: Int, end: Int, interval: TimeInterval, completion: CGFloat, color: UIColor, title: String) {
         
         countStart = start
         countEnd = end
         count = start
+        titleText = title
+        
         //counterVelocity = interval
         
         super.init(frame:frame)
         
         setupCircle()
         setupLabel()
+        setupTitleLabel()
         startTimer()
         
         let duration = TimeInterval(countEnd - countStart) * counterVelocity
@@ -61,6 +67,7 @@ class SkillLoaderView: UIView {
         
         setupCircle()
         setupLabel()
+        setupTitleLabel()
         startTimer()
         
         let duration = TimeInterval(countEnd - countStart) * counterVelocity
@@ -79,6 +86,7 @@ class SkillLoaderView: UIView {
         setupCircle()
         setupLabel()
         startTimer()
+        setupTitleLabel()
         
         let duration = TimeInterval(countEnd - countStart) * counterVelocity
         animate(duration: duration, completion: 1, color: UIColor.red.cgColor)
@@ -91,6 +99,7 @@ class SkillLoaderView: UIView {
         setupCircle()
         setupLabel()
         startTimer()
+        setupTitleLabel()
         
         let duration = TimeInterval(countEnd - countStart) * counterVelocity
         animate(duration: duration, completion: 1, color: UIColor.red.cgColor)
@@ -151,7 +160,19 @@ class SkillLoaderView: UIView {
         label.center.x = self.bounds.midX
         label.center.y = self.bounds.midY
         self.addSubview(label)
+    }
+    
+    func setupTitleLabel() {
+        titleLabel.text = titleText
+        titleLabel.frame = bounds
         
+        titleLabel.font = UIFont(name: "Avenir Next", size: 18)
+        
+        titleLabel.textAlignment = .center
+        titleLabel.textColor = UIColor.white
+        titleLabel.center.x = self.bounds.midX
+        titleLabel.center.y = ((self.bounds.midY) * 2) + 20
+        self.addSubview(titleLabel)
     }
     
     func countUp() {
@@ -162,7 +183,7 @@ class SkillLoaderView: UIView {
             timer.invalidate()
         }
         
-        var t = NSDate.timeIntervalSinceReferenceDate - startTime
+        let t = NSDate.timeIntervalSinceReferenceDate - startTime
         print(t, Double(count) * counterVelocity, count)
     }
     

@@ -13,6 +13,10 @@ class DynamicViewController: UIViewController {
     
     let  coreMotionManager = CMMotionManager()
     
+    @IBOutlet weak var dismissButton: UIButton!
+    @IBAction func dismissAction(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
     
     var pakrButton  = BallButton()
     var ipsmaButton = BallButton()
@@ -40,7 +44,7 @@ class DynamicViewController: UIViewController {
         // 0 = no elacticity, 1.0 = max elacticity
         lazyBehavior.elasticity = 1.0
         lazyBehavior.allowsRotation = true
-        lazyBehavior.friction = 0.4
+        //lazyBehavior.friction = 0.4
         //lazyBehavior.density = 0.4
         //lazyBehavior.resistance = 0.4
         
@@ -50,17 +54,62 @@ class DynamicViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.dismissButton.setBackgroundImage(#imageLiteral(resourceName: "error-3"), for: .normal)
+        self.dismissButton.layer.borderColor = UIColor.white.cgColor
+        self.dismissButton.layer.borderWidth = 1.2
+        
+        
+        dismissButton.layer.cornerRadius = dismissButton.frame.size.width / 2
+        
         drawButton()
         animateButton()
         
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
-
+        pakrButton.addTarget(self, action: #selector(parkrAction), for: .touchUpInside)
+        ipsmaButton.addTarget(self, action: #selector(ipsmaAction), for: .touchUpInside)
+        whampButton.addTarget(self, action: #selector(whampAction), for: .touchUpInside)
+        whampButton.addTarget(self, action: #selector(alfaAction), for: .touchUpInside)
+        
+    
+        pakrButton.setTitle("PARKR", for: .normal)
+        pakrButton.titleLabel?.font = UIFont(name: "Avenir Next", size: 18)
+        
+        ipsmaButton.setTitle("Ipsma", for: .normal)
+        ipsmaButton.titleLabel?.font = UIFont(name: "Avenir Next", size: 18)
+        
+        whampButton.setTitle("Whamp!", for: .normal)
+        whampButton.titleLabel?.font = UIFont(name: "Avenir Next", size: 18)
+        
+        alfaButton.setTitle("Alfa News", for: .normal)
+        alfaButton.titleLabel?.font = UIFont(name: "Avenir Next", size: 18)
+        
+        
+        
+        
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func parkrAction() {
+        let url = URL(string: "https://github.com/tlambrou/PARKR")
+        UIApplication.shared.open(url!, options: [:], completionHandler: nil)
+    }
+    
+    func ipsmaAction() {
+        let url = URL(string: "https://devpost.com/software/ipsma-invites")
+        UIApplication.shared.open(url!, options: [:], completionHandler: nil)
+    }
+    func whampAction() {
+        let url = URL(string: "https://itunes.apple.com/us/app/whamp!/id1141533832?mt=8")
+        UIApplication.shared.open(url!, options: [:], completionHandler: nil)
+    }
+    
+    func alfaAction() {
+        let url = URL(string: "https://itunes.apple.com/us/app/alfa-news/id1187632337?ls=1&mt=8")
+        UIApplication.shared.open(url!, options: [:], completionHandler: nil)
     }
     
     func drawButton() {
@@ -89,7 +138,7 @@ class DynamicViewController: UIViewController {
             self.view.addSubview(button)
         }
         
-       
+        
     }
     
     func animateButton() {
@@ -111,8 +160,21 @@ class DynamicViewController: UIViewController {
             coreMotionManager.accelerometerUpdateInterval = 0.25
             coreMotionManager.startAccelerometerUpdates(to: OperationQueue.main, withHandler: { (data, error) in
                 if self.gravity.dynamicAnimator != nil {
-                    if let dx = data?.acceleration.x, let dy = data?.acceleration.y {
-                        self.gravity.gravityDirection = CGVector(dx: dx, dy: dy)
+                    if var dx = data?.acceleration.x, var dy = data?.acceleration.y {
+                        
+                        switch UIDevice.current.orientation {
+                        case .portrait:
+                            dy = -dy
+                        case .portraitUpsideDown:
+                            break
+                        case .landscapeRight:
+                            swap(&dx, &dy)
+                        case .landscapeLeft:
+                            swap(&dx, &dy); dy = -dy
+                        default:
+                            dx = 0; dy = 0
+                        }
+                    self.gravity.gravityDirection = CGVector(dx: dx, dy: dy)
                     }
                 } else {
                     self.coreMotionManager.stopAccelerometerUpdates()

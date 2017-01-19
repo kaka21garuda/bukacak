@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="1Z0-xY-Lj6">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -66,7 +66,7 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HbW-Ae-aEJ">
                                 <rect key="frame" x="147" y="541" width="80" height="80"/>
-                                <color key="backgroundColor" red="0.49666959047317505" green="0.51328718662261963" blue="0.7163967490196228" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.33141613006591797" green="0.37796825170516968" blue="0.50246274471282959" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="oTg-RY-RAO"/>
                                     <constraint firstAttribute="height" constant="80" id="uQ8-6d-cQT"/>
@@ -183,10 +183,10 @@
                         <outlet property="skillsButton" destination="nxf-hT-TC6" id="hVc-Tw-oEC"/>
                         <outlet property="workButton" destination="HbW-Ae-aEJ" id="EFz-YX-rqp"/>
                         <outlet property="workContraint" destination="Pan-9N-uWD" id="BRJ-Os-wom"/>
-                        <segue destination="QMj-X9-b65" kind="show" identifier="projectSegue" id="xeM-iI-AUb"/>
                         <segue destination="EAk-xA-J5s" kind="show" identifier="skillSegue" id="uMY-RU-JtS"/>
                         <segue destination="hs6-pl-oqJ" kind="show" identifier="educationSegue" id="W9V-Wc-37I"/>
                         <segue destination="gEu-kk-zrj" kind="show" identifier="aboutSegue" id="98k-gf-zQo"/>
+                        <segue destination="1Z0-xY-Lj6" kind="show" identifier="projectSegue" id="XGR-u3-Epo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -398,7 +398,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wEO-cw-mVS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-74.400000000000006" y="748.87556221889065"/>
+            <point key="canvasLocation" x="-111" y="978"/>
         </scene>
         <!--Dynamic View Controller-->
         <scene sceneID="ZuR-zs-pDq">
@@ -411,12 +411,44 @@
                     <view key="view" contentMode="scaleToFill" id="R6U-wS-UMe">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Projects" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k8q-4y-eIM">
+                                <rect key="frame" x="189" y="28" width="170" height="71"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="71" id="LBZ-3U-2kF"/>
+                                    <constraint firstAttribute="width" constant="170" id="SPD-h5-dBJ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-UltraLight" family="Avenir Next" pointSize="36"/>
+                                <color key="textColor" red="0.99989169836044312" green="1" blue="0.99988096952438354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GqV-8G-PTP">
+                                <rect key="frame" x="16" y="20" width="60" height="60"/>
+                                <color key="backgroundColor" red="0.99989169836044312" green="1" blue="0.99988096952438354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="Fyi-Md-yVq"/>
+                                    <constraint firstAttribute="height" constant="60" id="N8L-6s-Un1"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="dismissAction:" destination="1Z0-xY-Lj6" eventType="touchUpInside" id="Q8s-jd-sbo"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.33141613006591797" green="0.37796825170516968" blue="0.50246274471282959" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="leadingMargin" secondItem="GqV-8G-PTP" secondAttribute="leading" id="Y80-jv-2u2"/>
+                            <constraint firstItem="GqV-8G-PTP" firstAttribute="top" secondItem="bBS-uu-NSk" secondAttribute="bottom" id="mfP-Q6-SgG"/>
+                            <constraint firstItem="k8q-4y-eIM" firstAttribute="top" secondItem="bBS-uu-NSk" secondAttribute="bottom" constant="8" id="q1m-yy-Sf1"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="k8q-4y-eIM" secondAttribute="trailing" id="wtP-9q-Rcb"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="dismissButton" destination="GqV-8G-PTP" id="aNd-PF-yZd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rX7-Ua-1fF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="662" y="1518"/>
+            <point key="canvasLocation" x="652" y="691.304347826087"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="XJX-CJ-E5M">

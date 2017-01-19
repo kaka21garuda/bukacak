@@ -228,7 +228,7 @@ class HomeViewController: UIViewController, UIViewControllerTransitioningDelegat
         
         } else if segue.identifier == "projectSegue" {
             
-            let projectViewController: ProjectsViewController = segue.destination as! ProjectsViewController
+            let projectViewController: DynamicViewController = segue.destination as! DynamicViewController
             projectViewController.transitioningDelegate = self
             projectViewController.modalPresentationStyle = .custom
         }

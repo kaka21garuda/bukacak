@@ -14,6 +14,7 @@
 		C62A4E921E1758CE00FC81A9 /* SkillViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62A4E911E1758CE00FC81A9 /* SkillViewController.swift */; };
 		C62E1EB51E1D78FF00CDB41D /* EducationElementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62E1EB41E1D78FF00CDB41D /* EducationElementViewController.swift */; };
 		C660B4E61E1EE1B00064BEEA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C660B4E51E1EE1B00064BEEA /* ViewController.swift */; };
+		C68169301E369256002A182E /* PreviewImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C681692F1E369256002A182E /* PreviewImageViewController.swift */; };
 		C6C1190D1E1449AB0041709B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C1190C1E1449AB0041709B /* AppDelegate.swift */; };
 		C6C119121E1449AB0041709B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6C119101E1449AB0041709B /* Main.storyboard */; };
 		C6C119141E1449AB0041709B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6C119131E1449AB0041709B /* Assets.xcassets */; };
@@ -24,7 +25,6 @@
 		C6D4D4421E16E4D50061FD35 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D4D4411E16E4D50061FD35 /* AboutViewController.swift */; };
 		C6D4D4441E16E7C40061FD35 /* CircularTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D4D4431E16E7C40061FD35 /* CircularTransition.swift */; };
 		C6DA1D821E19C75200E91556 /* SchoolView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DA1D811E19C75200E91556 /* SchoolView.swift */; };
-		C6DA1D841E1B128200E91556 /* ProjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DA1D831E1B128200E91556 /* ProjectsViewController.swift */; };
 		C6DA1D861E1B174800E91556 /* ProjectsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DA1D851E1B174800E91556 /* ProjectsCollectionViewCell.swift */; };
 		C6E9A6D01E1C9BA4009FE5B0 /* ContentProjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E9A6CF1E1C9BA4009FE5B0 /* ContentProjectsViewController.swift */; };
 		C6E9A6D61E1C9CC6009FE5B0 /* MainProjectShowCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E9A6D51E1C9CC6009FE5B0 /* MainProjectShowCase.swift */; };
@@ -55,6 +55,7 @@
 		C62A4E911E1758CE00FC81A9 /* SkillViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkillViewController.swift; sourceTree = "<group>"; };
 		C62E1EB41E1D78FF00CDB41D /* EducationElementViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EducationElementViewController.swift; sourceTree = "<group>"; };
 		C660B4E51E1EE1B00064BEEA /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C681692F1E369256002A182E /* PreviewImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewImageViewController.swift; sourceTree = "<group>"; };
 		C6C119091E1449AB0041709B /* BukaCak.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BukaCak.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6C1190C1E1449AB0041709B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C6C119111E1449AB0041709B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -71,7 +72,6 @@
 		C6D4D4411E16E4D50061FD35 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		C6D4D4431E16E7C40061FD35 /* CircularTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularTransition.swift; sourceTree = "<group>"; };
 		C6DA1D811E19C75200E91556 /* SchoolView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SchoolView.swift; sourceTree = "<group>"; };
-		C6DA1D831E1B128200E91556 /* ProjectsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectsViewController.swift; sourceTree = "<group>"; };
 		C6DA1D851E1B174800E91556 /* ProjectsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectsCollectionViewCell.swift; sourceTree = "<group>"; };
 		C6E9A6CF1E1C9BA4009FE5B0 /* ContentProjectsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentProjectsViewController.swift; sourceTree = "<group>"; };
 		C6E9A6D51E1C9CC6009FE5B0 /* MainProjectShowCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainProjectShowCase.swift; sourceTree = "<group>"; };
@@ -125,8 +125,8 @@
 		C6C1190B1E1449AB0041709B /* BukaCak */ = {
 			isa = PBXGroup;
 			children = (
-				C61642FB1E2DFA9A00AC96C6 /* DynamicViewController.swift */,
 				C660B4E51E1EE1B00064BEEA /* ViewController.swift */,
+				C681692F1E369256002A182E /* PreviewImageViewController.swift */,
 				C6E9A6D41E1C9C8E009FE5B0 /* AnimationAndTransition */,
 				C6E9A6D31E1C9C69009FE5B0 /* ProjectShowCase */,
 				C6E9A6D21E1C9C30009FE5B0 /* MainMenuViewController */,
@@ -173,8 +173,8 @@
 			children = (
 				C6C1193A1E144C500041709B /* HomeViewController.swift */,
 				C6D4D4411E16E4D50061FD35 /* AboutViewController.swift */,
+				C61642FB1E2DFA9A00AC96C6 /* DynamicViewController.swift */,
 				C61B424B1E26107C007D36E3 /* EducationViewController.swift */,
-				C6DA1D831E1B128200E91556 /* ProjectsViewController.swift */,
 				C62A4E911E1758CE00FC81A9 /* SkillViewController.swift */,
 				C62E1EB41E1D78FF00CDB41D /* EducationElementViewController.swift */,
 			);
@@ -262,7 +262,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0810;
-				LastUpgradeCheck = 0810;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Buka Cakrawala";
 				TargetAttributes = {
 					C6C119081E1449AA0041709B = {
@@ -341,7 +341,6 @@
 				C61B424C1E26107C007D36E3 /* EducationViewController.swift in Sources */,
 				C62A4E921E1758CE00FC81A9 /* SkillViewController.swift in Sources */,
 				C6C1190D1E1449AB0041709B /* AppDelegate.swift in Sources */,
-				C6DA1D841E1B128200E91556 /* ProjectsViewController.swift in Sources */,
 				C6C1193B1E144C500041709B /* HomeViewController.swift in Sources */,
 				C6D4D4441E16E7C40061FD35 /* CircularTransition.swift in Sources */,
 				C6E9A6D61E1C9CC6009FE5B0 /* MainProjectShowCase.swift in Sources */,
@@ -351,6 +350,7 @@
 				C6DA1D861E1B174800E91556 /* ProjectsCollectionViewCell.swift in Sources */,
 				C6E9A6D01E1C9BA4009FE5B0 /* ContentProjectsViewController.swift in Sources */,
 				C62E1EB51E1D78FF00CDB41D /* EducationElementViewController.swift in Sources */,
+				C68169301E369256002A182E /* PreviewImageViewController.swift in Sources */,
 				C61BD8FC1E185133005DFA97 /* AboutCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -424,6 +424,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -473,6 +474,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;

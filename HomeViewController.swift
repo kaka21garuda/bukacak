@@ -11,19 +11,21 @@ import Social
 
 //import AVFoundation
 
-class HomeViewController: UIViewController, UIViewControllerTransitioningDelegate {
+class HomeViewController: UIViewController, UIViewControllerTransitioningDelegate, UIViewControllerPreviewingDelegate {
+    
+    
+     var buttonSender: UIButton?
+     let transition = CircularTransition()
+    
+    
+    // MARK: - IBOutlets
     
     @IBOutlet weak var contactButton: UIButton!
-    
-    
-    var buttonSender: UIButton?
     
     @IBOutlet weak var aboutContraint: NSLayoutConstraint!
     
     @IBOutlet weak var workContraint: NSLayoutConstraint!
     
-
-      
     @IBOutlet weak var homeProfileImageView: UIImageView!
     
     @IBOutlet weak var aboutButton: UIButton!
@@ -34,8 +36,8 @@ class HomeViewController: UIViewController, UIViewControllerTransitioningDelegat
     
     @IBOutlet weak var educationButton: UIButton!
     
-    let transition = CircularTransition()
-    
+   
+    // MARK: - IBActions
     
     @IBAction func aboutAction(_ sender: UIButton) {
         self.buttonSender = sender
@@ -45,7 +47,7 @@ class HomeViewController: UIViewController, UIViewControllerTransitioningDelegat
     @IBAction func skillAction(_ sender: UIButton) {
         self.buttonSender = sender
         performSegue(withIdentifier: "skillSegue", sender: sender)
-        
+        print(sender.center)
     }
     
     @IBAction func projectAction(_ sender: UIButton) {
@@ -104,6 +106,66 @@ class HomeViewController: UIViewController, UIViewControllerTransitioningDelegat
         
     }
     
+    
+    
+    
+    
+    
+    // MARK: - 3d Touch Peek and Pop methods
+    
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
+        let viewsForForceTouch = [homeProfileImageView]
+        
+        let views: [UIView] = [skillsButton, aboutButton, educationButton, workButton, homeProfileImageView]
+        
+        print(location)
+        
+        for i in 0 ..< views.count {
+            print(i)
+            
+            if views[i].frame.contains(location) {
+                switch views[i].tag {
+                case 0:
+                    print("0 is working!")
+                    let previewImageVC = storyboard?.instantiateViewController(withIdentifier: "previewPicture") as? PreviewImageViewController
+                    return previewImageVC!
+                case 1:
+                    let previewAboutVC = storyboard?.instantiateViewController(withIdentifier: "AboutViewController") as? AboutViewController
+                    return previewAboutVC!
+                case 2:
+                    let previewEducationVC = storyboard?.instantiateViewController(withIdentifier: "EducationViewController") as? EducationViewController
+                    return previewEducationVC!
+                case 3:
+                    let previewSkillVC = storyboard?.instantiateViewController(withIdentifier: "SkillViewController") as? SkillViewController
+                    return previewSkillVC
+                case 4:
+                    let previewProjectVC = storyboard?.instantiateViewController(withIdentifier: "DynamicViewController") as? DynamicViewController
+                    return previewProjectVC
+                default:
+                    print("switch is not working!")
+                    return nil
+                }
+            }
+        }
+        
+        return nil
+    }
+    
+    func peek() -> UIViewController {
+        let preview = PreviewImageViewController()
+        return preview
+    }
+    
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
+        
+        // show(viewControllerToCommit, sender: self)
+        
+    }
+    
+    
+    
+    // MARK: - Circular Transitioning Methods
+    
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         
         print("transition: \(transition)")
@@ -114,7 +176,6 @@ class HomeViewController: UIViewController, UIViewControllerTransitioningDelegat
         transition.cirleColor = (buttonSender?.backgroundColor!)!
         return transition
     }
-    
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         
         transition.transitionMode = .dismiss
@@ -126,6 +187,7 @@ class HomeViewController: UIViewController, UIViewControllerTransitioningDelegat
     
     
     func animateImage(view: UIView, duration: TimeInterval, velocity: CGFloat) {
+        print("animate the picture")
         UIView.animate(withDuration: duration, delay: 0, usingSpringWithDamping: 0.2, initialSpringVelocity: velocity, options: .allowUserInteraction, animations: { 
             [ weak self ] in
                 self?.homeProfileImageView.transform = .identity
@@ -147,6 +209,13 @@ class HomeViewController: UIViewController, UIViewControllerTransitioningDelegat
         view.addMotionEffect(group)
     }
     
+    
+    func tapPictureAction() {
+        print("picture is tapped!")
+        self.homeProfileImageView.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
+        animateImage(view: self.homeProfileImageView, duration: 2.6, velocity: 6.0)
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -155,8 +224,27 @@ class HomeViewController: UIViewController, UIViewControllerTransitioningDelegat
         
     }
     
+    
+    
+//    func fuzzy() {
+//        let view = UIView()
+//        
+//        view.center = self.view.center
+//    }
+    
+    
+    
+    
+    // MARK: - View Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let singleTap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapPictureAction))
+        singleTap.numberOfTapsRequired = 1
+        
+        homeProfileImageView.isUserInteractionEnabled = true
+        homeProfileImageView.addGestureRecognizer(singleTap)
     
         contactButton.layer.borderWidth = 1.0
         contactButton.layer.cornerRadius = contactButton.bounds.size.height / 2
@@ -167,10 +255,11 @@ class HomeViewController: UIViewController, UIViewControllerTransitioningDelegat
         applyMotionEffect(toView: skillsButton, magnitude: -20)
         applyMotionEffect(toView: workButton, magnitude: -20)
         
-//        // Registering 3d touch
-//        if traitCollection.forceTouchCapability == .available {
-//            registerForPreviewing(with: self, sourceView: view)
-//        }
+        // Registering 3d touch
+        if traitCollection.forceTouchCapability == .available {
+            print("Capable of 3d touch")
+            registerForPreviewing(with: self, sourceView: view)
+        }
         
         // Buttons
         self.aboutButton.setBackgroundImage(#imageLiteral(resourceName: "man"), for: .normal)
@@ -207,6 +296,9 @@ class HomeViewController: UIViewController, UIViewControllerTransitioningDelegat
         
     }
 
+    
+    // MARK: - Navigation
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "aboutSegue" {
             

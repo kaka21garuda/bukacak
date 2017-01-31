@@ -92,6 +92,7 @@ extension CircularTransition: UIViewControllerAnimatedTransitioning {
                     if self.transitionMode == .pop {
                         containerView.insertSubview(returningView, belowSubview: returningView)
                         containerView.insertSubview(self.circle, belowSubview: returningView)
+                        
                     }
                     
                 }, completion: { (success: Bool) in
@@ -109,6 +110,7 @@ extension CircularTransition: UIViewControllerAnimatedTransitioning {
     }
     
     
+    
     func frameForCircle(withViewCenter viewCenter: CGPoint, size viewSize: CGSize, startPoint: CGPoint) -> CGRect {
         
         
@@ -120,5 +122,7 @@ extension CircularTransition: UIViewControllerAnimatedTransitioning {
         
         return CGRect(origin: CGPoint.zero, size: size)
     }
+    
+
 
 }

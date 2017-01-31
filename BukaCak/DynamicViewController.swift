@@ -67,7 +67,7 @@ class DynamicViewController: UIViewController {
         pakrButton.addTarget(self, action: #selector(parkrAction), for: .touchUpInside)
         ipsmaButton.addTarget(self, action: #selector(ipsmaAction), for: .touchUpInside)
         whampButton.addTarget(self, action: #selector(whampAction), for: .touchUpInside)
-        whampButton.addTarget(self, action: #selector(alfaAction), for: .touchUpInside)
+        alfaButton.addTarget(self, action: #selector(alfaAction), for: .touchUpInside)
         
     
         pakrButton.setTitle("PARKR", for: .normal)
@@ -103,6 +103,7 @@ class DynamicViewController: UIViewController {
         UIApplication.shared.open(url!, options: [:], completionHandler: nil)
     }
     func whampAction() {
+        print("whamp")
         let url = URL(string: "https://itunes.apple.com/us/app/whamp!/id1141533832?mt=8")
         UIApplication.shared.open(url!, options: [:], completionHandler: nil)
     }

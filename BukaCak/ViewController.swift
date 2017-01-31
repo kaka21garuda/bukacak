@@ -59,7 +59,7 @@ class ViewController: UIViewController, UIViewControllerTransitioningDelegate {
     func typeLetter(){
         if myCounter < (Array(myText.characters)).count {
             textView.text = textView.text! + String(Array(myText.characters)[myCounter])
-            let randomInterval = 0.9
+            let randomInterval = 0.08
             timer?.invalidate()
             timer = Timer.scheduledTimer(timeInterval: randomInterval, target: self, selector: #selector(ViewController.typeLetter), userInfo: nil, repeats: false)
         } else {
@@ -76,7 +76,7 @@ class ViewController: UIViewController, UIViewControllerTransitioningDelegate {
     func codeLetter() {
         if anotherCounter < (Array(codingText.characters)).count {
             codingTextView.text = codingTextView.text! + String(Array(codingText.characters)[anotherCounter])
-            let interval = 0.07
+            let interval = 0.03
             anotherTimer?.invalidate()
             anotherTimer = Timer.scheduledTimer(timeInterval: interval, target: self, selector: #selector(ViewController.codeLetter), userInfo: nil, repeats: false)
         } else {

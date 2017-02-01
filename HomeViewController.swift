@@ -36,7 +36,10 @@ class HomeViewController: UIViewController, UIViewControllerTransitioningDelegat
     
     @IBOutlet weak var educationButton: UIButton!
     
-   
+    
+    @IBOutlet var buttonLabel: [UILabel]!
+    
+    
     // MARK: - IBActions
     
     @IBAction func aboutAction(_ sender: UIButton) {
@@ -59,6 +62,8 @@ class HomeViewController: UIViewController, UIViewControllerTransitioningDelegat
         self.buttonSender = sender
         performSegue(withIdentifier: "educationSegue", sender: sender)
     }
+    
+    // MARK: - Contact IBAction 
     
     @IBAction func contactAction(_ sender: UIButton) {
         let actionSheet = UIAlertController(title: "", message: "Contact on social", preferredStyle: .actionSheet)
@@ -106,11 +111,6 @@ class HomeViewController: UIViewController, UIViewControllerTransitioningDelegat
         
     }
     
-    
-    
-    
-    
-    
     // MARK: - 3d Touch Peek and Pop methods
     
     func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
@@ -150,18 +150,8 @@ class HomeViewController: UIViewController, UIViewControllerTransitioningDelegat
         
         return nil
     }
-    
-    func peek() -> UIViewController {
-        let preview = PreviewImageViewController()
-        return preview
-    }
-    
-    func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
-        
-        // show(viewControllerToCommit, sender: self)
-        
-    }
-    
+
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {}
     
     
     // MARK: - Circular Transitioning Methods
@@ -209,36 +199,18 @@ class HomeViewController: UIViewController, UIViewControllerTransitioningDelegat
         view.addMotionEffect(group)
     }
     
-    
     func tapPictureAction() {
         print("picture is tapped!")
         self.homeProfileImageView.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
         animateImage(view: self.homeProfileImageView, duration: 2.6, velocity: 6.0)
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        self.homeProfileImageView.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
-        animateImage(view: self.homeProfileImageView, duration: 2.6, velocity: 6.0)
-        
-    }
-    
-    
-    
-//    func fuzzy() {
-//        let view = UIView()
-//        
-//        view.center = self.view.center
-//    }
-    
-    
-    
-    
     // MARK: - View Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let buttons: [UIButton] = [aboutButton!, workButton!, skillsButton!, educationButton!]
         
         let singleTap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapPictureAction))
         singleTap.numberOfTapsRequired = 1
@@ -250,10 +222,15 @@ class HomeViewController: UIViewController, UIViewControllerTransitioningDelegat
         contactButton.layer.cornerRadius = contactButton.bounds.size.height / 2
         
         applyMotionEffect(toView: self.view, magnitude: 10)
-        applyMotionEffect(toView: aboutButton, magnitude: -20)
-        applyMotionEffect(toView: educationButton, magnitude: -20)
-        applyMotionEffect(toView: skillsButton, magnitude: -20)
-        applyMotionEffect(toView: workButton, magnitude: -20)
+        
+        for button in buttons {
+            applyMotionEffect(toView: button, magnitude: -28)
+        }
+
+        for label in buttonLabel {
+            applyMotionEffect(toView: label, magnitude: -28)
+        }
+        
         
         // Registering 3d touch
         if traitCollection.forceTouchCapability == .available {
@@ -275,28 +252,24 @@ class HomeViewController: UIViewController, UIViewControllerTransitioningDelegat
         self.homeProfileImageView.layer.borderColor = UIColor.white.cgColor
         self.homeProfileImageView.layer.cornerRadius = homeProfileImageView.frame.size.height / 2
         
-       
         
         // UIButton layout
-        aboutButton.layer.cornerRadius = aboutButton.frame.size.width / 2
-        aboutButton.layer.borderWidth = 1.0
-        aboutButton.layer.borderColor = UIColor.white.cgColor
+        for button in buttons {
+            button.layer.cornerRadius = button.frame.size.width / 2
+            button.layer.borderWidth = 1.0
+            button.layer.borderColor = UIColor.white.cgColor
+        }
         
-        workButton.layer.cornerRadius = workButton.frame.size.width / 2
-        workButton.layer.borderWidth = 1.0
-        workButton.layer.borderColor = UIColor.white.cgColor
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
-        skillsButton.layer.cornerRadius = skillsButton.frame.size.width / 2
-        skillsButton.layer.borderWidth = 1.0
-        skillsButton.layer.borderColor = UIColor.white.cgColor
-        
-        educationButton.layer.cornerRadius = educationButton.frame.size.width / 2
-        educationButton.layer.borderWidth = 1.0
-        educationButton.layer.borderColor = UIColor.white.cgColor
+        self.homeProfileImageView.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
+        animateImage(view: self.homeProfileImageView, duration: 2.6, velocity: 6.0)
         
     }
 
-    
     // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

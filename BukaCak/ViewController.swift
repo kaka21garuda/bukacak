@@ -19,6 +19,19 @@ class ViewController: UIViewController, UIViewControllerTransitioningDelegate {
     let transition = CircularTransition()
     var buttonSender: UIButton!
     
+    var effect: UIVisualEffect!
+    
+    let myText = " swift"
+    let codingText = "    1> let me = Awesomeness()\n\n    2> me.deliver(message: \"Hello, \", to: \"world!\")\n\n    3> let welcome = UIAlertController(title: \"Welcome\", message: helloLanguage(), preferredStyle: .alert)\n\n    4> func helloLanguage() -> String {\n         if me.language == .english {\n            return \"Hello\"\n         } else if me.language == .spanish {\n            return \"Hola\"\n         } else {\n            return \"Welcome\"\n         }\n       }\n\n    ^D"
+    
+    var myCounter = 0
+    var timer:Timer?
+    
+    var anotherCounter = 0
+    var anotherTimer: Timer?
+    
+    // MARK: - IBOutlets
+    
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var welcomeTextView: UITextView!
     @IBOutlet weak var codingTextView: UITextView!
@@ -33,19 +46,8 @@ class ViewController: UIViewController, UIViewControllerTransitioningDelegate {
         self.buttonSender = sender
         self.performSegue(withIdentifier: "homeSegue", sender: sender)
     }
-
-    var effect: UIVisualEffect!
     
-    let myText = " swift"
-    let codingText = "    1> let me = Awesomeness()\n\n    2> me.deliver(message: \"Hello, \", to: \"world!\")\n\n    3> let welcome = UIAlertController(title: \"Welcome\", message: helloLanguage(), preferredStyle: .alert)\n\n    4> func helloLanguage() -> String {\n         if me.language == .english {\n            return \"Hello\"\n         } else if me.language == .spanish {\n            return \"Hola\"\n         } else {\n            return \"Welcome\"\n         }\n       }\n\n    ^D"
-    
-    
-    
-    var myCounter = 0
-    var timer:Timer?
-    
-    var anotherCounter = 0
-    var anotherTimer: Timer?
+    // MARK: - Timing Timer/Animation
     
     func fireTimer(){
         timer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(ViewController.typeLetter), userInfo: nil, repeats: true)
@@ -107,14 +109,10 @@ class ViewController: UIViewController, UIViewControllerTransitioningDelegate {
             self.alertView.alpha = 1.0
             self.alertView.transform = CGAffineTransform.identity
         }, completion: nil)
-        
-        //        UIView.animate(withDuration: 0.4) {
-        //            self.visualBlur.effect = self.effect
-        //            self.alertView.alpha = 1.0
-        //            self.alertView.transform = CGAffineTransform.identity
-        //        }
-        
+
     }
+    
+    // MARK: - Transitioning Method
     
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         
@@ -136,6 +134,7 @@ class ViewController: UIViewController, UIViewControllerTransitioningDelegate {
         return transition
     }
     
+    // MARK: - View Cycle
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -162,10 +161,7 @@ class ViewController: UIViewController, UIViewControllerTransitioningDelegate {
         
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+    // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "homeSegue" {

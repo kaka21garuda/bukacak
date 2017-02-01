@@ -119,7 +119,7 @@ class SkillLoaderView: UIView {
         animate(duration: duration, completion: 1, color: UIColor.red.cgColor)
     }
     
-    // MARK: - Methods
+    // MARK: - Draw Circle
     
     func setupCircle() {
     
@@ -139,12 +139,12 @@ class SkillLoaderView: UIView {
         
     }
     
-    
     func startTimer() {
         startTime = NSDate.timeIntervalSinceReferenceDate
         timer = Timer.scheduledTimer(timeInterval: 0.014, target: self, selector: #selector(countUp), userInfo: nil, repeats: true)
     }
     
+    // MARK: - Label
     
     func setupLabel() {
         label.text = "\(count) %"
@@ -187,6 +187,7 @@ class SkillLoaderView: UIView {
         print(t, Double(count) * counterVelocity, count)
     }
     
+    // MARK: - Circle Animation
     
     func animate(duration: TimeInterval, completion: CGFloat, color: CGColor) {
         

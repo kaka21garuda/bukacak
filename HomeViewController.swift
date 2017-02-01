@@ -223,13 +223,6 @@ class HomeViewController: UIViewController, UIViewControllerTransitioningDelegat
         
         applyMotionEffect(toView: self.view, magnitude: 10)
         
-        for button in buttons {
-            applyMotionEffect(toView: button, magnitude: -28)
-        }
-
-        for label in buttonLabel {
-            applyMotionEffect(toView: label, magnitude: -28)
-        }
         
         
         // Registering 3d touch
@@ -265,8 +258,48 @@ class HomeViewController: UIViewController, UIViewControllerTransitioningDelegat
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        let buttons: [UIButton] = [aboutButton, educationButton, skillsButton, workButton]
+        
         self.homeProfileImageView.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
         animateImage(view: self.homeProfileImageView, duration: 2.6, velocity: 6.0)
+        
+        for button in buttons {
+            button.alpha = 0
+            button.center.y += view.bounds.height
+            applyMotionEffect(toView: button, magnitude: -28)
+        }
+        
+        for label in buttonLabel {
+            applyMotionEffect(toView: label, magnitude: -28)
+            label.alpha = 0.0
+        }
+        
+        UIView.animate(withDuration: 2, delay: 1, options: [], animations: {
+            self.aboutButton.center.y -= self.view.bounds.height
+            self.aboutButton.alpha = 1.0
+        }, completion: nil)
+        
+        UIView.animate(withDuration: 2, delay: 2, options: [], animations: {
+            self.educationButton.center.y -= self.view.bounds.height
+            self.educationButton.alpha = 1.0
+        }, completion: nil)
+        
+        UIView.animate(withDuration: 2, delay: 3, options: [], animations: {
+            self.skillsButton.center.y -= self.view.bounds.height
+            self.skillsButton.alpha = 1.0
+        }, completion: nil)
+        
+        UIView.animate(withDuration: 2, delay: 4, options: [], animations: {
+            self.workButton.center.y -= self.view.bounds.height
+            self.workButton.alpha = 1.0
+        }, completion: nil)
+        
+        for each in buttonLabel {
+            UIView.animate(withDuration: 2, delay: 5, options: [], animations: {
+                each.alpha = 1.0
+            }, completion: nil)
+        }
+
         
     }
 

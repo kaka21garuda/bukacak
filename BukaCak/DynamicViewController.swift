@@ -41,12 +41,10 @@ class DynamicViewController: UIViewController {
     lazy var dynamicItemBehavior:UIDynamicItemBehavior = {
         let lazyBehavior = UIDynamicItemBehavior()
         
-        // 0 = no elacticity, 1.0 = max elacticity
+        
         lazyBehavior.elasticity = 1.0
         lazyBehavior.allowsRotation = true
-        //lazyBehavior.friction = 0.4
-        //lazyBehavior.density = 0.4
-        //lazyBehavior.resistance = 0.4
+        
         
         return lazyBehavior
     }()

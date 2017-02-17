@@ -204,8 +204,8 @@ class SkillLoaderView: UIView {
         // Do a linear animation (i.e. the speed of the animation stays the same)
         animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
         
-        // Do a linear animation (i.e. the speed of the animation stays the same)
-        animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
+//        // Do a linear animation (i.e. the speed of the animation stays the same)
+//        animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
         
         // Set the circleLayer's strokeEnd property to 1.0 now so that it's the
         // right value when the animation ends.
@@ -213,6 +213,7 @@ class SkillLoaderView: UIView {
         
         // Do the actual animation
         circleLayer.add(animation, forKey: "animateCircle")
+        
         
         
         // Add the circle layer into the sublayer

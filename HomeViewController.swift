@@ -9,7 +9,6 @@
 import UIKit
 import Social
 
-//import AVFoundation
 
 class HomeViewController: UIViewController, UIViewControllerTransitioningDelegate, UIViewControllerPreviewingDelegate {
     
@@ -157,7 +156,7 @@ class HomeViewController: UIViewController, UIViewControllerTransitioningDelegat
     // MARK: - Circular Transitioning Methods
     
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        
+
         print("transition: \(transition)")
         print("button sender \(buttonSender)")
         

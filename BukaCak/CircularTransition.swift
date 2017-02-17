@@ -8,26 +8,28 @@
 
 import UIKit
 
+enum CircularTransitionMode: Int {
+    case present, dismiss, pop
+}
+
 class CircularTransition: NSObject {
     
     public var circle = UIView()
     
     var startingPoint = CGPoint.zero {
         didSet {
-            circle.center = startingPoint
+            circle.center = startingPoint 
         }
     }
     
     var cirleColor = UIColor.green
     
     var duration = 0.6
-    
-    enum CircularTransitionMode: Int {
-        case present, dismiss, pop
-    }
 
     var transitionMode: CircularTransitionMode = .present
 }
+
+// MARK: - Transitioning extension
 
 extension CircularTransition: UIViewControllerAnimatedTransitioning {
     
@@ -109,7 +111,7 @@ extension CircularTransition: UIViewControllerAnimatedTransitioning {
         }
     }
     
-    
+    // MARK: - Frame Circle
     
     func frameForCircle(withViewCenter viewCenter: CGPoint, size viewSize: CGSize, startPoint: CGPoint) -> CGRect {
         

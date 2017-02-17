@@ -9,6 +9,7 @@
 import UIKit
 import MapKit
 
+// MARK: - School Model
 struct School {
     
     let schoolName: String!
@@ -20,11 +21,11 @@ struct School {
     
 }
 
-let product = School(schoolName: "Product Academy",schoolPlace: "San Francisco, CA",schoolYear: "2016 - present",schoolStory: "The Product College is a two year program taken place in Make School, each year is broken up into two semesters, and each semester into two quarters. Students focus the majority of their time on one of two technical concentrations: Mobile Development and Full Stack Web Development.", latitude: 37.7735142, longtitude: -122.4178074)
+let product = School(schoolName: "Product Academy",schoolPlace: "San Francisco, CA",schoolYear: "2016 - present",schoolStory: "2 year college replacement program for developer and entrepreneurs.\n• Data Structure & Probability in Python\n• Further iOS Devlopment\n• iOS Animation\n• IoT in C++", latitude: 37.7735142, longtitude: -122.4178074)
 
-let summer = School(schoolName: "Summer Academy",schoolPlace: "San Francisco, CA",schoolYear: "2016(2 months)", schoolStory: "The Make School Summer Academy is designed to teach product development to high school and college students passionate about technology.", latitude: 37.7735142, longtitude: -122.4178074)
+let summer = School(schoolName: "Summer Academy",schoolPlace: "San Francisco, CA",schoolYear: "2016(2 months)", schoolStory: "The Make School Summer Academy is designed to teach product development to high school and college students passionate about technology.\n • SpriteKit\n • UIKit", latitude: 37.7735142, longtitude: -122.4178074)
 
-let inti = School(schoolName: "Inti University", schoolPlace: "KL, Malaysia",schoolYear: "2015 -2016",schoolStory: "INTI International University & Colleges in Malaysia offers tertiary and pre- university courses with campuses in Malaysia. I attended INTI in 2015 - 2016 for foundational degree in Computer Science. \n\nCourses that I took:\n∙Pre-Calculus\n∙Chemistry\n∙AP Computer Science\n∙General Studies.", latitude: 3.0741922, longtitude: 101.5909564)
+let inti = School(schoolName: "Inti University", schoolPlace: "KL, Malaysia",schoolYear: "2015 -2016",schoolStory: "INTI International University & Colleges in Malaysia offers tertiary and pre- university courses with campuses in Malaysia. I attended INTI in 2015 - 2016 for foundational degree in Computer Science. \n\nCourses that I took:\n• Pre-Calculus\n• Chemistry\n• AP Computer Science\n• General Studies.", latitude: 3.0741922, longtitude: 101.5909564)
 
 let schoolsList = [inti, summer, product]
 
@@ -85,19 +86,18 @@ class EducationViewController: UIViewController, UICollisionBehaviorDelegate {
     }
     
     func labelFadeOut(view: UIView) {
-        let animationDuration = 0.2
+        let animationDuration = 1.2
         
-        for i in 0..<1000 {
+        
             // Fade in the view
             UIView.animate(withDuration: animationDuration, animations: {
                 view.alpha = 1.0
             }, completion: { (success) in
                 // if success, fade out the view.
-                UIView.animate(withDuration: animationDuration, delay: 0.3, options: .curveEaseOut, animations: {
+                UIView.animate(withDuration: animationDuration, delay: 0.0, options: .repeat, animations: {
                     view.alpha = 0
                 }, completion: nil)
             })
-        }
     }
     
     func addViewController(atOffset offset: CGFloat, dataForViewController data: AnyObject?, story: AnyObject?, lat: AnyObject?, long: AnyObject?, place: AnyObject?, year: AnyObject?) -> UIView? {
@@ -209,6 +209,7 @@ class EducationViewController: UIViewController, UICollisionBehaviorDelegate {
         }
     }
     
+    // MARK: - Handle Pan
     func handlePan(gestureRecognizer: UIPanGestureRecognizer) {
     
         let touchPoint = gestureRecognizer.location(in: self.view)
@@ -305,11 +306,5 @@ class EducationViewController: UIViewController, UICollisionBehaviorDelegate {
             pin(view: view)
         }
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     
 }
